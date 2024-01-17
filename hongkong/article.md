@@ -1,0 +1,132 @@
+# Гонконг
+
+Created by: Екатерина Можегова
+Created time: January 12, 2024 10:37 AM
+
+До Гонконга можно довольно быстро и просто добраться из Шэньженя. Метро, таможня — привет, китайский Нью-Йорк!
+
+Да, наконец-то мы оказались в городе, который богат не только в материальном плане, но и в плане многочисленных уникальных фактов и мифов вокруг него.
+
+Крышесносные небоскребы, квартиры-коробки, межнациональная солянка и многое другое. Вот он — Гонконг!
+
+На деле оказалось не совсем так.
+
+Уже прибыв в Гонконг, мы обратили внимание на людей, которые выглядели любопытно: они совершенно не были похожими на тех китайцев, с которыми мы жили полгода. Да и среди них было заметно большое количество людей других национальностей. Не всегда даже было понятно, каких именно. 
+
+![hong_kong_metro.JPG](images/hong_kong_metro.jpg)
+
+![hong_kong_metro_station.JPG](images/hong_kong_metro_station.jpg)
+
+Любопытно, как менялось наше отношение к такой мультинациональности. 
+
+![slava_and_kate.JPG](images/slava_and_kate.jpg)
+
+Оказавшись в таком разнообразии культур, испытываешь энтузиазм.
+
+Хотя инстинкт самосохранения его перекрывает**, когда вдруг из темного вонючего закоулка на тебя выходит малоопрятный мужчина в обносках.** 
+
+Хотя некоторые его соотечественники, деловые ходят по центральным улицам в дорогих пиджачках, на ходу попивая кофе. 
+
+(фото центра)
+
+На улицах и обеспеченные, и ультра-богатые, и ультра-бедные. 
+
+И туристы-европейцы.
+
+И туристы, раскрывающие рты от местных цен.
+
+Местные китайцы уникальны. Что уж говорить, если и язык, на котором они говорят, непонятен носителям северного диалекта - наиболее популярного и распространенного в самом Китае и во всем мире (его мы и учим).
+Локальный диалект - кантонский. Да, этот тот случай когда даже изучая китайский не можешь понять ни фразы.
+Иероглифы тоже выглядят по-другому (фото)
+
+Чтобы прояснить ситуацию, стоит остановиться на истории города. А у Гонконга она довольно интересная и непростая.
+
+ 
+
+Формальная нынешная система позволяет Гонконгу вести в какой-то мере самостоятельно внутреннюю политику, внешней политикой руководит материковый Китай. То есть “одна страна, две системы”. Однако в 2047 году Гонконг уже офциально станет частью Китая. Но а пока что это абсолютно самобытный город.
+
+Архитектура, инфраструктура, местные люди — все совершенно не похоже на Китай. 
+
+![beautifull_volkswagen.JPG](images/beautifull_volkswagen.jpg)
+
+По приезде в Гонконг заметным становится старомодная и местами пошарпанная архитектура.
+
+Впрочем, интересно, каково влияние Китая на наше впечатление от города, поскольку мы привыкли к повсеместным электромобилям, футуристичным небоскребам, построенным словно только вчера. 
+
+В Гонконге же думаешь, что попал в прошлое, даже несмотря на обилие высоток.  
+
+![thin_building.JPG](images/thin_building.jpg)
+
+А вот и местное такси.
+
+![taxi_in_baker_street.JPG](images/taxi_in_baker_street.jpg)
+
+![taxi_in_night_in_movement.JPG](images/taxi_in_night_in_movement.jpg)
+
+![taxi_and_bus.JPG](images/taxi_and_bus.jpg)
+
+Интересно, что на таких машинах часто указана максимальная вместимость пассажиров.
+
+![taxi_bus_under_road.JPG](images/taxi_bus_under_road.jpg)
+
+![taxi_in_night.JPG](images/taxi_in_night.jpg)
+
+![taxi_in_night_back.JPG](images/taxi_in_night_back.jpg)
+
+Сетевые компании типа Uber вот так маскируют маркировки брендов. (На двери не видно, надо уточнить)
+
+![uber_taxi.JPG](images/uber_taxi.jpg)
+
+Гонконг известен как город-муравейник, в котором проживает 7.5 миллионов человек. Плотность населения ~7000 человек на квадратный километр. 
+
+Отель снимали вот в таком вот особняке (Chungking mansions). 
+
+![chungking_mansions.JPG](images/chungking_mansions.jpg)
+
+Конура.
+
+![hostel_internal.JPG](images/hostel_internal.jpg)
+
+Зато с приватным санузлом. 
+
+Небоскрёбы
+
+![building_in_progress.JPG](images/building_in_progress.jpg)
+
+![building_in_progress_2.JPG](images/building_in_progress_2.jpg)
+
+![pants_skyscraper_and_others.JPG](images/pants_skyscraper_and_others.jpg)
+
+![hong_kong_island_landscape_with_peer.JPG](images/hong_kong_island_landscape_with_peer.jpg)
+
+![cubes_on_the_beach.JPG](images/cubes_on_the_beach.jpg)
+
+![skycraper_from_park.JPG](images/skycraper_from_park.jpg)
+
+![skyscrapers_in_the_town.JPG](images/skyscrapers_in_the_town.jpg)
+
+Кстати, строительные леса в Гонконге делают из бамбука.
+
+![bamboo_vertical.JPG](images/bamboo_vertical.jpg)
+
+![bamboo_plane.JPG](images/bamboo_plane.jpg)
+
+![bamboo_with_building.JPG](images/bamboo_with_building.jpg)
+
+![bamboo_angled_building.JPG](images/bamboo_angled_building.jpg)
+
+![camera_bamboo.JPG](images/camera_bamboo.jpg)
+
+Автобусы
+
+![red_stoped_bus.JPG](images/red_stoped_bus.jpg)
+
+![buses_taxi_and_beautifull_car.JPG](images/buses_taxi_and_beautifull_car.jpg)
+
+Отойдя от центра несколько километров, можно увидеть такие картины. Разноцветные коробки, да муравейники
+
+![usual_hongkong_street.JPG](images/usual_hongkong_street.jpg)
+
+![usual_tight_hongkong_street.JPG](images/usual_tight_hongkong_street.jpg)
+
+![usual_tight_hongkong_street_2.JPG](images/usual_tight_hongkong_street_2.jpg)
