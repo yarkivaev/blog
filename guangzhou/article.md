@@ -3,9 +3,11 @@
 
 В Гуанчжоу мы были проездом - провели там всего 1,5 дня, но зато каких!
 
+![night_skyscraper.JPG](images/night_skyscraper.jpg)
+
 ![hotel_park_caption.JPG](images/hotel_park_caption.jpg)
 
-Приезжаешь в Гуанчжоу, и сразу же утопаешь в водовороте бешеного трафика, шумного городского движа и китайских ярмарок. Хотя что еще можно ожидать от крупнейшего торгово-промышленного центра и города, который в Китае занимает 3-е место по численности населения.
+Приезжаешь в Гуанчжоу, и сразу же утопаешь в водовороте бешеного трафика, шумного городского движа и китайских ярмарок. Хотя что еще можно ожидать от крупнейшего торгово-промышленного центра и города, который входит в китайские топы по численности населения.
 
 Начнем обзор Гуанчжоу с улиц города.
 
@@ -61,7 +63,7 @@
 
 ![building_2.JPG](images/building_2.jpg)
 
-Местами же Гуанчжоу ошеломляет монструозной архитектурой и инфраструктурой.
+Местами Гуанчжоу ошеломляет монструозной архитектурой и инфраструктурой.
 
 ![antbuildings.JPG](images/antbuildings.jpg)
 
@@ -105,7 +107,6 @@
 
 ![ctulhu_book.JPG](images/ctulhu_book.jpg)
 
-![kate_beautiful_photo.JPG](images/kate_beautiful_photo.jpg)
 
 А вот и “Пикник на обочине”.
 
@@ -132,9 +133,6 @@
 ![night_cafee.JPG](images/night_cafee.jpg)
 
 ![night_cafee_2.JPG](images/night_cafee_2.jpg)
-
-
-![night_skyscraper.JPG](images/night_skyscraper.jpg)
 
 ![night_skyscraper_2.JPG](images/night_skyscraper_2.jpg)
 
