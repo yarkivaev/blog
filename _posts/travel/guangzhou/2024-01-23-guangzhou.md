@@ -1,0 +1,1 @@
+../../../../blog/guangzhou/article.md
