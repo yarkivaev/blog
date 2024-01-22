@@ -79,11 +79,13 @@
 
 ![building.JPG](images/building.jpg)
 
-![motorbicycle_that_can_hang_baggage.JPG](images/motorbicycle_that_can_hang_baggage.jpg)
-
 Доставщики трудятся.
 
 ![motorbycicle_with_baggage.JPG](images/motorbycicle_with_baggage.jpg)
+
+Интересно выглядит багажник с крюком для прицепа на мопеде доставщика.
+
+![motorbicycle_that_can_hang_baggage.JPG](images/motorbicycle_that_can_hang_baggage.jpg)
 
 Товарищи-ремонтники трудятся. Похоже, одни мы прохлаждаемся на улицах Гуанчжоу.
 
@@ -92,8 +94,6 @@
 Такая уличная еда популярна как на севере Китая, так и на юге. 
 
 ![seafood.JPG](images/seafood.jpg)
-
-![hotel_park_caption.JPG](images/hotel_park_caption.jpg)
 
 В центре города увидели приют для кошек.
 
@@ -111,6 +111,8 @@
 А вот и “Пикник на обочине”.
 
 ![aleans_book.JPG](images/aleans_book.jpg)
+
+
 
 ![crime_and_punishment.JPG](images/crime_and_punishment.jpg)
 
@@ -141,6 +143,8 @@
 ![night_skyscraper_3.JPG](images/night_skyscraper_3.jpg)
 
 ![skyscraper_with_a_word.JPG](images/skyscraper_with_a_word.jpg)
+
+![pink_skyscraper_view](images/pink_skyscrapers_view.JPG)
 
 Высотки с иллюминацией.
 
