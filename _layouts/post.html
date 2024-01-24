@@ -1,40 +1,50 @@
 ---
 layout: compress
 ---
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US" itemscope="" itemtype="http://schema.org/WebSite">
+<html lang="en-US" xml:lang="en-US" itemscope="" itemtype="http://schema.org/WebSite">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/post.css">
     <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <article class="article__container">
-      <h1 class="article__header_title" id="гуанчжоу-guǎngzhōu-广州">{{ page.title }}</h1>
+      <h1 class="article__header_title" >{{ page.title }}</h1>
       <article class="article__content text" id="text">
       {{ content }}
       </article>
     </article>
-  </body>
-  <script>
-    let content = document.getElementsByTagName("p");
-    let images = document.getElementsByTagName("img")
-    let elemImg, img
-    Array.from(content).forEach((elem) => {
-      if ( elem.innerHTML.slice(1,4) === "img") {
-        elem.className = 'figure'
-        img = new Image();
-        img.src = './' + elem.innerHTML.split(' ')[1].split('"')[1]
-        if (img.height > img.width) {
-          elemImg = document.createElement("img")
-          elemImg.src = './' + elem.innerHTML.split(' ')[1].split('"')[1]
-          elemImg.style.width = '640px'
-          elemImg.style.aspectRatio = 'auto 640 / 960'
-          // elemImg.style.height =  '960px'
-          elem.innerHTML = ""
-          elem.append(elemImg)
+    <script>
+      let content = document.getElementsByTagName("p");
+
+      function processImages(index) {
+        if (index < content.length) {
+          let elem = content[index];
+          if (elem.innerHTML.slice(1, 4) === "img") {
+            elem.className = 'figure';
+            let img = new Image();
+            img.src = './' + elem.innerHTML.split(' ')[1].split('"')[1];
+
+            img.onload = function () {
+              if (img.height > img.width) {
+                let elemImg = document.createElement("img");
+                elemImg.src = './' + elem.innerHTML.split(' ')[1].split('"')[1];
+                elemImg.style.width = '640px';
+                elemImg.style.aspectRatio = 'auto 640 / 960';
+                elem.innerHTML = "";
+                elem.append(elemImg);
+              }
+
+              processImages(index + 1);
+            }
+          } else {
+            processImages(index + 1);
+          }
         }
       }
-    })
-  </script>
+
+      processImages(0);
+    </script>
+  </body>
 </html>

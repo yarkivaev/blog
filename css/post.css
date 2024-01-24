@@ -123,3 +123,10 @@ img {
   text-align: center;
   vertical-align: top;
 }
+
+@media (orientation: portrait)  {
+  html {
+    font-size: 14px;
+
+  }
+}
