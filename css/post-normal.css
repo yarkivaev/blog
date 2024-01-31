@@ -1,0 +1,113 @@
+html {
+  background-color: #FFFFFF;
+  border-color: #1A1919;
+  color: #1A1919;
+  font-family: Inter,Helvetica Neue,Helvetica,sans-serif;
+  font-stretch: normal;
+  font-weight: 400;
+  font-style: normal;
+  font-feature-settings: "kern" on,"liga" on,"calt" on,"tnum" off,"case" off,"rlig" on,"zero" off,"ss01" off;
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+p {
+  min-width: 0;
+  max-width: 700px;
+  margin: 0 auto 0.88235294em;
+  min-height: 1.5em;
+  font-family: Inter,Helvetica Neue,Helvetica,sans-serif;
+  font-stretch: normal;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: justify-all;
+  color: #1A1919;
+  white-space: pre-wrap;
+}
+
+.article__content {
+  display: block;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  font-size: 1.7rem;
+  line-height: 1.4em;
+}
+
+body {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 20px 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.article__container:first-child {
+  padding-top: 0;
+}
+.article__container:first-child {
+  padding-top: 0;
+}
+
+.article__container {
+  text-decoration: none;
+  margin: 0 auto;
+  padding: 20px;
+  border-bottom: 1px solid #EFEFEF;
+  display: block;
+  --document-column-size: 700px;
+}
+
+div {
+  display: block;
+}
+.article__header_title {
+  display: block;
+  min-width: 0;
+  max-width: 700px;
+  margin: 0 auto 0.78947368em;
+  font-family: Inter,Helvetica Neue,Helvetica,sans-serif;
+  font-stretch: normal;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 3.8rem;
+  line-height: 1.15em;
+  color: #1A1919;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+h1 {
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+img {
+  position: relative;
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+  border: 0;
+  transition: opacity .2s;
+}
+
+.figure {
+  position: relative;
+  display: block;
+  margin: 0 auto 0.88235294em;
+  width: 100%;
+  min-width: 100px;
+  max-width: 1900px;
+  padding: 0;
+  font-size: 1em;
+  text-align: center;
+  vertical-align: top;
+}
+
