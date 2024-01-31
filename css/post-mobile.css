@@ -1,0 +1,15 @@
+@media screen and (max-width: 680px) {
+  .article__container {
+    padding-left: 16px;
+    padding-right: 16px;
+
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .article__header_title {
+    font-size: 2.7rem;
+    line-height: 1.4em;
+    margin-bottom: 0.74074074em;
+  }
+}
