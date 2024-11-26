@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Гуанчжоу (Guǎngzhōu, 广州)  
+preview: guangzhou/night_skyscraper.jpg
 ---
 
 В Гуанчжоу мы были проездом - провели там всего 1,5 дня, но зато каких!

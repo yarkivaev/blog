@@ -27,9 +27,9 @@ url: https://catdog905.github.io # the base hostname & protocol for your site, e
 github_username: catdog905
 
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+#theme: minima
+#plugins:
+#  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
