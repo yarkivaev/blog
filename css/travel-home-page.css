@@ -1,0 +1,101 @@
+/* Container for the articles list */
+.articles_list {
+  display: flex;
+  flex-direction: column; /* Stack panels vertically */
+  gap: 20px; /* Space between panels */
+  max-height: 80vh; /* Limit the height to 80% of the viewport */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 100px;
+  border: 1px solid #ddd; /* Optional: Border for the scrollable area */
+  border-radius: 8px; /* Rounded corners for aesthetics */
+  background-color: #f9f9f9; /* Optional: Light background color */
+}
+
+/* Individual article panels */
+.aricles_item {
+  flex: none; /* Prevent panels from stretching */
+  background: #fff; /* White background for contrast */
+  border: 1px solid #ccc; /* Border for individual panels */
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s, box-shadow 0.2s; /* Add hover effects */
+}
+
+.aricles_item:hover {
+  transform: translateY(-3px); /* Lift panel slightly on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Header styles */
+.article_card_header {
+  margin-bottom: 10px;
+}
+
+.article_card_header .post-meta {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.article_card_header .post-link {
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.article_card_header .post-link:hover {
+  text-decoration: underline;
+}
+
+/* Content styles */
+.article_card_content {
+  font-size: 18px;
+  color: #555;
+}
+.article_card_image img {
+  width: 100%;  /* Make the image responsive (it fills the width of the container) */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: cover; /* Crop the image to fill the container without distortion */
+  border-radius: 4px; /* Optional: Rounded corners for images */
+}
+
+/* Text styles */
+.article_card_text {
+    flex: 1 1 200px; /* The text will take up remaining space (at least 200px wide) */
+    max-width: 400px; /* Limit max width for the text */
+  }
+
+/* Optional: Constrain image size on larger devices */
+@media (min-width: 768px) {
+  .article_card_image img {
+    max-width: 600px; /* Set max width for larger screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .article_card_image img {
+    max-width: 800px; /* Set max width for even larger screens */
+  }
+}
+
+/* Custom scrollbar styles (optional) */
+.articles_list::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.articles_list::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light background for the scrollbar track */
+  border-radius: 8px; /* Rounded track corners */
+}
+
+.articles_list::-webkit-scrollbar-thumb {
+  background: #888; /* Darker thumb for contrast */
+  border-radius: 8px; /* Rounded scrollbar corners */
+}
+
+.articles_list::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker thumb on hover */
+}
+  
