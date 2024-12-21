@@ -36,7 +36,7 @@ layout: base
             {% assign preview_url = post.date | date: "/%Y/%m/%d/" | append: post.preview %}
             {{ post.preivew }}
             <figure class="article_card_image">
-              <img src="{{ site.baseurl | append: preview_url }}">
+              <img src="{{ post.preview }}">
             </figure>
             <div class="article_card_text">
               {{ post.description | escape }}
