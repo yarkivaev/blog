@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Гуанчжоу (Guǎngzhōu, 广州)  
-preview: guangzhou/night_skyscraper.jpg
+preview: https://storage.yandexcloud.net/yarkivaev-blog/2024/01/23/guangzhou/night_skyscraper.jpg
 description: В Гуанчжоу мы были проездом - провели там всего 1,5 дня, но зато каких!
 ---
 
