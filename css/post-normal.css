@@ -88,6 +88,14 @@ h1 {
   margin-inline-end: 0px;
 }
 
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
 img {
   position: relative;
   display: inline-block;
@@ -96,6 +104,7 @@ img {
   vertical-align: top;
   border: 0;
   transition: opacity .2s;
+  margin: 5px;
 }
 
 .figure {
