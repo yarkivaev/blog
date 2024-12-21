@@ -4,7 +4,7 @@ layout: base
 
 <div class="home">
   {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+    <h1 class="header">{{ page.title }}</h1>
   {%- endif -%}
 
   {{ content }}
@@ -21,29 +21,23 @@ layout: base
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-    <div class="articles_list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+  <div class="items">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
-      <div class="aricles_item">
-        <div class="article_card_wrap">
-          <div class="article_card_header">
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </div>
-          <div class="article_card_content">
-            {% assign preview_url = post.date | date: "/%Y/%m/%d/" | append: post.preview %}
-            {{ post.preivew }}
-            <figure class="article_card_image">
-              <img src="{{ post.preview }}">
-            </figure>
-            <div class="article_card_text">
-              {{ post.description | escape }}
-            </div>
-          </div>
-        </div>
-      </div>
+        <a class="item" href="{{ post.url | relative_url }}">
+          {% assign preview_url = post.date | date: "/%Y/%m/%d/" | append: post.preview %}
+          {{ post.preivew }}
+          <img class="item_img" src="{{ post.preview }}">
+
+          <h2 class="item_title">
+            {{ post.title | escape }}
+          </h2>
+          <p class="item_description">
+            {{ post.description | escape }}
+          </p>
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+        </a>
+
       {%- endfor -%}
     </div>
 

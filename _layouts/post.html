@@ -23,6 +23,10 @@ layout: base
         let p = img.parentNode;
         p.className = "figure";
         img.loading = "lazy";
+        img.style.maxWidth = '700px';
+        // img.style.objectFit = 'contain'
+        // img.style.maxHeight = '500px';
+        img.style.width = '100%';
 
         img.onload = function() {
           if (img.clientHeight > img.clientWidth) {
