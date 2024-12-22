@@ -31,6 +31,8 @@ p:not(:has(img)) {
 p:has(img) {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
   /*max-width: 100vw;*/
   /*max-height: 100vh;*/
 }
@@ -113,7 +115,7 @@ img {
   vertical-align: top;
   border: 0;
   transition: opacity .2s;
-  margin: 5px auto;
+  /* margin: 5px auto; */
 }
 
 .figure {
