@@ -33,3 +33,5 @@ end
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem "json", "~> 2.7"
+
+gem "jgd", "~> 1.14"
