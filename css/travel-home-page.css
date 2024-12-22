@@ -11,10 +11,10 @@ html {
 }
 
 .items {
-  max-width: 1000px;
-  padding: 0 20px;
-  display: flex; /* Ряды располагаются в виде двух колонок */
-  gap: 20px; /* Пробел между столбцами */
+  display: grid;
+  gap: 20px;
+  max-width: 400px;
+  grid-template-columns: 1fr; /* Два столбца по умолчанию */
 }
 
 .column {
@@ -85,9 +85,12 @@ html {
 }
 
 /* Optional: Constrain image size on larger devices */
-@media (min-width: 550px) {
+@media (min-width: 630px) {
   .items {
     gap: 30px; /* Space between panels */
+    grid-template-columns: 1fr 1fr; /* Два столбца по умолчанию */
+    max-width: 1000px;
+
   }
 }
 
