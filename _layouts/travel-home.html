@@ -23,23 +23,33 @@ layout: base
     {%- endif -%}
   <div class="items">
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-        <a class="item" href="{{ post.url | relative_url }}">
-          {% assign preview_url = post.date | date: "/%Y/%m/%d/" | append: post.preview %}
-          {{ post.preivew }}
-          <img class="item_img" src="{{ post.preview }}">
-
-          <h2 class="item_title">
-            {{ post.title | escape }}
-          </h2>
-          <p class="item_description">
-            {{ post.description | escape }}
-          </p>
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
-        </a>
-
+    <!-- Первый столбец -->
+    <div class="column">
+      {%- assign middle_index = posts.size | divided_by: 2 -%}
+      {%- for post in posts limit: middle_index -%}
+      <a class="item" href="{{ post.url | relative_url }}">
+        {% assign preview_url = post.date | date: "/%Y/%m/%d/" | append: post.preview %}
+        <img class="item_img" src="{{ post.preview }}" alt="{{ post.title | escape }}">
+        <h2 class="item_title">{{ post.title | escape }}</h2>
+        <p class="item_description">{{ post.description | escape }}</p>
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+      </a>
       {%- endfor -%}
     </div>
+
+    <!-- Второй столбец -->
+    <div class="column">
+      {%- assign middle_index = posts.size | divided_by: 2 -%}
+      {%- for post in posts offset: middle_index -%}
+      <a class="item" href="{{ post.url | relative_url }}">
+        <img class="item_img" src="{{ post.preview }}" alt="{{ post.title | escape }}">
+        <h2 class="item_title">{{ post.title | escape }}</h2>
+        <p class="item_description">{{ post.description | escape }}</p>
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
 
     {% if site.paginate %}
       <div class="pager">
