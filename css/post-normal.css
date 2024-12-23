@@ -118,6 +118,24 @@ img {
   /* margin: 5px auto; */
 }
 
+.youtube_container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.youtube_container iframe {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95vh;
+}
+
+
 .figure {
   position: relative;
   display: block;
@@ -130,4 +148,11 @@ img {
   text-align: center;
   vertical-align: top;
 }
+
+blockquote {
+  font-style: italic;
+  font-size: 12px;
+  margin-left: 40px;
+}
+
 
