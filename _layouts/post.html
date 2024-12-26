@@ -15,6 +15,9 @@ layout: base
       <article class="article__content text" id="text">
       {{ content }}
       </article>
+      {% if site.disqus.shortname %}
+        {% include disqus_comments.html %}
+      {% endif %}
     </article>
     <script>
       let content = document.getElementsByTagName("img");
