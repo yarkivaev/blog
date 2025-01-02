@@ -2,7 +2,8 @@
 layout: post
 title: Гуанчжоу (Guǎngzhōu, 广州)  
 preview: https://storage.yandexcloud.net/yarkivaev-blog/2024/01/23/guangzhou/night_skyscraper.jpg
-description: В Гуанчжоу мы были проездом - провели там всего 1,5 дня, но зато каких!
+description: |
+    Небоскребы, небоскребы, небоскребы. Магазины, рынки, торговые лавки. И конечно же, много современных, модных мест в Гуанчжоу.
 ---
 
 В Гуанчжоу мы были проездом - провели там всего 1,5 дня, но зато каких!
@@ -142,7 +143,7 @@ description: В Гуанчжоу мы были проездом - провели
 
 ![night_skyscraper_2.JPG][night_skyscraper_2]
 
-Конечно же, высотки.
+Конечно же, наши любимые высотки!
 
 ![night_skyscraper_3.JPG][night_skyscraper_3]
 
@@ -160,7 +161,7 @@ description: В Гуанчжоу мы были проездом - провели
 
 ![the biggest_tower_with_slava.JPG][the_biggest_tower_with_slava]
 
-Прогулка по Гуанчжоу закончена, а мы поехали дальше - в Шэньчжень!
+Вот такая вот она - торговая и промышленная столица Китая. Наша прогулка по Гуанчжоу закончена, и мы поехали дальше - в Шэньчжень!
 
 
 [night_skyscraper]: https://storage.yandexcloud.net/yarkivaev-blog/2024/01/23/guangzhou/night_skyscraper.jpg
