@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Гуанчжоу (Guǎngzhōu, 广州)  
+title: Гуанчжоу (广州, Guǎngzhōu)  
 preview: https://storage.yandexcloud.net/yarkivaev-blog/2024/01/23/guangzhou/night_skyscraper.jpg
 description: |
     Небоскребы, небоскребы, небоскребы. Магазины, рынки, торговые лавки. И конечно же, много современных, модных мест в Гуанчжоу.
