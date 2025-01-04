@@ -27,11 +27,11 @@ description: |
 ![city_downtown_3][city_downtown_3]
 
 А еще, Сингапур - невероятно зеленый город.
-13 0737
-13 0727
-13 0509
-13 0353
-13 0317
+![13/0737][13/0737]
+![13/0727][13/0727]
+![13/0509][13/0509]
+![13/0353][13/0353]
+![13/0317][13/0317]
 
 
 Сингапур известен своими многочисленными запретами и правилами. Так, здесь нельзя мусорить, петь, есть в метро и некоторых других общественных местах. Успешный метод для постоянного поддержания чистоты и порядка в городе.  
@@ -48,11 +48,11 @@ description: |
 Они работают. Вероятно, в одном из этих небоскребов. 
 
 ![skyscraper][skyscraper]
-14 0834 
+![14/0834][14/0834]
 
 Днем выходят на кофе-брейк. 
-13 0366
-15 0083 
+![13/0366][13/0366]
+![15/0083][15/0083]
 
 Но в Сингапуре, в связи с культурным разнообразием, есть и альтернативы. Так, в фудкорте Чайнатауна мы сидели за одним столом с деловыми индийцами в пиджачках, которые пили сок из огромных кокосов, параллельно обсуждая что-то на своем языке.
 
@@ -60,25 +60,25 @@ description: |
 
 Милое дело также пробежаться по красивой (и солнечной!) набережной. 
 
-14 0478
-14 0449
+![14/0478][14/0478]
+![14/0449][14/0449]
 
 Местный климат позволяет и даже побуждает заниматься здесь спортом.
 
-13 0520 
+![13/0520][13/0520]
 
 Интересный факт! Нас поразили ноги местных жителей. У многих азиатов в Сингапуре очень мощные икры! И вероятно, это не просто следствие чрезмерного спорта, а природные особенности. К слову, свои стандарты красоты местные выражают и в архитектуре. 
 
-13 0707
-13 0578 
-13 0646
-14 0233 
+![13/0707][13/0707]
+![13/0578][13/0578] 
+![13/0646][13/0646]
+![14/0233][14/0233]
 
 
 Вечером состоятельные сингапурцы прогуливаются с семьей. Со своими детьми часто гуляют либо молодые азиаты, либо европейцы средних лет. 
 
-13 0967
-13 0073
+![13/0967][13/0967]
+![13/0073][13/0073]
 
 По вечерам многие просто отдыхают в кафе/ресторанах. 
 
@@ -86,16 +86,16 @@ description: |
 
 Стирают белье местные жители в публичных прачечных - их можно запросто найти, прогуливаясь по улицам города. Кстати, однажды мы сами воспользовались такой услугой.
 
-13 0741
-13 0106
+![13/0741][13/0741]
+![13/0106][13/0106]
 
 Предполгаю, что со стороны образ жизни сингапурских богатеев довольно однообразен и даже уныл. Быт обычных людей более примечательный и неоднозначный. 
 
 В Сингапуре есть несколько тематических районов: Чайнатаун, Маленькая Индия, Арабский квартал, Кампонг-Глам.
 
-13 DSC 0775
-13 DSC 0773
-13 0760
+![13/0775][13/0775]
+![13/0773][13/0773]
+![13/0760][13/0760]
 ![china_town_tonight][china_town_tonight]
 
 Присутствие таких районов в городе говорит о мультинациональности. Действительно, если походить по улицам Сингапура, то можно увидеть представителей совершенно разных культур. Довольно много европейских лиц. Азиатских, разумеется, тоже. Много индусов. 
@@ -131,7 +131,7 @@ description: |
 
 ![supertree_detailed][supertree_detailed]
 
-14 0691
+![14/0691][14/0691]
 
 Также деревья оборудованы солнечными батареями. В дневное время они накапливают энергию, а вечером используют ее для иллюминации. 
 
@@ -156,7 +156,7 @@ description: |
 
 Другая популярная достопримечательность Сингапура - Мерлион. Это статуя с мифическим существом, напоминающим одновременно и льва, и рыбу.
 
-13 0049 
+![13/0049][13/0049]
 
 Власти Сингапура придерживаются концепции “город в саду”, и получается у них это вполне успешно. Прогуливаться по городу, да еще и по таким, ну согласитесь, райским оазисам – большое удовольствие.
 
@@ -164,40 +164,38 @@ description: |
 
 Хотя по концепции это все же магазин, где представлены различные дизайнерские решения. Некоторые из них тут же и продаются.
 
-14 0441 
-14 0443
+![14/0441][14/0441]
+![14/0443][14/0443]
 
 Прогулочная зона спроектирована интересно.
 
 Сингапур – островное государство. Вторым по популярности островом (после основного острова, где располагается большая часть города) является Сентоза. Там создали эдакий райский островок с парками развлечений и, конечно же, пляжами и различными водными развлечениями.
 
-15 0473
-15 0394
+![15/0473][15/0473]
+![15/0394][15/0394]
 
-Вообще, Сентоза – это остров для семейного отдыха. Есть развлечения и для детей, и для взрослых.
+Вообще, Сентоза – это остров для семейного отдыха. Есть развлечения и для детей и их родителей.
 
-15 0930
+![15/0930][15/0930]
 
 Основные туристические места Сентозы – океанариум и парк Universal Studios. Еще есть казино.
 
-15 0514
+![15/0514][15/0514]
 
 
 Отдыхать на Сентозе можно и бесплатно. Ведь тут есть пляжи! 
 
-15 0818
-15 0849
-
-
+![15/0818][15/0818]
+![15/0849][15/0849]
 
 
 Тут также проходят водные шоу с фонтанами.
 
-15 0623
+![15/0623][15/0623]
 
 Конечно же, на Сентозе можно поесть всякие сладости: пирожное и мороженое за сумасшедшие, по сингапурским традициям, цены.
 
-15 0554 
+![15/0554][15/0554]
 
 Сингапур известен как город высоких технологий. Метро в Сингапуре беспилотное. 
 
@@ -207,33 +205,33 @@ description: |
 
 Это научно-технический район, где базируются исследовательские организации, высокотехнологичные компании.
 
-15 0175
-15 0158
-15 0162
-15 0165
-15 0191
+![15/0175][15/0175]
+![15/0158][15/0158]
+![15/0162][15/0162]
+![15/0165][15/0165]
+![15/0191][15/0191]
 
 Конечно же, очевидно сходство с Иннополисом, начиная даже с названия. Тут есть свои смузи-места.
 
 Модные кафешки. 
 
-15 0245
-15 0235 
-15 0236
+![15/0245][15/0245]
+![15/0235][15/0235] 
+![15/0236][15/0236]
 
 Зоны отдыха.
 
-15 0254
-15 0259
+![15/0254][15/0254]
+![15/0259][15/0259]
 
 Катаются маленькие беспилотные автобусы. Но и аналоги наших “тошнобусов” у них тоже есть.
 
-15 0351
+![15/0351][15/0351]
 
 Вот только на фоне остального Сингапура, который и сам по себе модный и технологичный, Фьюжинополис не выглядит таким выдающимся, как Иннополис на фоне любого другого российского города.
 
-15 0305
-15 0325
+![15/0305][15/0305]
+![15/0325][15/0325]
 
 
 Так завершилось наше путешествие по Сингапуру. Одна из давних мечт стала реальностью. Этот город-государство действительно такой, как его описывают: очень современный, аккуратный, спокойный, однако и весьма дорогой. Когда у нас появится возможность обеспечить себя такой сказкой, то мы, пожалуй, воспользуемся ей. Копилка мест, где мы планируем пожить в будущем, пополнилась!
@@ -257,3 +255,53 @@ description: |
 [maria_bay_in_background]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/maria_bay_in_background.JPG
 [maria_bay_in_night]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/maria_bay_in_night.JPG
 [maria_bay_in_night_2]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/maria_bay_in_night_2.JPG
+
+
+[13/0737]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0737.JPG
+[13/0727]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0727.JPG
+[13/0509]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0509.JPG
+[13/0353]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0353.JPG
+[13/0317]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0317.JPG
+[14/0834]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0834.JPG
+[13/0366]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0366.JPG
+[15/0083]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0083.JPG
+[14/0478]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0478.JPG
+[14/0449]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0449.JPG
+[13/0520]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0520.JPG
+[13/0707]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0707.JPG
+[13/0578]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0578.JPG
+[13/0646]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0646.JPG
+[14/0233]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0233.JPG
+[13/0967]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0967.JPG
+[13/0073]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0073.JPG
+[13/0741]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0741.JPG
+[13/0106]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0106.JPG
+[13/0775]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0775.JPG
+[13/0773]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0773.JPG
+[13/0760]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0760.JPG
+[14/0691]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0691.JPG
+[13/0049]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0049.JPG
+[14/0441]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0441.JPG
+[14/0443]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0443.JPG
+[15/0473]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0473.JPG
+[15/0394]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0394.JPG
+[15/0930]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0930.JPG
+[15/0514]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0514.JPG
+[15/0818]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0818.JPG
+[15/0849]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0849.JPG
+[15/0623]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0623.JPG
+[15/0554]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0554.JPG
+[15/0175]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0175.JPG
+[15/0158]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0158.JPG
+[15/0162]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0162.JPG
+[15/0165]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0165.JPG
+[15/0191]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0191.JPG
+[15/0245]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0245.JPG
+[15/0235]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0235.JPG
+[15/0236]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0236.JPG
+[15/0254]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0254.JPG
+[15/0259]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0259.JPG
+[15/0351]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0351.JPG
+[15/0305]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0305.JPG
+[15/0325]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0325.JPG
+
