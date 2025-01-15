@@ -155,4 +155,21 @@ blockquote {
   margin-left: 40px;
 }
 
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 10px; /* Add space between images */
+  padding: 10px; /* Optional padding */
+  list-style: none; /* Remove bullet points from the list */
+}
+
+.horizontal-scroll img {
+  flex-shrink: 0;
+  height: auto;
+  max-height: 95vh;
+  width: auto;
+  border-radius: 8px; /* Optional rounded corners */
+  object-fit: contain;
+}
+
 
