@@ -24,10 +24,10 @@ description: Browse travel posts by tag
             {% if post.description %}
               <p class="post-description">{{ post.description | strip_html | truncate: 120 }}</p>
             {% endif %}
-            {% if post.categories.size > 0 %}
+            {% if post.countries.size > 0 %}
               <div class="post-categories">
-                {% for category in post.categories %}
-                  <a href="{{ '/categories/#' | append: category | slugify | relative_url }}" class="category">{{ category | capitalize }}</a>
+                {% for country in post.countries %}
+                  <a href="{{ '/countries/#' | append: country | slugify | relative_url }}" class="category">{{ country | capitalize }}</a>
                 {% endfor %}
               </div>
             {% endif %}

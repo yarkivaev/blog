@@ -29,10 +29,10 @@ layout: base
               <p class="post-card-description">{{ post.description | escape }}</p>
               <div class="post-card-meta">
                 <time class="post-card-date">{{ post.date | date: date_format }}</time>
-                {% if post.categories.size > 0 %}
+                {% if post.countries.size > 0 %}
                   <div class="post-card-categories">
-                    {% for category in post.categories limit:2 %}
-                      <span class="post-card-category">{{ category | capitalize }}</span>
+                    {% for country in post.countries limit:2 %}
+                      <span class="post-card-category">{{ country | capitalize }}</span>
                     {% endfor %}
                   </div>
                 {% endif %}

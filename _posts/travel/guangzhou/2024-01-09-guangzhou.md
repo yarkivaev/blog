@@ -4,6 +4,13 @@ title: Гуанчжоу (广州, Guǎngzhōu)
 preview: https://storage.yandexcloud.net/yarkivaev-blog/2024/01/23/guangzhou/night_skyscraper.jpg
 description: |
     Небоскребы, небоскребы, небоскребы. Магазины, рынки, торговые лавки. И конечно же, много современных, модных мест в Гуанчжоу.
+countries: [china]
+tags: [skyscrapers, commercial-center, trade, urban, night-life, markets, shopping, metropolitan, guangdong]
+location:
+  city: "Guangzhou"
+  country: "China"
+  coordinates: [23.1291, 113.2644]
+lang: ru
 ---
 
 В Гуанчжоу мы были проездом - провели там всего 1,5 дня, но зато каких!

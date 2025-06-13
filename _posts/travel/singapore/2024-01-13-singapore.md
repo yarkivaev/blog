@@ -4,6 +4,13 @@ title: Сингапур (Singapore)
 preview: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/kate_with_maria_bay.JPG
 description: |
     Азиатская сказка в городе-государстве с необычными законами. Здесь нельзя петь, пользоваться жвачкой. По многим рейтингам это один из лучших городов мира. Чистый, прогрессивный и дорогой Сингапур - хотели бы заплатить за такую азиатскую сказку?
+countries: [singapore]
+tags: [city-state, gardens-by-the-bay, marina-bay-sands, multicultural, clean, expensive, laws-regulations, tropical, equator, airport, safe]
+location:
+  city: "Singapore"
+  country: "Singapore"
+  coordinates: [1.3521, 103.8198]
+lang: ru
 ---
 
 Наверное, в Сингапуре бывал не каждый, хотя многие о нем, мы уверены, слышали. Сингапур часто попадает в топы самых дорогих и самых безопасных городов мира, а его аэропорт вообще признан лучшим в мире. Да, все эти факты — про следующую точку нашего путешествия.

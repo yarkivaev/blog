@@ -1,22 +1,33 @@
 ---
 layout: base
-title: Categories
-description: Browse travel posts by category
+title: Countries
+description: Browse travel posts by countries
 ---
 
 <div class="archive-page">
-  <h1>Categories</h1>
+  <h1>Countries</h1>
   
-  {% assign categories = site.categories | sort %}
-  {% for category in categories %}
+  {% assign all_countries = '' %}
+  {% for post in site.posts %}
+    {% if post.countries %}
+      {% for country in post.countries %}
+        {% assign all_countries = all_countries | append: country | append: '|' %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  
+  {% assign country_list = all_countries | split: '|' | uniq | sort %}
+  {% for country_name in country_list %}
+    {% if country_name != '' %}
+      {% assign country_posts = site.posts | where_exp: 'post', 'post.countries contains country_name' %}
     <div class="category-section">
-      <h2 id="{{ category[0] | slugify }}">
-        <a href="#{{ category[0] | slugify }}">{{ category[0] | capitalize }}</a>
-        <span class="post-count">({{ category[1] | size }})</span>
+      <h2 id="{{ country_name | slugify }}">
+        <a href="#{{ country_name | slugify }}">{{ country_name | capitalize }}</a>
+        <span class="post-count">({{ country_posts.size }})</span>
       </h2>
       
       <div class="post-list">
-        {% assign posts = category[1] | sort: 'date' | reverse %}
+        {% assign posts = country_posts | sort: 'date' | reverse %}
         {% for post in posts %}
           <article class="post-item">
             <time class="post-date">{{ post.date | date: "%B %d, %Y" }}</time>
@@ -35,5 +46,6 @@ description: Browse travel posts by category
         {% endfor %}
       </div>
     </div>
+    {% endif %}
   {% endfor %}
 </div>
