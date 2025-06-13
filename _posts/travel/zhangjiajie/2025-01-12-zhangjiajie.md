@@ -4,7 +4,7 @@ title:  Чжанцзяцзе (张家界, Zhāngjiājiè)
 preview: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/25/hong_kong_metro.jpg
 description: |
     Горы Аватара
-categories: [travel, china]
+countries: [china]
 tags: [mountains, nature, avatar, hunan, cable-car, snow, tianmen]
 location:
   city: "Zhangjiajie"

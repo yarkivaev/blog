@@ -47,9 +47,9 @@ paginate: 6
 paginate_path: "/page:num/"
 
 # Taxonomy
-category_archive:
+country_archive:
   type: liquid
-  path: /categories/
+  path: /countries/
 tag_archive:
   type: liquid
   path: /tags/
@@ -67,7 +67,6 @@ defaults:
       type: posts
     values:
       layout: post
-      categories: [travel]
       author: "Yaroslav Kivaev"
       comments: true
 

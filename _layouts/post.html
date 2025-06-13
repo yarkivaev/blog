@@ -8,17 +8,17 @@ layout: base
   <!-- Post metadata -->
   <div class="post-meta">
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-    {% if page.categories.size > 0 %}
+    {% if page.countries.size > 0 %}
       <span class="post-categories">
-        {% for category in page.categories %}
-          <a href="{{ '/categories/#' | append: category | slugify | relative_url }}" class="category">{{ category | capitalize }}</a>
+        {% for country in page.countries %}
+          <a href="{{ '/countries/#' | append: country | relative_url }}" class="category">{{ country | capitalize }}</a>
         {% endfor %}
       </span>
     {% endif %}
     {% if page.tags.size > 0 %}
       <span class="post-tags">
         {% for tag in page.tags %}
-          <a href="{{ '/tags/#' | append: tag | slugify | relative_url }}" class="tag">{{ tag }}</a>
+          <a href="{{ '/tags/#' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
         {% endfor %}
       </span>
     {% endif %}
