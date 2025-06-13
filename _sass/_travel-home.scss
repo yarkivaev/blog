@@ -1,0 +1,63 @@
+
+// Travel home page specific styles
+html {
+  overflow-y: auto;
+}
+
+.home {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+}
+
+.items {
+  display: grid;
+  gap: $grid-gap;
+  max-width: $max-home-width;
+  grid-template-columns: 1fr;
+}
+
+.column {
+  flex: 1;
+  @include flex-column($grid-gap);
+}
+
+.item {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// Item preview styles
+.item__preview {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+  
+  .item:hover & {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.item__title {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $text-color;
+  text-align: center;
+}
+
+.item__description {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  color: lighten($text-color, 20%);
+  text-align: center;
+  line-height: 1.3;
+}

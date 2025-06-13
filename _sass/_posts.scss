@@ -1,0 +1,167 @@
+// Post metadata styles
+.post-meta {
+  text-align: center;
+  margin-bottom: $spacing-base * 1.5;
+  padding-bottom: $spacing-base;
+  border-bottom: 1px solid lighten($primary-color, 85%);
+  
+  time {
+    display: block;
+    font-size: 0.9rem;
+    color: lighten($text-color, 30%);
+    margin-bottom: 10px;
+  }
+  
+  .post-categories, .post-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 5px 10px;
+    
+    .category, .tag {
+      font-size: 0.8rem;
+      padding: 3px 8px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background-color 0.2s ease-in-out;
+    }
+    
+    .category {
+      background: lighten($primary-color, 90%);
+      color: $primary-color;
+      
+      &:hover {
+        background: lighten($primary-color, 80%);
+      }
+    }
+    
+    .tag {
+      background: lighten($primary-color, 85%);
+      color: darken($primary-color, 10%);
+      
+      &:hover {
+        background: lighten($primary-color, 75%);
+      }
+    }
+  }
+}
+
+// Post layout styles
+.article__container {
+  text-decoration: none;
+  margin: 0 auto;
+  padding: $spacing-base;
+  border-bottom: 1px solid lighten($primary-color, 85%);
+  display: block;
+  --document-column-size: #{$max-content-width};
+  
+  &:first-child {
+    padding-top: 0;
+  }
+  
+  @include mobile {
+    padding-left: $spacing-small;
+    padding-right: $spacing-small;
+  }
+}
+
+.article__header_title {
+  display: block;
+  min-width: 0;
+  @include centered-content;
+  margin: 0 auto 0.78947368em;
+  @include base-text;
+  font-weight: 800;
+  font-size: 3.8rem;
+  line-height: 1.15em;
+  color: $text-color;
+  text-align: left;
+  word-wrap: break-word;
+  
+  @include mobile {
+    font-size: $font-size-mobile-title;
+    line-height: $line-height-content;
+    margin-bottom: 0.74074074em;
+  }
+}
+
+.article__content {
+  display: block;
+  margin-bottom: $spacing-base;
+  word-wrap: break-word;
+  font-size: $font-size-content;
+  line-height: $line-height-content;
+}
+
+// Typography overrides for posts
+body {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: $spacing-base 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Paragraph styles
+p:not(:has(img)) {
+  min-width: 0;
+  @include centered-content;
+  margin: 0 auto 0.88235294em;
+  min-height: 1.5em;
+  @include base-text;
+  font-size: 1em;
+  line-height: $line-height-base;
+  text-align: justify-all;
+  color: $text-color;
+  white-space: pre-wrap;
+}
+
+p:has(img) {
+  @include flex-column;
+  align-items: center;
+}
+
+// Headings
+h1 {
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+h2, h3 {
+  text-align: center;
+  color: $text-color;
+  margin: 1.5em 0 1em 0;
+}
+
+
+// YouTube containers
+.youtube_container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  margin-left: 0px;
+  margin-right: 0px;
+  
+  iframe {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95vh;
+  }
+}
+
+// Blockquotes
+blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-left: 40px;
+  padding-left: $spacing-base;
+  border-left: 3px solid lighten($primary-color, 70%);
+  color: lighten($text-color, 10%);
+}

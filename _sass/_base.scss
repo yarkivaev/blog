@@ -1,0 +1,59 @@
+
+// Base HTML elements
+html {
+  background-color: $background-color;
+  border-color: $primary-color;
+  color: $text-color;
+  @include base-text;
+  font-size: $font-size-base;
+  @include font-smoothing;
+}
+
+body {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+// Typography
+p:not(:has(img)) {
+  min-width: 0;
+  @include centered-content;
+  margin-bottom: 0.88235294em;
+  min-height: 1.5em;
+  @include base-text;
+  font-size: 1em;
+  line-height: $line-height-base;
+  text-align: justify-all;
+  color: $text-color;
+  white-space: pre-wrap;
+}
+
+p:has(img) {
+  @include flex-column;
+  align-items: center;
+}
+
+// Article content
+.article__content {
+  display: block;
+  margin-bottom: $spacing-base;
+  word-wrap: break-word;
+  font-size: $font-size-content;
+  line-height: $line-height-content;
+}
+
+.article__container {
+  @include mobile {
+    padding-left: $spacing-small;
+    padding-right: $spacing-small;
+  }
+}
+
+.article__header_title {
+  @include mobile {
+    font-size: $font-size-mobile-title;
+    line-height: $line-height-content;
+    margin-bottom: 0.74074074em;
+  }
+}
