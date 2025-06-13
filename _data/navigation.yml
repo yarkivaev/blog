@@ -31,7 +31,7 @@ destinations:
     featured: false
   - name: "Guilin"
     slug: "guilin"
-    country: "China"page2/
+    country: "China"
     featured: true
   - name: "Hong Kong"
     slug: "hongkong"
