@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Чжанцзяцзе (张家界, Zhāngjiājiè)
-preview: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/25/hong_kong_metro.jpg
+preview: 2025/01/12/imgs/kate/386.jpg
 description: |
     Горы Аватара
 countries: [china]
