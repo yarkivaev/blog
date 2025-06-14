@@ -54,11 +54,10 @@ tag_archive:
   type: liquid
   path: /tags/
 
-# Collections
-collections:
-  travel:
-    output: true
-    permalink: /:collection/:name/
+image_archive:
+  type: liquid
+  path: /images/
+
 
 # Default front matter
 defaults:
@@ -69,6 +68,8 @@ defaults:
       layout: post
       author: "Yaroslav Kivaev"
       comments: true
+      storage_prefix: "local"  
+      permalink: /travel/:title/
 
 # Build settings
 markdown: kramdown
