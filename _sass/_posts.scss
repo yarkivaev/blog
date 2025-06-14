@@ -91,6 +91,10 @@
   word-wrap: break-word;
   font-size: $font-size-content;
   line-height: $line-height-content;
+  
+  @include mobile {
+    font-size: $font-size-content-mobile;
+  }
 }
 
 // Typography overrides for posts
@@ -116,6 +120,11 @@ p:not(:has(img)) {
   text-align: justify-all;
   color: $text-color;
   white-space: pre-wrap;
+  
+  @include mobile {
+    font-size: 0.9em;
+    line-height: 1.6em;
+  }
 }
 
 p:has(img) {
@@ -135,6 +144,19 @@ h2, h3 {
   text-align: center;
   color: $text-color;
   margin: 1.5em 0 1em 0;
+  
+  @include mobile {
+    font-size: $font-size-heading-mobile;
+    margin: 1.2em 0 0.8em 0;
+  }
+}
+
+h4, h5, h6 {
+  color: $text-color;
+  
+  @include mobile {
+    font-size: 1.2rem;
+  }
 }
 
 
@@ -164,4 +186,10 @@ blockquote {
   padding-left: $spacing-base;
   border-left: 3px solid lighten($primary-color, 70%);
   color: lighten($text-color, 10%);
+  
+  @include mobile {
+    font-size: 1.1rem;
+    margin-left: 20px;
+    padding-left: $spacing-small;
+  }
 }
