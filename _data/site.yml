@@ -36,3 +36,14 @@ features:
   analytics: false
   rss: true
   sitemap: true
+
+# Image storage configuration
+image_storage:
+  # Default storage prefix for images
+  # Options: 'local' for local storage, 'yandex' for Yandex Cloud
+  default_prefix: "local"
+  
+  # Storage prefixes
+  prefixes:
+    local: ""  # Local images use relative paths
+    yandex: "https://storage.yandexcloud.net/yarkivaev-blog/:slug/"

@@ -34,26 +34,12 @@ layout: base
 </article>
 
 <script>
-  let content = document.getElementsByTagName("img");
-
-  Array.from(content).forEach(function(img) {
-    let p = img.parentNode;
-    p.className = "figure";
-    img.loading = "lazy";
-    img.style.maxWidth = '700px';
-    // img.style.objectFit = 'contain'
-    // img.style.maxHeight = '500px';
-    img.style.width = '100%';
-
-    img.onload = function() {
-      if (img.clientHeight > img.clientWidth) {
-        console.log(img);
-
-        img.style.width = '700px';
-        img.style.aspectRatio = 'auto 700 / 1050';
-
-      }
-    }
-
-  } )
+  const storagePrefix = '{{ page.storage_prefix | default: site.data.site.image_storage.default_prefix }}';
+  const prefixes = {{ site.data.site.image_storage.prefixes | jsonify }};
+  const prefix = (prefixes[storagePrefix] || '').replace(':slug', '{{ page.slug }}');
+  const images = document.getElementsByTagName('img');
+  Array.from(images).forEach((img) => {
+    const originalSrc = img.getAttribute('src');
+    img.src = prefix + originalSrc;
+  });
 </script>

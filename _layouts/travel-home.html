@@ -22,7 +22,11 @@ layout: base
         <article class="post-card">
           <a href="{{ post.url | relative_url }}" class="post-card-link">
             <div class="post-card-image">
-              <img src="{{ post.preview }}" alt="{{ post.title | escape }}" loading="lazy">
+              <img 
+                src="{{ site.data.site.image_storage.prefixes[post.storage_prefix] | default: '' | replace: ':slug', post.slug }}{{ post.preview }}" 
+                alt="{{ post.title | escape }}" 
+                loading="lazy"
+                >
             </div>
             <div class="post-card-content">
               <h2 class="post-card-title">{{ post.title | escape }}</h2>
