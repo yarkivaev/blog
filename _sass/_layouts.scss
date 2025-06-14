@@ -1,0 +1,47 @@
+
+// Default layout
+.default-layout {
+  @include centered-content;
+  padding: $spacing-base;
+}
+
+// Page layout
+.page {
+  @include centered-content;
+  padding: $spacing-base;
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: $spacing-base * 2;
+    
+    .page-title {
+      font-size: 2.5rem;
+      color: $text-color;
+      margin: 0;
+    }
+  }
+  
+  .page-content {
+    line-height: 1.6;
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: $spacing-base * 1.5;
+      margin-bottom: $spacing-base;
+      color: $text-color;
+    }
+    
+    p {
+      margin-bottom: $spacing-base;
+    }
+    
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+

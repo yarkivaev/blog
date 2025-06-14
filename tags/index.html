@@ -1,0 +1,39 @@
+---
+layout: base
+title: Tags
+description: Browse travel posts by tag
+---
+
+<div class="archive-page">
+  <h1>Tags</h1>
+  
+  {% assign tags = site.tags | sort %}
+  {% for tag in tags %}
+    <div class="tag-section">
+      <h2 id="{{ tag[0] | slugify }}">
+        <a href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
+        <span class="post-count">({{ tag[1] | size }})</span>
+      </h2>
+      
+      <div class="post-list">
+        {% assign posts = tag[1] | sort: 'date' | reverse %}
+        {% for post in posts %}
+          <article class="post-item">
+            <time class="post-date">{{ post.date | date: "%B %d, %Y" }}</time>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            {% if post.description %}
+              <p class="post-description">{{ post.description | strip_html | truncate: 120 }}</p>
+            {% endif %}
+            {% if post.countries.size > 0 %}
+              <div class="post-categories">
+                {% for country in post.countries %}
+                  <a href="{{ '/countries/#' | append: country | slugify | relative_url }}" class="category">{{ country | capitalize }}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

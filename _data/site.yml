@@ -1,0 +1,49 @@
+title: "XiongXiaomao Travel Blog"
+description: "Travel adventures and programming experiences around the world"
+keywords: "travel, blog, china, asia, programming, adventure, photography"
+
+# Languages
+languages:
+  - code: "en"
+    name: "English"
+    flag: "🇺🇸"
+  - code: "ru"
+    name: "Русский"
+    flag: "🇷🇺"
+  - code: "zh"
+    name: "中文"
+    flag: "🇨🇳"
+
+# Travel statistics
+stats:
+  countries_visited: 3
+  cities_visited: 9
+  photos_taken: 500+
+  posts_written: 9
+
+# Performance settings
+performance:
+  lazy_load_images: true
+  webp_support: true
+  critical_css: true
+  service_worker: false
+
+# Features
+features:
+  comments: true
+  search: false
+  dark_mode: false
+  analytics: false
+  rss: true
+  sitemap: true
+
+# Image storage configuration
+image_storage:
+  # Default storage prefix for images
+  # Options: 'local' for local storage, 'yandex' for Yandex Cloud
+  default_prefix: "local"
+  
+  # Storage prefixes
+  prefixes:
+    local: ""  # Local images use relative paths
+    yandex: "https://storage.yandexcloud.net/yarkivaev-blog/:slug/"

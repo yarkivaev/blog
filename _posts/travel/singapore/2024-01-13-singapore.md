@@ -1,9 +1,17 @@
 ---
 layout: post
 title: Сингапур (Singapore)
-preview: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/kate_with_maria_bay.JPG
+preview: kate_with_maria_bay.JPG
+storage_prefix: "yandex"
 description: |
     Азиатская сказка в городе-государстве с необычными законами. Здесь нельзя петь, пользоваться жвачкой. По многим рейтингам это один из лучших городов мира. Чистый, прогрессивный и дорогой Сингапур - хотели бы заплатить за такую азиатскую сказку?
+countries: [singapore]
+tags: [city-state, gardens-by-the-bay, marina-bay-sands, multicultural, clean, expensive, laws-regulations, tropical, equator, airport, safe]
+location:
+  city: "Singapore"
+  country: "Singapore"
+  coordinates: [1.3521, 103.8198]
+lang: ru
 ---
 
 Наверное, в Сингапуре бывал не каждый, хотя многие о нем, мы уверены, слышали. Сингапур часто попадает в топы самых дорогих и самых безопасных городов мира, а его аэропорт вообще признан лучшим в мире. Да, все эти факты — про следующую точку нашего путешествия.
@@ -234,72 +242,72 @@ description: |
 
 Так завершилось наше путешествие по Сингапуру. Одна из давних мечт стала реальностью. Этот город-государство действительно такой, как его описывают: очень современный, аккуратный, спокойный, однако и весьма дорогой. Если у нас когда-нибудь появится возможность обеспечить себя такой сказкой, то мы, пожалуй, воспользуемся этим шансом. Копилка мест, где мы планируем пожить в будущем, пополнилась!
 
-[kate_with_maria_bay]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/kate_with_maria_bay.JPG
-[sunning_singapore]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/sunning_singapore.JPG
-[city_downtown]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/city_downtown.JPG
-[city_downtown_2]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/city_downtown_2.JPG
-[city_downtown_3]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/city_downtown_3.JPG
-[subway_restrictions]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/subway_restrictions.JPG
-[city_downtown_4]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/city_downtown_4.JPG
-[skyscraper]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/skyscraper.JPG
-[china_town_tonight]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/china_town_tonight.JPG
-[hawker_chan]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/hawker_chan.JPG
-[mishlen]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/mishlen.JPG
-[chef]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/chef.JPG
-[strange_kate]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/strange_kate.JPG
-[supertree_detailed]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/supertree_detailed.JPG
-[maria_bay_detailed]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/maria_bay_detailed.JPG
-[maria_bay_close_view]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/maria_bay_close_view.JPG
-[maria_bay_in_background]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/maria_bay_in_background.JPG
-[maria_bay_in_night]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/maria_bay_in_night.JPG
-[maria_bay_in_night_2]: https://storage.yandexcloud.net/yarkivaev-blog/2024/11/23/maria_bay_in_night_2.JPG
+[kate_with_maria_bay]: kate_with_maria_bay.JPG
+[sunning_singapore]: sunning_singapore.JPG
+[city_downtown]: city_downtown.JPG
+[city_downtown_2]: city_downtown_2.JPG
+[city_downtown_3]: city_downtown_3.JPG
+[subway_restrictions]: subway_restrictions.JPG
+[city_downtown_4]: city_downtown_4.JPG
+[skyscraper]: skyscraper.JPG
+[china_town_tonight]: china_town_tonight.JPG
+[hawker_chan]: hawker_chan.JPG
+[mishlen]: mishlen.JPG
+[chef]: chef.JPG
+[strange_kate]: strange_kate.JPG
+[supertree_detailed]: supertree_detailed.JPG
+[maria_bay_detailed]: maria_bay_detailed.JPG
+[maria_bay_close_view]: maria_bay_close_view.JPG
+[maria_bay_in_background]: maria_bay_in_background.JPG
+[maria_bay_in_night]: maria_bay_in_night.JPG
+[maria_bay_in_night_2]: maria_bay_in_night_2.JPG
 
 
-[13/0737]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0737.JPG
-[13/0727]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0727.JPG
-[13/0509]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0509.JPG
-[13/0353]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0353.JPG
-[13/0317]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0317.JPG
-[14/0834]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0834.JPG
-[13/0366]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0366.JPG
-[15/0083]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0083.JPG
-[14/0478]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0478.JPG
-[14/0449]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0449.JPG
-[13/0520]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0520.JPG
-[13/0707]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0707.JPG
-[13/0578]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0578.JPG
-[13/0646]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0646.JPG
-[14/0233]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0233.JPG
-[13/0967]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0967.JPG
-[13/0073]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0073.JPG
-[13/0741]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0741.JPG
-[13/0106]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0106.JPG
-[13/0775]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0775.JPG
-[13/0773]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0773.JPG
-[13/0760]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0760.JPG
-[14/0691]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0691.JPG
-[13/0049]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/13/DSC_0049.JPG
-[14/0441]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0441.JPG
-[14/0443]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/14/DSC_0443.JPG
-[15/0473]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0473.JPG
-[15/0394]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0394.JPG
-[15/0930]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0930.JPG
-[15/0514]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0514.JPG
-[15/0818]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0818.JPG
-[15/0849]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0849.JPG
-[15/0623]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0623.JPG
-[15/0554]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0554.JPG
-[15/0175]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0175.JPG
-[15/0158]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0158.JPG
-[15/0162]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0162.JPG
-[15/0165]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0165.JPG
-[15/0191]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0191.JPG
-[15/0245]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0245.JPG
-[15/0235]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0235.JPG
-[15/0236]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0236.JPG
-[15/0254]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0254.JPG
-[15/0259]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0259.JPG
-[15/0351]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0351.JPG
-[15/0305]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0305.JPG
-[15/0325]: https://storage.yandexcloud.net/yarkivaev-blog/singapore/15/DSC_0325.JPG
+[13/0737]: 13/DSC_0737.JPG
+[13/0727]: 13/DSC_0727.JPG
+[13/0509]: 13/DSC_0509.JPG
+[13/0353]: 13/DSC_0353.JPG
+[13/0317]: 13/DSC_0317.JPG
+[14/0834]: 14/DSC_0834.JPG
+[13/0366]: 13/DSC_0366.JPG
+[15/0083]: 15/DSC_0083.JPG
+[14/0478]: 14/DSC_0478.JPG
+[14/0449]: 14/DSC_0449.JPG
+[13/0520]: 13/DSC_0520.JPG
+[13/0707]: 13/DSC_0707.JPG
+[13/0578]: 13/DSC_0578.JPG
+[13/0646]: 13/DSC_0646.JPG
+[14/0233]: 14/DSC_0233.JPG
+[13/0967]: 13/DSC_0967.JPG
+[13/0073]: 13/DSC_0073.JPG
+[13/0741]: 13/DSC_0741.JPG
+[13/0106]: 13/DSC_0106.JPG
+[13/0775]: 13/DSC_0775.JPG
+[13/0773]: 13/DSC_0773.JPG
+[13/0760]: 13/DSC_0760.JPG
+[14/0691]: 14/DSC_0691.JPG
+[13/0049]: 13/DSC_0049.JPG
+[14/0441]: 14/DSC_0441.JPG
+[14/0443]: 14/DSC_0443.JPG
+[15/0473]: 15/DSC_0473.JPG
+[15/0394]: 15/DSC_0394.JPG
+[15/0930]: 15/DSC_0930.JPG
+[15/0514]: 15/DSC_0514.JPG
+[15/0818]: 15/DSC_0818.JPG
+[15/0849]: 15/DSC_0849.JPG
+[15/0623]: 15/DSC_0623.JPG
+[15/0554]: 15/DSC_0554.JPG
+[15/0175]: 15/DSC_0175.JPG
+[15/0158]: 15/DSC_0158.JPG
+[15/0162]: 15/DSC_0162.JPG
+[15/0165]: 15/DSC_0165.JPG
+[15/0191]: 15/DSC_0191.JPG
+[15/0245]: 15/DSC_0245.JPG
+[15/0235]: 15/DSC_0235.JPG
+[15/0236]: 15/DSC_0236.JPG
+[15/0254]: 15/DSC_0254.JPG
+[15/0259]: 15/DSC_0259.JPG
+[15/0351]: 15/DSC_0351.JPG
+[15/0305]: 15/DSC_0305.JPG
+[15/0325]: 15/DSC_0325.JPG
 

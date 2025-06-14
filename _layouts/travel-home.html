@@ -2,13 +2,12 @@
 layout: base
 ---
 
-<div class="home">
+<div class="travel-home-container">
   {%- if page.title -%}
-    <h1 class="header">{{ page.title }}</h1>
+    <h1 class="travel-home-title">{{ page.title }}</h1>
   {%- endif -%}
 
   {{ content }}
-
 
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
@@ -16,59 +15,106 @@ layout: base
     {% assign posts = site.posts %}
   {% endif %}
 
-
   {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-  <div class="items">
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    <!-- Первый столбец -->
-    <div class="column">
-      {%- assign middle_index = posts.size | divided_by: 2 -%}
-      {%- for post in posts limit: middle_index -%}
-      <a class="item" href="{{ post.url | relative_url }}">
-        {% assign preview_url = post.date | date: "/%Y/%m/%d/" | append: post.preview %}
-        <img class="item_img" src="{{ post.preview }}" alt="{{ post.title | escape }}">
-        <h2 class="item_title">{{ post.title | escape }}</h2>
-        <p class="item_description">{{ post.description | escape }}</p>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-      </a>
+    <div class="posts-grid">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- for post in posts -%}
+        <article class="post-card">
+          <a href="{{ post.url | relative_url }}" class="post-card-link">
+            <div class="post-card-image">
+              <img 
+                src="{{ site.data.site.image_storage.prefixes[post.storage_prefix] | default: '' | replace: ':slug', post.slug }}{{ post.preview }}" 
+                alt="{{ post.title | escape }}" 
+                loading="lazy"
+                >
+            </div>
+            <div class="post-card-content">
+              <h2 class="post-card-title">{{ post.title | escape }}</h2>
+              <p class="post-card-description">{{ post.description | escape }}</p>
+              <div class="post-card-meta">
+                <time class="post-card-date">{{ post.date | date: date_format }}</time>
+                {% if post.countries.size > 0 %}
+                  <div class="post-card-categories">
+                    {% for country in post.countries limit:2 %}
+                      <span class="post-card-category">{{ country | capitalize }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+        </article>
       {%- endfor -%}
     </div>
 
-    <!-- Второй столбец -->
-    <div class="column">
-      {%- assign middle_index = posts.size | divided_by: 2 -%}
-      {%- for post in posts offset: middle_index -%}
-      <a class="item" href="{{ post.url | relative_url }}">
-        <img class="item_img" src="{{ post.preview }}" alt="{{ post.title | escape }}">
-        <h2 class="item_title">{{ post.title | escape }}</h2>
-        <p class="item_description">{{ post.description | escape }}</p>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-      </a>
-      {%- endfor -%}
-    </div>
-  </div>
-
-    {% if site.paginate %}
-      <div class="pager">
+    {% if site.paginate and paginator.total_pages > 1 %}
+      <nav class="pagination-nav" aria-label="Pagination Navigation">
         <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
+          {%- if paginator.previous_page %}
+            <li class="pagination-item">
+              <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link pagination-prev" rel="prev">
+                ← Previous
+              </a>
+            </li>
+          {%- endif %}
+
+          {%- assign start_page = paginator.page | minus: 2 | at_least: 1 -%}
+          {%- assign end_page = paginator.page | plus: 2 | at_most: paginator.total_pages -%}
+
+          {%- if start_page > 1 -%}
+            <li class="pagination-item">
+              <a href="{{ site.paginate_path | replace: ':num', 1 | relative_url }}" class="pagination-link">1</a>
+            </li>
+            {%- if start_page > 2 -%}
+              <li class="pagination-item pagination-ellipsis">
+                <span>…</span>
+              </li>
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- for page_num in (start_page..end_page) -%}
+            {%- if page_num == paginator.page -%}
+              <li class="pagination-item pagination-current">
+                <span class="pagination-link">{{ page_num }}</span>
+              </li>
+            {%- else -%}
+              <li class="pagination-item">
+                {%- if page_num == 1 -%}
+                  <a href="{{ '/' | relative_url }}" class="pagination-link">{{ page_num }}</a>
+                {%- else -%}
+                  <a href="{{ site.paginate_path | replace: ':num', page_num | relative_url }}" class="pagination-link">{{ page_num }}</a>
+                {%- endif -%}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if end_page < paginator.total_pages -%}
+            {%- assign total_minus_one = paginator.total_pages | minus: 1 -%}
+            {%- if end_page < total_minus_one -%}
+              <li class="pagination-item pagination-ellipsis">
+                <span>…</span>
+              </li>
+            {%- endif -%}
+            <li class="pagination-item">
+              <a href="{{ site.paginate_path | replace: ':num', paginator.total_pages | relative_url }}" class="pagination-link">{{ paginator.total_pages }}</a>
+            </li>
+          {%- endif -%}
+
+          {%- if paginator.next_page -%}
+            <li class="pagination-item">
+              <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link pagination-next" rel="next">
+                Next →
+              </a>
+            </li>
+          {%- endif %}
         </ul>
-      </div>
+        
+        <div class="pagination-info">
+          Page {{ paginator.page }} of {{ paginator.total_pages }} 
+          ({{ paginator.total_posts }} posts total)
+        </div>
+      </nav>
     {%- endif %}
 
   {%- endif -%}
-
 </div>

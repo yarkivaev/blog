@@ -1,0 +1,55 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: /about/
+  - title: "Travel"
+    url: /travel/
+  - title: "Contact"
+    url: /contact/
+
+social:
+  - title: "GitHub"
+    url: "https://github.com/catdog905"
+    icon: "github"
+  - title: "Email"
+    url: "mailto:yarkivaev@gmail.com"
+    icon: "email"
+
+destinations:
+  - name: "Beijing"
+    slug: "beijing"
+    country: "China"
+    featured: true
+  - name: "Chengdu"
+    slug: "chengdu"
+    country: "China"
+    featured: true
+  - name: "Guangzhou"
+    slug: "guangzhou"
+    country: "China"
+    featured: false
+  - name: "Guilin"
+    slug: "guilin"
+    country: "China"
+    featured: true
+  - name: "Hong Kong"
+    slug: "hongkong"
+    country: "Hong Kong SAR"
+    featured: true
+  - name: "Shenzhen"
+    slug: "shenzhen"
+    country: "China"
+    featured: false
+  - name: "Singapore"
+    slug: "singapore"
+    country: "Singapore"
+    featured: true
+  - name: "Xi'an"
+    slug: "xian"
+    country: "China"
+    featured: true
+  - name: "Zhangjiajie"
+    slug: "zhangjiajie"
+    country: "China"
+    featured: true
