@@ -4,7 +4,7 @@ title:  Чжанцзяцзе (张家界, Zhāngjiājiè)
 preview: kate/386.jpg
 storage_prefix: "yandex"
 description: |
-    Горы Аватара
+    С высоты этих гор не видно земли, а парящие скалы и заснеженные тропы словно ведут тебя по фэнтезийному миру. А еще здесь вас настигнут флэшбеки из сцен "Аватара".
 countries: [china]
 tags: [mountains, nature, avatar, hunan, cable-car, snow, tianmen]
 location:
