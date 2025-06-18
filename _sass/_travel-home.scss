@@ -11,12 +11,12 @@
 
 .travel-home-title {
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: $spacing-base * 2;
   color: $text-color;
   
   @include mobile {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: $spacing-base;
   }
 }
