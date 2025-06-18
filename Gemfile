@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+gem "observer"
+gem "ostruct"
+gem "csv"
 gem "jekyll", "~> 4.3.4"
 
 # Plugins
