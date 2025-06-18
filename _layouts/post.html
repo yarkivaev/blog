@@ -40,8 +40,7 @@ layout: base
   const images = document.getElementsByTagName('img');
   Array.from(images).forEach((img) => {
     const originalSrc = img.getAttribute('src');
-    // Skip processing for absolute URLs
-    if (originalSrc.startsWith('http://') || originalSrc.startsWith('https://') || originalSrc.startsWith('/')) {
+    if (originalSrc.startsWith('http://') || originalSrc.startsWith('https://') || originalSrc.startsWith('/assets/')) {
       return;
     }
     img.src = prefix + originalSrc;
