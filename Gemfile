@@ -21,6 +21,7 @@ end
 gem "sassc", "~> 2.4"
 gem "image_optim", "~> 0.31"
 gem "image_optim_pack", "~> 0.10"
+gem "faraday-retry", "~> 2.2"
 
 # Development and deployment
 gem "jgd", "~> 1.14"

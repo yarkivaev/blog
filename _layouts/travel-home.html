@@ -22,8 +22,15 @@ layout: base
         <article class="post-card">
           <a href="{{ post.url | relative_url }}" class="post-card-link">
             <div class="post-card-image">
+              {% assign storage_prefix = post.storage_prefix | default: site.data.site.image_storage.default_prefix %}
+              {% assign prefix = site.data.site.image_storage.prefixes[storage_prefix] | replace: ':slug', post.slug %}
+              {% if storage_prefix == 'local' %}
+                {% assign image_url = '/travel/' | append: post.slug | append: '/' | append: post.preview %}
+              {% else %}
+                {% assign image_url = prefix | append: post.preview %}
+              {% endif %}
               <img 
-                src="{{ site.data.site.image_storage.prefixes[post.storage_prefix] | default: '' | replace: ':slug', post.slug }}{{ post.preview }}" 
+                src="{{ image_url }}" 
                 alt="{{ post.title | escape }}" 
                 loading="lazy"
                 >
