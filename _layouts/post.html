@@ -2,6 +2,7 @@
 layout: base
 ---
 
+
 <article class="article__container">
   <h1 class="article__header_title">{{ page.title }}</h1>
   
@@ -33,16 +34,3 @@ layout: base
   {% endif %}
 </article>
 
-<script>
-  const storagePrefix = '{{ page.storage_prefix | default: site.data.site.image_storage.default_prefix }}';
-  const prefixes = {{ site.data.site.image_storage.prefixes | jsonify }};
-  const prefix = (prefixes[storagePrefix] || '').replace(':slug', '{{ page.slug }}');
-  const images = document.getElementsByTagName('img');
-  Array.from(images).forEach((img) => {
-    const originalSrc = img.getAttribute('src');
-    if (originalSrc.startsWith('http://') || originalSrc.startsWith('https://') || originalSrc.startsWith('/assets/')) {
-      return;
-    }
-    img.src = prefix + originalSrc;
-  });
-</script>

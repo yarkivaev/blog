@@ -1,4 +1,6 @@
 
+@use 'variables' as *;
+
 // Typography mixins
 @mixin font-smoothing {
   -webkit-font-smoothing: antialiased;
