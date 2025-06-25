@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use 'variables' as *;
+@use 'mixins' as *;
 
 // Archive pages styles
 .archive-page {
@@ -20,20 +23,20 @@
     font-size: 1.8rem;
     margin-bottom: $spacing-base;
     padding-bottom: 8px;
-    border-bottom: 2px solid lighten($primary-color, 70%);
+    border-bottom: 2px solid color.adjust($primary-color, $lightness: 70%);
     
     a {
       color: $text-color;
       text-decoration: none;
       
       &:hover {
-        color: lighten($text-color, 20%);
+        color: color.adjust($text-color, $lightness: 20%);
       }
     }
     
     .post-count {
       font-size: 0.8em;
-      color: lighten($text-color, 40%);
+      color: color.adjust($text-color, $lightness: 40%);
       font-weight: normal;
     }
   }
@@ -45,9 +48,9 @@
 
 .post-item {
   padding: 15px;
-  border: 1px solid lighten($primary-color, 80%);
+  border: 1px solid color.adjust($primary-color, $lightness: 80%);
   border-radius: 6px;
-  background: lighten($background-color, 2%);
+  background: color.adjust($background-color, $lightness: 2%);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   
   &:hover {
@@ -57,7 +60,7 @@
   
   .post-date {
     font-size: 0.9rem;
-    color: lighten($text-color, 30%);
+    color: color.adjust($text-color, $lightness: 30%);
     font-weight: 500;
   }
   
@@ -70,13 +73,13 @@
       text-decoration: none;
       
       &:hover {
-        color: lighten($text-color, 20%);
+        color: color.adjust($text-color, $lightness: 20%);
       }
     }
   }
   
   .post-description {
-    color: lighten($text-color, 15%);
+    color: color.adjust($text-color, $lightness: 15%);
     line-height: 1.4;
     margin: 8px 0;
   }
@@ -99,20 +102,20 @@
   }
   
   .tag {
-    background: lighten($primary-color, 85%);
-    color: darken($primary-color, 10%);
+    background: color.adjust($primary-color, $lightness: 85%);
+    color: color.adjust($primary-color, $lightness: -10%);
     
     &:hover {
-      background: lighten($primary-color, 75%);
+      background: color.adjust($primary-color, $lightness: 75%);
     }
   }
   
   .category {
-    background: lighten($primary-color, 90%);
+    background: color.adjust($primary-color, $lightness: 90%);
     color: $primary-color;
     
     &:hover {
-      background: lighten($primary-color, 80%);
+      background: color.adjust($primary-color, $lightness: 80%);
     }
   }
 }

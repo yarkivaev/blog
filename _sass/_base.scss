@@ -1,4 +1,7 @@
 
+@use 'variables' as *;
+@use 'mixins' as *;
+
 // Base HTML elements
 html {
   background-color: $background-color;

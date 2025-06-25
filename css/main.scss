@@ -1,14 +1,14 @@
 ---
 ---
 
-@import 'variables';
-@import 'mixins';
-@import 'title-fonts';
-@import 'home-button';
-@import 'country-flags';
-@import 'base';
-@import 'posts';
-@import 'travel-home';
-@import 'images';
-@import 'archive';
-@import 'layouts';
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'title-fonts';
+@use 'home-button';
+@use 'country-flags';
+@use 'base';
+@use 'posts';
+@use 'travel-home';
+@use 'images';
+@use 'archive';
+@use 'layouts';

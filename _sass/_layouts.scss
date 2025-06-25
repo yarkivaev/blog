@@ -1,4 +1,7 @@
 
+@use 'variables' as *;
+@use 'mixins' as *;
+
 // Default layout
 .default-layout {
   @include centered-content;
