@@ -9,7 +9,7 @@ A modern Jekyll-based travel blog documenting adventures around the world. ä¸€è¾
 - **Responsive Design** - Optimized for all devices and screen sizes
 - **SEO Optimized** - Comprehensive meta tags, structured data, and social media integration
 - **Fast Loading** - Compressed assets, optimized images, and efficient caching
-- **Travel-focused** - Custom layouts for travel posts with image galleries
+- **Travel-focused** - Custom layouts for travel posts with image galleries and optional HLS video (see `CLAUDE.md`)
 - **Taxonomy System** - Organized by categories and tags with archive pages
 - **Security Enhanced** - Modern security headers and HTTPS enforcement
 

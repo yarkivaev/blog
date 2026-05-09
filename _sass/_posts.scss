@@ -164,6 +164,213 @@ h4, h5, h6 {
 }
 
 
+.post-video-player {
+  @include centered-content;
+  margin: 1.5em auto;
+  max-width: min(#{$max-content-width}, 100%);
+}
+
+.post-video-player__frame {
+  position: relative;
+  width: 100%;
+  background: color.adjust($primary-color, $lightness: 92%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.post-video-player__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
+}
+
+.post-video-player__toolbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px 12px;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.45) 55%, transparent 100%);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+  pointer-events: auto;
+}
+
+.post-video-player.post-video-player--chrome-hidden .post-video-player__toolbar {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.post-video-player.post-video-player--chrome-hidden.post-video-player--round .post-video-player__seek,
+.post-video-player.post-video-player--chrome-hidden.post-video-player--round .post-video-player__toolbar-actions {
+  pointer-events: none;
+}
+
+.post-video-player__toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.post-video-player__mute {
+  flex-shrink: 0;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-family: $font-family-base;
+  font-size: 0.8rem;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.post-video-player__mute:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.post-video-player__seek {
+  flex: 1 1 100px;
+  min-width: 0;
+  min-height: 28px;
+  cursor: pointer;
+  accent-color: #fff;
+}
+
+.post-video-player__rate-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 0;
+}
+
+.post-video-player:not(.post-video-player--round) .post-video-player__rate-label {
+  margin-left: auto;
+}
+
+.post-video-player__rate-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.75rem;
+  @include mobile {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+}
+
+.post-video-player__rate {
+  min-height: 36px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-family: $font-family-base;
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  cursor: pointer;
+}
+
+.post-video-player__error {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  color: color.adjust($primary-color, $lightness: -5%);
+}
+
+.post-video-player--round {
+  max-width: min(360px, 100%);
+}
+
+.post-video-player--round .post-video-player__frame {
+  width: min(360px, 100%);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+}
+
+.post-video-player--round .post-video-player__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.post-video-player--round .post-video-player__toolbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: 12px;
+  gap: 0;
+  font-size: 0.72rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 30%, transparent 58%, rgba(0, 0, 0, 0.78) 100%);
+  pointer-events: none;
+}
+
+.post-video-player--round .post-video-player__seek {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 260px;
+  flex: none;
+  min-height: 32px;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.post-video-player--round .post-video-player__toolbar-actions {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  width: 100%;
+  justify-content: center;
+  gap: 6px;
+  margin-top: auto;
+  pointer-events: auto;
+}
+
+.post-video-player--round .post-video-player__mute {
+  min-height: 36px;
+  min-width: 36px;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+}
+
+.post-video-player--round .post-video-player__rate {
+  min-height: 32px;
+  font-size: 0.7rem;
+}
+
 // YouTube containers
 .youtube_container {
   position: relative;

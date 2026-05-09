@@ -1,0 +1,23 @@
+<figure class="post-video-player post-video-player--chrome-hidden{% if include.round %} post-video-player--round{% endif %}" data-post-video-player data-hls-src="{{ include.src | xml_escape }}">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline preload="metadata" tabindex="0"{% if include.poster %} poster="{{ include.poster | xml_escape }}"{% endif %}></video>
+    <div class="post-video-player__toolbar" hidden role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <label class="post-video-player__rate-label">
+          <span class="post-video-player__rate-text">Speed</span>
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected>1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden></p>
+</figure>
