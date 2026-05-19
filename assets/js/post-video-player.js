@@ -7,7 +7,21 @@
       }
     });
   }
+  function setLoading(root, on) {
+    root.classList.toggle('post-video-player--loading', on);
+    if (on) {
+      root.setAttribute('aria-busy', 'true');
+    } else {
+      root.removeAttribute('aria-busy');
+    }
+  }
   function showError(root, message) {
+    setLoading(root, false);
+    root.classList.remove('post-video-player--play-visible');
+    var playBtn = root.querySelector('.post-video-player__play');
+    if (playBtn) {
+      playBtn.hidden = true;
+    }
     var node = root.querySelector('.post-video-player__error');
     if (!node) {
       return;
@@ -24,10 +38,36 @@
     var seek = root.querySelector('.post-video-player__seek');
     var muteBtn = root.querySelector('.post-video-player__mute');
     var rate = root.querySelector('.post-video-player__rate');
+    var playBtn = root.querySelector('.post-video-player__play');
     var scrubbing = false;
     var chromeTimer = null;
     var chromeHideAfterMs = 0;
     var started = false;
+    var hoverInside = false;
+    var hoverChrome = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    function setLoadingState(on) {
+      setLoading(root, on);
+      syncPlayOverlay();
+    }
+    function syncPlayOverlay() {
+      var loading = root.classList.contains('post-video-player--loading');
+      var idle = video.paused || video.ended;
+      var chromeHidden = root.classList.contains('post-video-player--chrome-hidden');
+      var show = !loading && idle && chromeHidden && !video.error;
+      root.classList.toggle('post-video-player--play-visible', show);
+      if (playBtn) {
+        playBtn.hidden = !show;
+      }
+    }
+    function syncLoadingFromReadyState() {
+      if (video.error) {
+        setLoadingState(false);
+        return;
+      }
+      if (video.readyState >= 3) {
+        setLoadingState(false);
+      }
+    }
     function markStarted() {
       started = true;
     }
@@ -47,6 +87,7 @@
         toolbar.removeAttribute('hidden');
         toolbar.style.removeProperty('display');
       }
+      syncPlayOverlay();
     }
     function hideToolbarDom() {
       root.classList.add('post-video-player--chrome-hidden');
@@ -54,6 +95,7 @@
         toolbar.setAttribute('hidden', '');
         toolbar.style.setProperty('display', 'none', 'important');
       }
+      syncPlayOverlay();
     }
     function hideChrome() {
       if (video.paused || video.ended) {
@@ -74,7 +116,7 @@
       markStarted();
       showToolbarDom();
       clearChromeHidePlan();
-      if (!video.paused) {
+      if (!video.paused && !video.ended) {
         armChromeHideTimer();
       }
     }
@@ -89,6 +131,31 @@
       } else {
         armChromeHideTimer();
       }
+    }
+    function onFramePointerEnter() {
+      if (!hoverChrome) {
+        return;
+      }
+      hoverInside = true;
+      showToolbarDom();
+      clearChromeHidePlan();
+    }
+    function onFramePointerLeave() {
+      if (!hoverChrome) {
+        return;
+      }
+      hoverInside = false;
+      if (scrubbing) {
+        return;
+      }
+      if (!started) {
+        hideToolbarDom();
+        return;
+      }
+      if (video.paused || video.ended) {
+        return;
+      }
+      armChromeHideTimer();
     }
     function syncChromeAfterPlaySettled() {
       window.setTimeout(function () {
@@ -146,6 +213,9 @@
       if (ev.target.closest('.post-video-player__toolbar')) {
         return;
       }
+      if (ev.target.closest('.post-video-player__play')) {
+        return;
+      }
       revealChrome();
       if (video.paused || video.ended) {
         video.play().catch(function () {});
@@ -153,14 +223,31 @@
         video.pause();
       }
     }
+    if (playBtn) {
+      playBtn.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+        if (video.ended) {
+          video.currentTime = 0;
+        }
+        revealChrome();
+        if (video.paused || video.ended) {
+          video.play().catch(function () {});
+        }
+      });
+    }
     if (frame) {
       frame.addEventListener('click', togglePlayFromStage, true);
+      frame.addEventListener('pointerenter', onFramePointerEnter);
+      frame.addEventListener('pointerleave', onFramePointerLeave);
     }
     function dismissChromeIfOutside(ev) {
       if (!frame || frame.contains(ev.target)) {
         return;
       }
       if (!started) {
+        return;
+      }
+      if (hoverInside) {
         return;
       }
       clearChromeHidePlan();
@@ -181,13 +268,16 @@
     video.addEventListener('play', function () {
       markStarted();
       pauseOtherPlayers(video);
+      syncPlayOverlay();
       syncChromeAfterPlaySettled();
     });
     video.addEventListener('pause', function () {
+      syncPlayOverlay();
       syncChromeWithPlayback();
     });
     video.addEventListener('ended', function () {
       clearChromeHidePlan();
+      syncPlayOverlay();
       if (started) {
         showToolbarDom();
       } else {
@@ -196,6 +286,18 @@
     });
     video.addEventListener('loadedmetadata', function () {
       refreshSeekMax();
+    });
+    video.addEventListener('waiting', function () {
+      if (scrubbing) {
+        return;
+      }
+      setLoadingState(true);
+    });
+    video.addEventListener('canplay', function () {
+      setLoadingState(false);
+    });
+    video.addEventListener('playing', function () {
+      setLoadingState(false);
     });
     video.addEventListener('timeupdate', function () {
       if (chromeHideAfterMs && !video.paused && !video.ended && Date.now() >= chromeHideAfterMs) {
@@ -225,6 +327,9 @@
     video.addEventListener('error', function () {
       showError(root, 'Video playback failed');
     });
+    setLoadingState(true);
+    syncLoadingFromReadyState();
+    syncPlayOverlay();
     clearChromeHidePlan();
     hideToolbarDom();
   }
@@ -242,6 +347,7 @@
       hls.loadSource(src);
       hls.attachMedia(video);
     } else {
+      setLoading(root, false);
       showError(root, 'HLS playback is not supported in this browser');
       return;
     }

@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ "${1:-}" == "" || "${2:-}" == "" ]]; then
-  echo "Usage: $0 <input_mp4> <assets_subdir>" >&2
-  echo "Example: $0 ~/Downloads/clip.mp4 test-doc-2026-05-09" >&2
-  echo "Writes HLS under assets/hls/<subdir>/ (master.m3u8, segments, poster.jpg)" >&2
-  exit 1
-fi
+# if [[ "${1:-}" == "" || "${2:-}" == "" ]]; then
+#   echo "Usage: $0 <input_mp4> <assets_subdir>" >&2
+#   echo "Example: $0 ~/Downloads/clip.mp4 test-doc-2026-05-09" >&2
+#   echo "Writes HLS under assets/hls/<subdir>/ (master.m3u8, segments, poster.jpg)" >&2
+#   exit 1
+# fi
 
-INPUT="$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
-SUBDIR="${2#/}"
+SUBDIR="${1#/}"
+NAME="${2:-$SUBDIR}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-OUT="${ROOT}/assets/hls/${SUBDIR}"
+INPUT="${ROOT}/travel/italy/${SUBDIR}/${NAME}.mp4"
+OUT="${ROOT}/travel/italy/${SUBDIR}"
 
 mkdir -p "$OUT"
 (
@@ -25,7 +26,7 @@ mkdir -p "$OUT"
     -hls_segment_filename 'segment_%03d.m4s' \
     -master_pl_name master.m3u8 \
     -f hls "stream.m3u8"
-  ffmpeg -y -ss 1 -i "$INPUT" -frames:v 1 -update 1 -q:v 2 "poster.jpg"
+  ffmpeg -y -ss ${3:-0} -i "$INPUT" -frames:v 1 -update 1 -q:v 2 "poster.jpg"
 )
 
 echo "Done: ${OUT}/master.m3u8"

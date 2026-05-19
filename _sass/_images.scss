@@ -15,21 +15,112 @@ img {
   border-radius: 8px;
 }
 
-// Horizontal scroll gallery
+.horizontal-scroll-carousel {
+  position: relative;
+  width: 100%;
+  margin: 0 0 0.88235294em;
+
+  &--static .horizontal-scroll {
+    justify-content: center;
+    overflow-x: hidden;
+  }
+}
+
+.horizontal-scroll-carousel__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid color.adjust($primary-color, $lightness: 75%);
+  border-radius: 50%;
+  background: color.change($background-color, $alpha: 0.92);
+  color: $primary-color;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 1px 4px color.change($primary-color, $alpha: 0.12);
+
+  &[hidden] {
+    display: none;
+  }
+
+  &:hover {
+    background: $background-color;
+    border-color: color.adjust($primary-color, $lightness: 55%);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+
+  &--prev {
+    left: 4px;
+  }
+
+  &--next {
+    right: 4px;
+  }
+}
+
 .horizontal-scroll {
   display: flex;
+  justify-content: flex-start;
+  width: 100%;
   overflow-x: auto;
   gap: 10px;
   padding: 10px;
   list-style: none;
-  
-  img {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  img,
+  > .post-video-player {
     flex-shrink: 0;
+  }
+
+  > .post-video-player {
+    margin: 0;
+  }
+
+  img {
     height: auto;
     max-height: 95vh;
     width: auto;
     border-radius: 8px;
     object-fit: contain;
+  }
+
+  > .post-video-player:not(.post-video-player--round) {
+    max-width: none;
+    width: auto;
+
+    .post-video-player__frame {
+      width: auto;
+      max-width: 100%;
+    }
+
+    .post-video-player__video {
+      width: auto;
+      height: auto;
+      max-height: 95vh;
+      max-width: 100%;
+      object-fit: contain;
+    }
   }
 }
 
