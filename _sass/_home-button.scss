@@ -1,4 +1,7 @@
+@use 'mixins' as *;
+
 .home-button {
+  @include touch-interaction;
   display: inline-flex;
   flex-direction: column;
   align-items: center;

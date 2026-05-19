@@ -1,6 +1,22 @@
 
 @use 'sass:color';
 @use 'variables' as *;
+@use 'mixins' as *;
+
+.article__content img[role="button"],
+.article__content .post-video-player[role="button"] {
+  @include touch-interaction;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 4px;
+  }
+}
+
+.article__content img[role="button"] {
+  -webkit-user-drag: none;
+}
 
 // Image handling and gallery styles
 img {
@@ -27,6 +43,7 @@ img {
 }
 
 .horizontal-scroll-carousel__btn {
+  @include touch-interaction;
   position: absolute;
   top: 50%;
   z-index: 2;

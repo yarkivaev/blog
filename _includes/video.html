@@ -1,6 +1,6 @@
 <figure class="post-video-player post-video-player--chrome-hidden post-video-player--loading{% if include.round %} post-video-player--round{% endif %}" data-post-video-player data-hls-src="{{ include.src | xml_escape }}" aria-busy="true">
   <div class="post-video-player__frame">
-    <video class="post-video-player__video" playsinline preload="metadata" tabindex="0"{% if include.poster %} poster="{{ include.poster | xml_escape }}"{% endif %}></video>
+    <video class="post-video-player__video" playsinline preload="metadata"{% if include.poster %} poster="{{ include.poster | xml_escape }}"{% endif %}></video>
     <div class="post-video-player__loader" role="status" aria-label="Loading video">
       <span class="post-video-player__spinner" aria-hidden="true"></span>
     </div>

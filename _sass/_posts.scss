@@ -175,6 +175,7 @@ h4, h5, h6 {
 }
 
 .post-video-player__frame {
+  @include touch-interaction;
   position: relative;
   background: color.adjust($primary-color, $lightness: 92%);
   border-radius: 8px;
@@ -227,6 +228,7 @@ h4, h5, h6 {
 }
 
 .post-video-player__play {
+  @include touch-interaction;
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -331,6 +333,7 @@ h4, h5, h6 {
 }
 
 .post-video-player__mute {
+  @include touch-interaction;
   flex-shrink: 0;
   min-height: 40px;
   min-width: 40px;
@@ -385,6 +388,7 @@ h4, h5, h6 {
 }
 
 .post-video-player__rate {
+  @include touch-interaction;
   min-height: 36px;
   padding: 4px 6px;
   border-radius: 6px;

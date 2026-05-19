@@ -209,20 +209,6 @@
       ev.stopPropagation();
       revealChrome();
     });
-    function togglePlayFromStage(ev) {
-      if (ev.target.closest('.post-video-player__toolbar')) {
-        return;
-      }
-      if (ev.target.closest('.post-video-player__play')) {
-        return;
-      }
-      revealChrome();
-      if (video.paused || video.ended) {
-        video.play().catch(function () {});
-      } else {
-        video.pause();
-      }
-    }
     if (playBtn) {
       playBtn.addEventListener('click', function (ev) {
         ev.stopPropagation();
@@ -235,8 +221,15 @@
         }
       });
     }
+    root.addEventListener('post-video-player:center-tap', function () {
+      revealChrome();
+      if (video.paused || video.ended) {
+        video.play().catch(function () {});
+      } else {
+        video.pause();
+      }
+    });
     if (frame) {
-      frame.addEventListener('click', togglePlayFromStage, true);
       frame.addEventListener('pointerenter', onFramePointerEnter);
       frame.addEventListener('pointerleave', onFramePointerLeave);
     }
@@ -254,17 +247,6 @@
       hideToolbarDom();
     }
     document.addEventListener('pointerdown', dismissChromeIfOutside, true);
-    video.addEventListener('keydown', function (ev) {
-      if (ev.key === ' ' || ev.key === 'Enter') {
-        ev.preventDefault();
-        revealChrome();
-        if (video.paused || video.ended) {
-          video.play().catch(function () {});
-        } else {
-          video.pause();
-        }
-      }
-    });
     video.addEventListener('play', function () {
       markStarted();
       pauseOtherPlayers(video);

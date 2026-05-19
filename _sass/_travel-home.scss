@@ -69,10 +69,17 @@
 }
 
 .post-card-link {
+  @include touch-interaction;
   display: block;
   text-decoration: none;
   color: inherit;
   height: 100%;
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 4px;
+    border-radius: 12px;
+  }
 }
 
 .post-card-image {
@@ -85,6 +92,8 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+    -webkit-user-drag: none;
   }
   
   .post-card:hover & img {
@@ -179,6 +188,7 @@
 }
 
 .pagination-link {
+  @include touch-interaction;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,6 +211,11 @@
     background: color.adjust($primary-color, $lightness: 95%);
     border-color: color.adjust($primary-color, $lightness: 70%);
     color: color.adjust($text-color, $lightness: -10%);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
   }
 }
 

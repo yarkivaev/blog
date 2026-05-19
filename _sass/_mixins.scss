@@ -45,3 +45,14 @@
     @content;
   }
 }
+
+@mixin touch-interaction {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &:focus {
+    outline: none;
+  }
+}
