@@ -1,5 +1,28 @@
 #!/usr/bin/env bash
 
+pm_set_has() {
+  local file="$1" value="$2"
+  grep -Fqx "$value" "$file" 2>/dev/null
+}
+
+pm_set_add() {
+  local file="$1" value="$2"
+  pm_set_has "$file" "$value" && return 0
+  printf '%s\n' "$value" >> "$file"
+}
+
+pm_map_get() {
+  local mapfile="$1" key="$2"
+  awk -F '\t' -v k="$key" '$1==k {print substr($0, length($1) + 2); exit}' "$mapfile" 2>/dev/null
+}
+
+pm_map_put() {
+  local mapfile="$1" key="$2" value="$3"
+  awk -F '\t' -v k="$key" '$1!=k {print}' "$mapfile" > "${mapfile}.tmp" 2>/dev/null || true
+  [[ -f "${mapfile}.tmp" ]] && mv "${mapfile}.tmp" "$mapfile"
+  printf '%s\t%s\n' "$key" "$value" >> "$mapfile"
+}
+
 pm_repo_root() {
   local script_dir
   script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -82,17 +105,21 @@ pm_collect_reference_map() {
 
 pm_collect_body_paths() {
   local post_path="$1"
-  local body ref target path assign_name assign_value rest
-  declare -A PM_REF_MAP=()
-  declare -A PM_ASSIGN_MAP=()
+  local body ref target path assign_name assign_value rest ref_map assign_map
+  ref_map="$(mktemp "${TMPDIR:-/tmp}/post-media-ref.XXXXXX")"
+  assign_map="$(mktemp "${TMPDIR:-/tmp}/post-media-assign.XXXXXX")"
+  trap 'rm -f "$ref_map" "$assign_map"' RETURN
   while IFS=$'\t' read -r ref target; do
     [[ -z "$ref" ]] && continue
-    PM_REF_MAP["$ref"]="$target"
+    pm_map_put "$ref_map" "$ref" "$target"
   done < <(pm_collect_reference_map "$post_path")
-  body="$(awk 'BEGIN{fm=0} /^---$/{fm++; if(fm>=2) print; next} fm>=2{print}' "$post_path" | pm_strip_html_comments)"
+  body="$(awk 'BEGIN{p=0} /^---$/{if(p==0){p=1;next} if(p==1){p=2;next}} p==2{print}' "$post_path" | pm_strip_html_comments)"
   while IFS= read -r line || [[ -n "$line" ]]; do
+    if [[ "$line" =~ ^\[[^]]+\]:[[:space:]] ]]; then
+      continue
+    fi
     if [[ "$line" =~ assign[[:space:]]+([A-Za-z0-9_]+)[[:space:]]*=[[:space:]]*[\"\']([^\"\']+)[\"\'] ]]; then
-      PM_ASSIGN_MAP["${BASH_REMATCH[1]}"]="${BASH_REMATCH[2]}"
+      pm_map_put "$assign_map" "${BASH_REMATCH[1]}" "${BASH_REMATCH[2]}"
     fi
     rest="$line"
     while [[ "$rest" =~ src=\"([^\"]+)\" ]]; do
@@ -109,15 +136,13 @@ pm_collect_body_paths() {
     if [[ "$line" =~ include[[:space:]]+video\.html ]]; then
       if [[ "$line" =~ src=([A-Za-z0-9_]+) ]]; then
         assign_name="${BASH_REMATCH[1]}"
-        if [[ -n "${PM_ASSIGN_MAP[$assign_name]:-}" ]]; then
-          printf '%s\n' "${PM_ASSIGN_MAP[$assign_name]}"
-        fi
+        target="$(pm_map_get "$assign_map" "$assign_name")"
+        [[ -n "$target" ]] && printf '%s\n' "$target"
       fi
       if [[ "$line" =~ poster=([A-Za-z0-9_]+) ]]; then
         assign_name="${BASH_REMATCH[1]}"
-        if [[ -n "${PM_ASSIGN_MAP[$assign_name]:-}" ]]; then
-          printf '%s\n' "${PM_ASSIGN_MAP[$assign_name]}"
-        fi
+        target="$(pm_map_get "$assign_map" "$assign_name")"
+        [[ -n "$target" ]] && printf '%s\n' "$target"
       fi
     fi
     while IFS= read -r path; do
@@ -126,11 +151,23 @@ pm_collect_body_paths() {
     done < <(printf '%s\n' "$line" | grep -oE '!\[[^]]*\]\([^)]+\)' | sed -E 's/^!\[[^]]*\]\(([^)]+)\)$/\1/' || true)
     while IFS= read -r ref; do
       [[ -z "$ref" ]] && continue
-      if [[ -n "${PM_REF_MAP[$ref]:-}" ]]; then
-        printf '%s\n' "${PM_REF_MAP[$ref]}"
-      fi
+      target="$(pm_map_get "$ref_map" "$ref")"
+      [[ -n "$target" ]] && printf '%s\n' "$target"
     done < <(printf '%s\n' "$line" | grep -oE '!\[[^]]*\]\[[^]]+\]' | sed -E 's/^!\[[^]]*\]\[([^]]+)\]$/\1/' || true)
+    while IFS= read -r token; do
+      [[ -z "$token" ]] && continue
+      ref="${token#![}"
+      ref="${ref%]}"
+      [[ -z "$ref" ]] && continue
+      if [[ "$line" == *"![${ref}][${ref}]"* ]] || [[ "$line" == *"![${ref}]("* ]]; then
+        continue
+      fi
+      target="$(pm_map_get "$ref_map" "$ref")"
+      [[ -n "$target" ]] && printf '%s\n' "$target"
+    done < <(printf '%s\n' "$line" | grep -oE '!\[[^]]+\]' || true)
   done <<< "$body"
+  rm -f "$ref_map" "$assign_map"
+  trap - RETURN
 }
 
 pm_collect_raw_paths() {
@@ -164,7 +201,9 @@ pm_resolve_path() {
   else
     resolved="${media_root}/${path}"
   fi
-  resolved="$(cd "$(dirname "$resolved")" 2>/dev/null && pwd)/$(basename "$resolved")" 2>/dev/null || echo "$resolved"
+  if [[ -d "$(dirname "$resolved")" ]]; then
+    resolved="$(cd "$(dirname "$resolved")" && pwd)/$(basename "$resolved")"
+  fi
   printf '%s' "$resolved"
 }
 
@@ -185,16 +224,17 @@ pm_hls_uri_from_line() {
 pm_expand_hls_playlist() {
   local playlist="$1"
   local exclude_mp4="${2:-0}"
+  local visited_file="$3"
   local playlist_dir uri target visited_key
   if [[ ! -f "$playlist" ]]; then
     return 0
   fi
   playlist_dir="$(cd "$(dirname "$playlist")" && pwd)"
   visited_key="$playlist"
-  if [[ -n "${PM_HLS_VISITED[$visited_key]:-}" ]]; then
+  if pm_set_has "$visited_file" "$visited_key"; then
     return 0
   fi
-  PM_HLS_VISITED[$visited_key]=1
+  pm_set_add "$visited_file" "$visited_key"
   printf '%s\n' "$playlist"
   while IFS= read -r line || [[ -n "$line" ]]; do
     line="${line//$'\r'/}"
@@ -211,7 +251,7 @@ pm_expand_hls_playlist() {
     target="$(cd "$(dirname "$target")" 2>/dev/null && pwd)/$(basename "$target")" 2>/dev/null || echo "$target"
     if [[ -f "$target" ]]; then
       if [[ "$target" == *.m3u8 ]]; then
-        pm_expand_hls_playlist "$target" "$exclude_mp4"
+        pm_expand_hls_playlist "$target" "$exclude_mp4" "$visited_file"
       else
         if [[ "$exclude_mp4" -eq 1 && "$target" == *.mp4 && "$(basename "$target")" != "init.mp4" ]]; then
           continue
@@ -232,11 +272,13 @@ pm_expand_hls_playlist() {
 pm_expand_hls_for_path() {
   local path="$1"
   local exclude_mp4="${2:-0}"
+  local visited_file
   if [[ "$path" != *.m3u8 ]]; then
     return 0
   fi
-  declare -gA PM_HLS_VISITED=()
-  pm_expand_hls_playlist "$path" "$exclude_mp4"
+  visited_file="$(mktemp "${TMPDIR:-/tmp}/post-media-hls.XXXXXX")"
+  pm_expand_hls_playlist "$path" "$exclude_mp4" "$visited_file"
+  rm -f "$visited_file"
 }
 
 pm_add_unique_path() {
@@ -255,7 +297,7 @@ pm_list_media() {
   local exclude_mp4="${4:-0}"
   local repo slug media_root raw resolved expanded missing=0
   PM_RESULT_PATHS=()
-  declare -gA PM_SEEN=()
+  declare -A PM_SEEN=()
   repo="$(pm_repo_root)"
   slug="$(pm_slug_from_post "$post_path")" || return 1
   post_path="$(cd "$(dirname "$post_path")" && pwd)/$(basename "$post_path")"
