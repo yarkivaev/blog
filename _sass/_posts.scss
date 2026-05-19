@@ -137,32 +137,48 @@ p:has(img) {
 }
 
 // Headings
+h1, h2, h3, h4, h5, h6, blockquote, ul, ol {
+  min-width: 0;
+  @include centered-content;
+}
+
 h1 {
+  text-align: center;
+  color: $text-color;
   margin-block-start: 0.67em;
   margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
 }
 
 h2, h3 {
   text-align: center;
   color: $text-color;
-  margin: 1.5em 0 1em 0;
+  margin: 1.5em auto 1em auto;
   
   @include mobile {
     font-size: $font-size-heading-mobile;
-    margin: 1.2em 0 0.8em 0;
+    margin: 1.2em auto 0.8em auto;
   }
 }
 
 h4, h5, h6 {
   color: $text-color;
+  margin: 1.5em auto 1em auto;
   
   @include mobile {
     font-size: 1.2rem;
+    margin: 1.2em auto 0.8em auto;
   }
 }
 
+ul, ol {
+  margin: 0 auto 1.5em auto;
+  padding-left: 1.4em;
+  text-align: left;
+
+  li + li {
+    margin-top: 0.35em;
+  }
+}
 
 .post-video-player {
   margin: 1.5em auto;
@@ -507,14 +523,14 @@ h4, h5, h6 {
 blockquote {
   font-style: italic;
   font-size: 1.2rem;
-  margin-left: 40px;
+  margin-top: 0;
+  margin-bottom: 0.88235294em;
   padding-left: $spacing-base;
   border-left: 3px solid color.adjust($primary-color, $lightness: 70%);
   color: color.adjust($text-color, $lightness: 10%);
   
   @include mobile {
     font-size: 1.1rem;
-    margin-left: 20px;
     padding-left: $spacing-small;
   }
 }

@@ -36,6 +36,11 @@
     p {
       margin-bottom: $spacing-base;
     }
+
+    ul, ol {
+      margin-bottom: $spacing-base * 1.5;
+      padding-left: 1.4em;
+    }
     
     a {
       color: $primary-color;
