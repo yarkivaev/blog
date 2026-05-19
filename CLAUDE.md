@@ -45,6 +45,9 @@ blog/
 ├── tags/                   # Tag archive pages
 ├── utils/                  # Local helper scripts (not part of the Jekyll build)
 │   ├── download_photos.sh
+│   ├── list-post-media.sh       # List local media paths used by a travel post
+│   ├── upload-post-media-to-yandex.sh # Upload a path list to Yandex Object Storage
+│   ├── lib/post-media.sh        # Shared parsing and HLS expansion for the scripts above
 │   ├── encode-mp4-to-assets-hls.sh # MP4 → HLS into assets/hls/<subdir>/ for local or test posts
 │   └── publish-hls-to-yandex.sh # Encode HLS with ffmpeg and upload to Yandex Object Storage
 └── css/
@@ -147,7 +150,13 @@ lang: ru                                   # Content language (ru/zh/en)
 - **Include**: `{% include video.html src="https://storage.yandexcloud.net/…/master.m3u8" %}`; опции `poster="https://…/poster.jpg"`, `round=true` (круглый кадр, как видеокружок).
 - **Клиент**: Safari (включая iOS) — нативный HLS; прочие браузеры — **hls.js** из [`assets/js/vendor/hls.min.js`](assets/js/vendor/hls.min.js). Кастомные элементы: play/pause, перемотка, mute, скорость; при воспроизведении одного ролика остальные вставки `video.html` на странице ставятся на паузу.
 - **Локально в репозитории**: [`utils/encode-mp4-to-assets-hls.sh`](utils/encode-mp4-to-assets-hls.sh) — положить HLS в `assets/hls/<subdir>/` для тестов или статической раздачи с сайта: `./utils/encode-mp4-to-assets-hls.sh /path/to/file.mp4 my-clip`.
-- **Публикация**: [`utils/publish-hls-to-yandex.sh`](utils/publish-hls-to-yandex.sh) — локально нужны `ffmpeg` и AWS CLI с `--endpoint-url=https://storage.yandexcloud.net`, переменные `AWS_ACCESS_KEY_ID` и `AWS_SECRET_ACCESS_KEY`. Пример: `./utils/publish-hls-to-yandex.sh clip.mp4 my-bucket video/2026/trip/clip/`. Опционально `YC_S3_ACL_PUBLIC=1` для `public-read` на объектах; иначе настройте публичный доступ политикой бакета. Переопределение публичного URL: `YC_PUBLIC_BASE_URL`. Если домен сайта и медиа различаются, на бакете может понадобиться **CORS**.
+- **Публикация (encode + upload)**: [`utils/publish-hls-to-yandex.sh`](utils/publish-hls-to-yandex.sh) — локально нужны `ffmpeg` и AWS CLI с `--endpoint-url=https://storage.yandexcloud.net`, переменные `AWS_ACCESS_KEY_ID` и `AWS_SECRET_ACCESS_KEY`. Пример: `./utils/publish-hls-to-yandex.sh clip.mp4 my-bucket video/2026/trip/clip/`. Опционально `YC_S3_ACL_PUBLIC=1` для `public-read` на объектах; иначе настройте публичный доступ политикой бакета. Переопределение публичного URL: `YC_PUBLIC_BASE_URL`. Если домен сайта и медиа различаются, на бакете может понадобиться **CORS**.
+- **Публикация готовых файлов из поста**: [`utils/list-post-media.sh`](utils/list-post-media.sh) собирает абсолютные пути к медиа (картинки, постеры, развёрнутые HLS-пакеты в `travel/<slug>/`); [`utils/upload-post-media-to-yandex.sh`](utils/upload-post-media-to-yandex.sh) заливает список в бакет (`yarkivaev-blog/<slug>/…`). Пример:
+  ```bash
+  ./utils/list-post-media.sh --check _posts/travel/italy/2025-04-10-italy.md -o /tmp/italy-media.txt
+  ./utils/upload-post-media-to-yandex.sh --bucket yarkivaev-blog --slug italy --from-list /tmp/italy-media.txt
+  ```
+  Для проверки без загрузки: `--dry-run`. Исходные `.mp4` в каталогах HLS включаются по умолчанию; `--exclude-mp4` убирает их из списка и из `aws s3 sync` (кроме `init.mp4`). После загрузки выставьте `storage_prefix: "yandex"` — плагин переписывает только `<img src>`; URL видео в `video.html` нужно задать полными (`https://storage.yandexcloud.net/yarkivaev-blog/<slug>/…/master.m3u8`) или расширить плагин отдельно.
 
 ## Key Features
 

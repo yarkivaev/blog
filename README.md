@@ -93,7 +93,9 @@ blog/
 ├── css/
 │   └── main.scss           # Single CSS entry point
 ├── utils/
-│   └── download_photos.sh  # Image management utility
+│   ├── list-post-media.sh              # List media paths referenced by a post
+│   ├── upload-post-media-to-yandex.sh  # Upload that list to Yandex Object Storage
+│   └── download_photos.sh              # Image management utility
 ├── _config.yml             # Jekyll configuration
 ├── Gemfile                 # Ruby dependencies
 ├── CLAUDE.md              # AI assistant instructions
@@ -301,7 +303,18 @@ bundle exec jekyll doctor
 ```bash
 # Download images from Yandex Cloud
 ./utils/download_photos.sh
+
+# List all local media for a travel post (images + expanded HLS trees)
+./utils/list-post-media.sh --check _posts/travel/italy/2025-04-10-italy.md -o /tmp/italy-media.txt
+
+# Upload to Yandex Object Storage (needs AWS CLI + AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY)
+./utils/upload-post-media-to-yandex.sh --bucket yarkivaev-blog --slug italy --from-list /tmp/italy-media.txt
+
+# Or pipe list → upload; add --dry-run on upload to preview aws commands
+# Optional: YC_S3_ACL_PUBLIC=1 for public-read objects
 ```
+
+After upload, set `storage_prefix: "yandex"` in the post frontmatter so images use `https://storage.yandexcloud.net/yarkivaev-blog/<slug>/`. Video `{% include video.html %}` paths still need full cloud URLs unless you extend the Jekyll plugin.
 
 ### Deployment
 
