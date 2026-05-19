@@ -4,7 +4,7 @@
 @use 'mixins' as *;
 
 .article__content img[role="button"],
-.article__content .post-video-player[role="button"] {
+.article__content .post-video-player__frame[role="button"] {
   @include touch-interaction;
   cursor: pointer;
 

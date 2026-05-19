@@ -191,6 +191,7 @@ h4, h5, h6 {
   display: block;
   position: relative;
   z-index: 0;
+  pointer-events: none;
 }
 
 .post-video-player__loader {
@@ -250,6 +251,12 @@ h4, h5, h6 {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+@media (hover: none) {
+  .post-video-player--play-visible .post-video-player__play {
+    pointer-events: none;
+  }
 }
 
 .post-video-player__play-icon {

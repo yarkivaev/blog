@@ -1,24 +1,20 @@
 (function () {
   var MOVE_PX = 12;
   var MAX_MS = 350;
+  var CENTER_RETRY_MAX = 24;
   var VIDEO_CONTROL_SELECTOR = '.post-video-player__toolbar, .post-video-player__play';
-  function verticalTarget(el) {
-    if (el.classList.contains('post-video-player')) {
-      return el.querySelector('.post-video-player__frame') || el;
-    }
-    return el;
+  function playerFrom(el) {
+    return el.closest('.post-video-player');
   }
-  function horizontalItem(el) {
-    if (el.classList.contains('post-video-player__frame')) {
-      return el.closest('.post-video-player');
+  function verticalTarget(el) {
+    var player = playerFrom(el);
+    if (player) {
+      return player.querySelector('.post-video-player__frame') || player;
     }
     return el;
   }
   function centerHorizontally(el) {
-    var item = horizontalItem(el);
-    if (!item) {
-      return;
-    }
+    var item = playerFrom(el) || el;
     var track = item.closest('.horizontal-scroll');
     if (!track) {
       return;
@@ -36,29 +32,36 @@
     var top = window.scrollY + rect.top + rect.height / 2 - window.innerHeight / 2;
     window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
   }
-  function center(el) {
+  function centerTarget(el) {
     centerVertically(el);
     centerHorizontally(el);
   }
-  function videoWillStart(player) {
-    var video = player.querySelector('.post-video-player__video');
-    if (!video) {
-      return true;
-    }
-    return video.paused || video.ended;
+  function frameHasSize(player) {
+    var frame = player.querySelector('.post-video-player__frame');
+    var probe = frame || player;
+    var rect = probe.getBoundingClientRect();
+    return rect.height >= 4 && rect.width >= 4;
   }
-  function afterCenterTap(el) {
-    if (el.classList.contains('post-video-player')) {
-      el.dispatchEvent(new CustomEvent('post-video-player:center-tap'));
-    }
-  }
-  function activateTap(el) {
-    if (el.classList.contains('post-video-player') && !videoWillStart(el)) {
-      afterCenterTap(el);
+  function centerTargetWhenSized(player, attempt) {
+    var step = attempt || 0;
+    if (frameHasSize(player) || step >= CENTER_RETRY_MAX) {
+      centerTarget(player);
       return;
     }
-    center(el);
-    afterCenterTap(el);
+    window.requestAnimationFrame(function () {
+      centerTargetWhenSized(player, step + 1);
+    });
+  }
+  function dispatchCenterTap(player) {
+    player.dispatchEvent(new CustomEvent('post-video-player:center-tap'));
+  }
+  function activateTap(el) {
+    var player = playerFrom(el);
+    if (player) {
+      dispatchCenterTap(player);
+      return;
+    }
+    centerTarget(el);
   }
   function bindTap(el, options) {
     var ignoreSelector = options && options.ignoreSelector;
@@ -144,11 +147,19 @@
       if (player.dataset.centerOnTapBound === 'true') {
         return;
       }
+      player.dataset.centerOnTapBound = 'true';
+      var frame = player.querySelector('.post-video-player__frame');
       var video = player.querySelector('.post-video-player__video');
       if (video) {
         video.setAttribute('tabindex', '-1');
       }
-      markTapTarget(player, 'Показать по центру и воспроизвести', { ignoreSelector: VIDEO_CONTROL_SELECTOR });
+      if (!frame) {
+        return;
+      }
+      player.addEventListener('post-video-player:center-viewport', function () {
+        centerTargetWhenSized(player, 0);
+      });
+      markTapTarget(frame, 'Показать по центру и воспроизвести', { ignoreSelector: VIDEO_CONTROL_SELECTOR });
     });
   }
   function init() {

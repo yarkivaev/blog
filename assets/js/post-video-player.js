@@ -215,18 +215,33 @@
         if (video.ended) {
           video.currentTime = 0;
         }
-        revealChrome();
-        if (video.paused || video.ended) {
-          video.play().catch(function () {});
-        }
+        root.dispatchEvent(new CustomEvent('post-video-player:center-tap'));
       });
     }
+    function playAndSignalCenter() {
+      var signaled = false;
+      function signalCenter() {
+        if (signaled) {
+          return;
+        }
+        signaled = true;
+        video.removeEventListener('resize', signalCenter);
+        root.dispatchEvent(new CustomEvent('post-video-player:center-viewport'));
+      }
+      video.addEventListener('playing', signalCenter, { once: true });
+      video.addEventListener('resize', signalCenter);
+      var promise = video.play();
+      if (promise !== undefined) {
+        promise.then(signalCenter).catch(function () {});
+      }
+    }
     root.addEventListener('post-video-player:center-tap', function () {
-      revealChrome();
       if (video.paused || video.ended) {
-        video.play().catch(function () {});
+        playAndSignalCenter();
+        revealChrome();
       } else {
         video.pause();
+        revealChrome();
       }
     });
     if (frame) {
