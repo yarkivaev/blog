@@ -3,7 +3,7 @@
 require 'json'
 
 module ImageUrlProcessor
-  SIZES_ARTICLE = '(max-width: 680px) 100vw, 700px'
+  SIZES_ARTICLE = '100vw'
   SIZES_GALLERY = '(max-width: 680px) 100vw, min(100vw, 1900px)'
 
   module_function
@@ -80,11 +80,10 @@ module ImageUrlProcessor
     full_src = default_src(prefix, variants)
     lqip_src = variant_url(prefix, lqip['webp'])
     sizes = gallery ? SIZES_GALLERY : SIZES_ARTICLE
-    width = entry['width']
-    height = entry['height']
+    gallery_attr = gallery ? ' data-image-layout="gallery"' : ''
     alt = parsed[:alt] ? %( alt="#{parsed[:alt]}") : ''
     extra_class = parsed[:class] ? " #{parsed[:class]}" : ''
-    %(<img class="blur-up#{extra_class}" src="#{lqip_src}" data-src="#{full_src}" data-srcset="#{srcset}" data-sizes="#{sizes}" width="#{width}" height="#{height}"#{alt} loading="lazy" decoding="async">)
+    %(<img class="blur-up#{extra_class}"#{gallery_attr} src="#{lqip_src}" data-src="#{full_src}" data-srcset="#{srcset}" data-sizes="#{sizes}"#{alt} loading="lazy" decoding="async">)
   end
 end
 

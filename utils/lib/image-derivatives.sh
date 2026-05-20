@@ -78,7 +78,7 @@ id_lqip_webp_path() {
 id_file_dimensions() {
   local path="$1"
   local dims
-  dims="$(magick identify -format '%w %h' "$path" 2>/dev/null)" || return 1
+  dims="$(magick "$path" -auto-orient -format '%w %h' info: 2>/dev/null)" || return 1
   printf '%s' "$dims"
 }
 

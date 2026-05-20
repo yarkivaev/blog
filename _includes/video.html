@@ -11,14 +11,12 @@
       <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
       <div class="post-video-player__toolbar-actions">
         <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
-        <label class="post-video-player__quality-label" hidden>
-          <span class="post-video-player__quality-text">Quality</span>
+        <div class="post-video-player__quality-label" hidden>
           <select class="post-video-player__quality" aria-label="Video quality">
             <option value="-1" selected>Auto</option>
           </select>
-        </label>
-        <label class="post-video-player__rate-label">
-          <span class="post-video-player__rate-text">Speed</span>
+        </div>
+        <div class="post-video-player__rate-label">
           <select class="post-video-player__rate" aria-label="Playback speed">
             <option value="0.5">0.5×</option>
             <option value="0.75">0.75×</option>
@@ -27,7 +25,7 @@
             <option value="1.5">1.5×</option>
             <option value="2">2×</option>
           </select>
-        </label>
+        </div>
       </div>
     </div>
   </div>
