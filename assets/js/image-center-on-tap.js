@@ -58,6 +58,7 @@
   function activateTap(el) {
     var player = playerFrom(el);
     if (player) {
+      centerTargetWhenSized(player, 0);
       dispatchCenterTap(player);
       return;
     }

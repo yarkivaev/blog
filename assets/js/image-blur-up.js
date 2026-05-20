@@ -1,6 +1,7 @@
 (function () {
   var VIEWPORT_ROOT_MARGIN = '320px 0px';
   var MEDIA_PRIORITY_EVENT = 'media-priority-video';
+  var viewportMargin = { top: 320, right: 0, bottom: 320, left: 0 };
   var viewportObserver = null;
   var videoPriorityActive = false;
   var activeLoads = [];
@@ -8,24 +9,57 @@
   function isVideoPriority() {
     return videoPriorityActive;
   }
+  function isNearViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var viewW = document.documentElement.clientWidth;
+    var viewH = document.documentElement.clientHeight;
+    return (
+      rect.bottom >= -viewportMargin.bottom &&
+      rect.top <= viewH + viewportMargin.top &&
+      rect.right >= -viewportMargin.left &&
+      rect.left <= viewW + viewportMargin.right
+    );
+  }
+  function shouldDeferUpgrade(img) {
+    return isVideoPriority() && !isNearViewport(img);
+  }
   function removeActiveLoad(entry) {
     activeLoads = activeLoads.filter(function (item) {
       return item !== entry;
     });
   }
-  function abortImageLoads() {
+  function abortOffViewportImageLoads() {
+    var kept = [];
     activeLoads.forEach(function (entry) {
+      if (isNearViewport(entry.img)) {
+        kept.push(entry);
+        return;
+      }
       entry.loader.onload = null;
       entry.loader.onerror = null;
       entry.loader.src = '';
     });
-    activeLoads = [];
+    activeLoads = kept;
   }
   function deferUpgrade(img) {
     if (deferredImages.indexOf(img) !== -1) {
       return;
     }
     deferredImages.push(img);
+  }
+  function flushDeferredNearViewport() {
+    var pending = deferredImages.slice();
+    deferredImages = [];
+    pending.forEach(function (img) {
+      if (img.classList.contains('loaded')) {
+        return;
+      }
+      if (isNearViewport(img)) {
+        upgrade(img);
+        return;
+      }
+      deferUpgrade(img);
+    });
   }
   function flushDeferredImages() {
     var pending = deferredImages.slice();
@@ -41,7 +75,7 @@
     if (img.classList.contains('loaded')) {
       return;
     }
-    if (isVideoPriority()) {
+    if (shouldDeferUpgrade(img)) {
       deferUpgrade(img);
       return;
     }
@@ -117,10 +151,6 @@
           }
           var img = entry.target;
           viewportObserver.unobserve(img);
-          if (isVideoPriority()) {
-            deferUpgrade(img);
-            return;
-          }
           upgrade(img);
         });
       },
@@ -131,7 +161,8 @@
     var active = ev.detail && ev.detail.active;
     if (active) {
       videoPriorityActive = true;
-      abortImageLoads();
+      abortOffViewportImageLoads();
+      flushDeferredNearViewport();
       return;
     }
     videoPriorityActive = false;

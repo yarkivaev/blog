@@ -3,35 +3,90 @@
   var VIEWPORT_ROOT_MARGIN = '320px 0px';
   var HLS_NETWORK_RETRIES = 6;
   var HLS_MEDIA_RETRIES = 3;
-  var PREFETCH_SEGMENTS = 2;
   var playerState = new Map();
   var viewportRoots = new Set();
   var focusedPlaybackRoot = null;
+  var idleLoadRoot = null;
   var mediaPriorityVideo = false;
+  function isPlaybackActive() {
+    if (!focusedPlaybackRoot) {
+      return false;
+    }
+    var state = playerState.get(focusedPlaybackRoot);
+    if (!state) {
+      return false;
+    }
+    if (state.playIntent) {
+      return true;
+    }
+    return !state.video.paused && !state.video.ended;
+  }
+  function viewportCenterDistance(root) {
+    var rect = root.getBoundingClientRect();
+    var centerY = rect.top + rect.height / 2;
+    return Math.abs(centerY - window.innerHeight / 2);
+  }
+  function pickIdleLoadCandidate() {
+    var best = null;
+    var bestDistance = Infinity;
+    viewportRoots.forEach(function (root) {
+      var distance = viewportCenterDistance(root);
+      if (distance < bestDistance) {
+        bestDistance = distance;
+        best = root;
+      }
+    });
+    return best;
+  }
+  function unmountPlayer(state) {
+    if (!state.mounted) {
+      return;
+    }
+    if (state.hls) {
+      state.hls.destroy();
+      state.hls = null;
+    }
+    state.video.pause();
+    state.video.removeAttribute('src');
+    state.video.load();
+    state.mounted = false;
+    if (idleLoadRoot === state.root) {
+      idleLoadRoot = null;
+    }
+  }
+  function syncMediaLoading() {
+    if (isPlaybackActive()) {
+      idleLoadRoot = null;
+      playerState.forEach(function (state, root) {
+        if (root === focusedPlaybackRoot) {
+          if (!state.mounted) {
+            mountPlayer(state);
+          }
+          return;
+        }
+        unmountPlayer(state);
+      });
+      return;
+    }
+    var candidate = pickIdleLoadCandidate();
+    idleLoadRoot = candidate;
+    playerState.forEach(function (state, root) {
+      if (root === candidate) {
+        if (!state.mounted) {
+          mountPlayer(state);
+        }
+        return;
+      }
+      unmountPlayer(state);
+    });
+  }
   var MEDIA_PRIORITY_EVENT = 'media-priority-video';
-  var HLS_PRELOAD_LINK_ID = 'media-priority-hls-preload';
   function setMediaPriorityVideo(active) {
     if (active === mediaPriorityVideo) {
       return;
     }
     mediaPriorityVideo = active;
     document.dispatchEvent(new CustomEvent(MEDIA_PRIORITY_EVENT, { detail: { active: active } }));
-    var preloadLink = document.getElementById(HLS_PRELOAD_LINK_ID);
-    if (!active && preloadLink) {
-      preloadLink.remove();
-    }
-  }
-  function preloadHlsManifest(url) {
-    if (!url || document.getElementById(HLS_PRELOAD_LINK_ID)) {
-      return;
-    }
-    var link = document.createElement('link');
-    link.id = HLS_PRELOAD_LINK_ID;
-    link.rel = 'preload';
-    link.as = 'fetch';
-    link.href = url;
-    link.crossOrigin = 'anonymous';
-    document.head.appendChild(link);
   }
   function pauseOtherPlayers(active) {
     document.querySelectorAll('.post-video-player__video').forEach(function (el) {
@@ -88,69 +143,12 @@
   function createHlsInstance() {
     return new window.Hls({
       enableWorker: !isTouchDevice(),
-      maxBufferLength: 8,
-      maxMaxBufferLength: 20,
-      maxBufferSize: 25 * 1000 * 1000,
-      backBufferLength: 30,
-      startFragPrefetch: false,
+      maxBufferLength: 12,
+      maxMaxBufferLength: 30,
       fragLoadingTimeOut: 60000,
       manifestLoadingTimeOut: 30000,
-      levelLoadingTimeOut: 30000,
       fragLoadingMaxRetry: 8,
       manifestLoadingMaxRetry: 6,
-      levelLoadingMaxRetry: 6,
-      fragLoadingRetryDelay: 2000,
-      manifestLoadingRetryDelay: 2000,
-      levelLoadingRetryDelay: 2000,
-    });
-  }
-  function retryPlayback(state) {
-    hideError(state.root);
-    setLoading(state.root, true);
-    if (state.hls) {
-      state.hls.destroy();
-      state.hls = null;
-    }
-    state.media = false;
-    state.prepared = false;
-    state.sourceLoaded = false;
-    resetPlayTimers(state);
-    state.playIntent = false;
-    state.video.pause();
-    state.video.removeAttribute('src');
-    state.video.load();
-    state.onFragBuffered = null;
-    state.prefetchMode = false;
-    state.prefetchStopped = false;
-    prepareMedia(state);
-    beginPlayback(state);
-  }
-  function bindHlsRecovery(hls, state) {
-    var Hls = window.Hls;
-    var networkRetries = 0;
-    var mediaRetries = 0;
-    hls.on(Hls.Events.ERROR, function (_, data) {
-      if (!data.fatal) {
-        return;
-      }
-      if (data.type === Hls.ErrorTypes.NETWORK_ERROR && networkRetries < HLS_NETWORK_RETRIES) {
-        networkRetries += 1;
-        hideError(state.root);
-        setLoading(state.root, true);
-        hls.startLoad();
-        return;
-      }
-      if (data.type === Hls.ErrorTypes.MEDIA_ERROR && mediaRetries < HLS_MEDIA_RETRIES) {
-        mediaRetries += 1;
-        hideError(state.root);
-        hls.recoverMediaError();
-        return;
-      }
-      showError(state.root, 'Slow connection — tap to retry', function () {
-        networkRetries = 0;
-        mediaRetries = 0;
-        retryPlayback(state);
-      });
     });
   }
   function supportsNativeHls(video) {
@@ -240,6 +238,144 @@
       select.value = '-1';
     });
   }
+  function bindHlsRecovery(hls, state) {
+    var Hls = window.Hls;
+    var networkRetries = 0;
+    var mediaRetries = 0;
+    hls.on(Hls.Events.ERROR, function (_, data) {
+      if (!data.fatal) {
+        return;
+      }
+      if (data.type === Hls.ErrorTypes.NETWORK_ERROR && networkRetries < HLS_NETWORK_RETRIES) {
+        networkRetries += 1;
+        hideError(state.root);
+        setLoading(state.root, true);
+        hls.startLoad();
+        return;
+      }
+      if (data.type === Hls.ErrorTypes.MEDIA_ERROR && mediaRetries < HLS_MEDIA_RETRIES) {
+        mediaRetries += 1;
+        hideError(state.root);
+        hls.recoverMediaError();
+        return;
+      }
+      setMediaPriorityVideo(false);
+      state.playIntent = false;
+      showError(state.root, 'Slow connection — tap to retry', function () {
+        networkRetries = 0;
+        mediaRetries = 0;
+        remountPlayer(state);
+        beginPlayback(state);
+      });
+    });
+  }
+  function createPlayerState(root) {
+    var src = root.getAttribute('data-hls-src');
+    var video = root.querySelector('.post-video-player__video');
+    if (!src || !video) {
+      return null;
+    }
+    return {
+      root: root,
+      video: video,
+      src: src,
+      hls: null,
+      ui: false,
+      mounted: false,
+      playIntent: false,
+      native: preferNativeHls(video),
+      revealChrome: null,
+    };
+  }
+  function remountPlayer(state) {
+    unmountPlayer(state);
+    state.playIntent = false;
+    setLoading(state.root, false);
+  }
+  function ensureUi(state) {
+    if (state.ui) {
+      return;
+    }
+    bindUi(state.root, state.video, null, state);
+    state.ui = true;
+  }
+  function mountPlayer(state) {
+    if (state.mounted) {
+      return;
+    }
+    ensureUi(state);
+    if (state.native) {
+      state.video.src = state.src;
+      state.mounted = true;
+      return;
+    }
+    if (typeof window.Hls !== 'undefined' && window.Hls.isSupported()) {
+      state.hls = createHlsInstance();
+      bindHlsRecovery(state.hls, state);
+      state.hls.loadSource(state.src);
+      state.hls.attachMedia(state.video);
+      if (state.revealChrome) {
+        bindQuality(state.root, state.hls, state.revealChrome);
+      }
+      state.mounted = true;
+      return;
+    }
+    if (supportsNativeHls(state.video)) {
+      state.native = true;
+      state.video.src = state.src;
+      state.mounted = true;
+      return;
+    }
+    showError(state.root, 'HLS playback is not supported in this browser');
+  }
+  function requestPlay(state) {
+    var promise = state.video.play();
+    if (promise === undefined) {
+      return;
+    }
+    promise.catch(function (err) {
+      if (!state.playIntent) {
+        return;
+      }
+      if (err && err.name === 'NotAllowedError') {
+        setLoading(state.root, false);
+        state.playIntent = false;
+        setMediaPriorityVideo(false);
+        return;
+      }
+    });
+  }
+  function cancelPlaybackExcept(activeRoot) {
+    playerState.forEach(function (state, root) {
+      if (root === activeRoot) {
+        return;
+      }
+      state.playIntent = false;
+      state.video.pause();
+      setLoading(state.root, false);
+      unmountPlayer(state);
+    });
+  }
+  function beginPlayback(state) {
+    if (!state) {
+      return;
+    }
+    cancelPlaybackExcept(state.root);
+    pauseOtherPlayers(state.video);
+    hideError(state.root);
+    focusedPlaybackRoot = state.root;
+    setMediaPriorityVideo(true);
+    state.playIntent = true;
+    setLoading(state.root, true);
+    mountPlayer(state);
+    if (!state.mounted) {
+      state.playIntent = false;
+      setMediaPriorityVideo(false);
+      return;
+    }
+    requestPlay(state);
+    syncMediaLoading();
+  }
   function bindUi(root, video, hls, state) {
     var frame = root.querySelector('.post-video-player__frame');
     var toolbar = root.querySelector('.post-video-player__toolbar');
@@ -264,15 +400,6 @@
       root.classList.toggle('post-video-player--play-visible', show);
       if (playBtn) {
         playBtn.hidden = !show;
-      }
-    }
-    function syncLoadingFromReadyState() {
-      if (video.error) {
-        setLoadingState(false);
-        return;
-      }
-      if (video.readyState >= 2) {
-        setLoadingState(false);
       }
     }
     function markStarted() {
@@ -419,57 +546,42 @@
       ev.stopPropagation();
       revealChrome();
     });
-    if (playBtn) {
-      playBtn.addEventListener('click', function (ev) {
-        ev.stopPropagation();
+    function signalCenterViewport() {
+      root.dispatchEvent(new CustomEvent('post-video-player:center-viewport'));
+    }
+    function onCenterTap() {
+      if (video.paused || video.ended) {
         if (video.ended) {
           video.currentTime = 0;
         }
-        root.dispatchEvent(new CustomEvent('post-video-player:center-tap'));
-      });
-    }
-    var centerSignaled = false;
-    function signalCenterOnce() {
-      if (centerSignaled) {
-        return;
-      }
-      centerSignaled = true;
-      root.dispatchEvent(new CustomEvent('post-video-player:center-viewport'));
-    }
-    function onPlaybackReady() {
-      if (!state || !state.playIntent || !video.paused) {
-        return;
-      }
-      tryPlayback(state);
-    }
-    video.addEventListener('playing', function () {
-      if (state) {
-        clearPlayIntent(state);
-      }
-      setLoadingState(false);
-      signalCenterOnce();
-      video.addEventListener('resize', signalCenterOnce, { once: true });
-    });
-    video.addEventListener('canplay', function () {
-      if (state && state.playIntent && state.native) {
-        setLoadingState(false);
-      }
-      onPlaybackReady();
-    });
-    video.addEventListener('loadeddata', onPlaybackReady);
-    root.addEventListener('post-video-player:center-tap', function () {
-      if (video.paused || video.ended) {
+        signalCenterViewport();
         if (state) {
           beginPlayback(state);
         }
         revealChrome();
-      } else {
-        if (state) {
-          clearPlayIntent(state);
-        }
-        video.pause();
-        revealChrome();
+        return;
       }
+      if (state) {
+        state.playIntent = false;
+        setMediaPriorityVideo(false);
+      }
+      video.pause();
+      revealChrome();
+    }
+    if (playBtn) {
+      playBtn.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+        onCenterTap();
+      });
+    }
+    root.addEventListener('post-video-player:center-tap', onCenterTap);
+    video.addEventListener('playing', function () {
+      if (state) {
+        state.playIntent = false;
+      }
+      setLoadingState(false);
+      signalCenterViewport();
+      video.addEventListener('resize', signalCenterViewport, { once: true });
     });
     if (frame) {
       frame.addEventListener('pointerenter', onFramePointerEnter);
@@ -492,7 +604,6 @@
     video.addEventListener('play', function () {
       markStarted();
       focusedPlaybackRoot = root;
-      stopPrefetchExcept(root);
       pauseOtherPlayers(video);
       syncPlayOverlay();
       syncChromeAfterPlaySettled();
@@ -503,7 +614,10 @@
         if (focusedPlaybackRoot === root) {
           focusedPlaybackRoot = null;
         }
-        refreshViewportPrefetch();
+        if (focusedPlaybackRoot === null) {
+          setMediaPriorityVideo(false);
+          syncMediaLoading();
+        }
       }
       syncPlayOverlay();
       syncChromeWithPlayback();
@@ -513,7 +627,8 @@
       if (focusedPlaybackRoot === root) {
         focusedPlaybackRoot = null;
       }
-      refreshViewportPrefetch();
+      setMediaPriorityVideo(false);
+      syncMediaLoading();
       syncPlayOverlay();
       if (started) {
         showToolbarDom();
@@ -523,22 +638,17 @@
     });
     video.addEventListener('loadedmetadata', function () {
       refreshSeekMax();
-      if (state && state.playIntent && state.native) {
-        setLoadingState(false);
-        tryPlayback(state);
-      }
     });
     video.addEventListener('waiting', function () {
       if (scrubbing) {
         return;
       }
-      if (state && state.native && state.video.readyState >= 2) {
+      if (started && !video.paused) {
         return;
       }
-      if (started && state && state.playIntent) {
-        return;
+      if (state && state.playIntent) {
+        setLoadingState(true);
       }
-      setLoadingState(true);
     });
     video.addEventListener('timeupdate', function () {
       if (chromeHideAfterMs && !video.paused && !video.ended && Date.now() >= chromeHideAfterMs) {
@@ -559,335 +669,39 @@
       seek.disabled = true;
     }
     video.addEventListener('error', function () {
-      if (hls || !state || !state.sourceLoaded) {
+      if (!state || !state.mounted) {
         return;
       }
+      setMediaPriorityVideo(false);
+      state.playIntent = false;
       showError(root, 'Slow connection — tap to retry', function () {
-        retryPlayback(state);
+        remountPlayer(state);
+        beginPlayback(state);
       });
     });
-    syncLoadingFromReadyState();
     syncPlayOverlay();
     clearChromeHidePlan();
     hideToolbarDom();
   }
-  function createPlayerState(root) {
-    var src = root.getAttribute('data-hls-src');
-    var video = root.querySelector('.post-video-player__video');
-    if (!src || !video) {
-      return null;
-    }
-    return {
-      root: root,
-      video: video,
-      src: src,
-      hls: null,
-      ui: false,
-      media: false,
-      prepared: false,
-      sourceLoaded: false,
-      playIntent: false,
-      playRetryTimer: null,
-      playStallTimer: null,
-      prefetchMode: false,
-      prefetchStopped: false,
-      prefetchedSegments: 0,
-      native: preferNativeHls(video),
-      revealChrome: null,
-    };
-  }
-  function canPrefetch(root) {
-    if (isTouchDevice()) {
-      return false;
-    }
-    if (!viewportRoots.has(root)) {
-      return false;
-    }
-    if (focusedPlaybackRoot && focusedPlaybackRoot !== root) {
-      return false;
-    }
-    return true;
-  }
-  function stopPrefetch(state) {
-    if (!state || state.playIntent) {
-      return;
-    }
-    if (!state.video.paused && focusedPlaybackRoot === state.root) {
-      return;
-    }
-    if (state.hls) {
-      state.hls.stopLoad();
-    }
-  }
-  function stopPrefetchExcept(exceptRoot) {
-    playerState.forEach(function (state, root) {
-      if (root === exceptRoot) {
-        return;
-      }
-      stopPrefetch(state);
-    });
-  }
-  function refreshViewportPrefetch() {
-    viewportRoots.forEach(function (root) {
-      if (!canPrefetch(root)) {
-        return;
-      }
-      var state = playerState.get(root);
-      if (!state) {
-        return;
-      }
-      prefetchStream(state);
-    });
-  }
-  function wireHlsEvents(state) {
-    var Hls = window.Hls;
-    if (!state.hls) {
-      return;
-    }
-    if (state.onFragBuffered) {
-      state.hls.off(Hls.Events.FRAG_BUFFERED, state.onFragBuffered);
-    }
-    state.onFragBuffered = function () {
-      if (state.playIntent && state.video.paused) {
-        tryPlayback(state);
-      }
-      if (state.prefetchMode && !state.playIntent && !state.prefetchStopped) {
-        state.prefetchedSegments += 1;
-        if (state.prefetchedSegments >= PREFETCH_SEGMENTS) {
-          state.prefetchStopped = true;
-          state.hls.stopLoad();
-        }
-      }
-    };
-    state.hls.on(Hls.Events.FRAG_BUFFERED, state.onFragBuffered);
-  }
-  function prefetchStream(state) {
-    if (!canPrefetch(state.root) || state.playIntent || state.native) {
-      return;
-    }
-    prepareMedia(state);
-    if (state.prefetchStopped && state.sourceLoaded) {
-      return;
-    }
-    loadStream(state, false);
-    if (state.hls) {
-      state.prefetchMode = true;
-      state.prefetchedSegments = 0;
-      state.prefetchStopped = false;
-      state.hls.startLoad();
-    }
-  }
-  function clearPlayRetry(state) {
-    if (state.playRetryTimer !== null) {
-      clearTimeout(state.playRetryTimer);
-      state.playRetryTimer = null;
-    }
-  }
-  function resetPlayTimers(state) {
-    clearPlayRetry(state);
-    if (state.playStallTimer !== null) {
-      clearTimeout(state.playStallTimer);
-      state.playStallTimer = null;
-    }
-  }
-  function clearPlayIntent(state) {
-    state.playIntent = false;
-    resetPlayTimers(state);
-    setMediaPriorityVideo(false);
-  }
-  function tryPlayback(state) {
-    var video = state.video;
-    if (!state.playIntent || !video.paused) {
-      return;
-    }
-    var promise = video.play();
-    if (promise === undefined) {
-      return;
-    }
-    promise.catch(function (err) {
-      if (!state.playIntent) {
-        return;
-      }
-      if (err && err.name === 'NotAllowedError') {
-        setLoading(state.root, false);
-        return;
-      }
-    });
-  }
-  function schedulePlayback(state) {
-    clearPlayRetry(state);
-    tryPlayback(state);
-    if (!state.playIntent || !state.video.paused) {
-      return;
-    }
-    state.playRetryTimer = window.setTimeout(function () {
-      state.playRetryTimer = null;
-      if (!state.playIntent || !state.video.paused) {
-        return;
-      }
-      if (state.video.readyState >= 2) {
-        tryPlayback(state);
-        return;
-      }
-      schedulePlayback(state);
-    }, 250);
-  }
-  function beginNativePlayback(state) {
-    if (!state.sourceLoaded) {
-      state.video.src = state.src;
-      state.sourceLoaded = true;
-      state.media = true;
-    }
-    tryPlayback(state);
-    schedulePlayback(state);
-  }
-  function beginPlayback(state) {
-    resetPlayTimers(state);
-    state.playIntent = false;
-    hideError(state.root);
-    focusedPlaybackRoot = state.root;
-    stopPrefetchExcept(state.root);
-    setMediaPriorityVideo(true);
-    state.video.setAttribute('fetchpriority', 'high');
-    preloadHlsManifest(state.src);
-    state.playIntent = true;
-    state.prefetchMode = false;
-    state.prefetchStopped = false;
-    setLoading(state.root, true);
-    prepareMedia(state);
-    if (state.native) {
-      beginNativePlayback(state);
-    } else {
-      ensureStreamLoaded(state, true);
-      schedulePlayback(state);
-    }
-    state.playStallTimer = window.setTimeout(function () {
-      state.playStallTimer = null;
-      if (!state.playIntent || !state.video.paused) {
-        return;
-      }
-      clearPlayIntent(state);
-      setLoading(state.root, false);
-      showError(state.root, 'Playback did not start — tap to retry', function () {
-        beginPlayback(state);
-      });
-    }, 45000);
-  }
-  function prepareMedia(state) {
-    if (state.prepared) {
-      return;
-    }
-    if (!state.ui) {
-      bindUi(state.root, state.video, null, state);
-      state.ui = true;
-    }
-    if (state.native) {
-      state.prepared = true;
-      return;
-    }
-    if (typeof window.Hls !== 'undefined' && window.Hls.isSupported()) {
-      state.hls = createHlsInstance();
-      bindHlsRecovery(state.hls, state);
-      state.hls.attachMedia(state.video);
-      state.prepared = true;
-      return;
-    }
-    if (supportsNativeHls(state.video)) {
-      state.native = true;
-      state.prepared = true;
-      return;
-    }
-    showError(state.root, 'HLS playback is not supported in this browser');
-  }
-  function loadStream(state, forPlay) {
-    if (state.sourceLoaded) {
-      if (state.hls) {
-        state.hls.startLoad();
-        if (forPlay) {
-          state.prefetchMode = false;
-          state.prefetchStopped = false;
-        }
-      }
-      if (forPlay && state.playIntent) {
-        schedulePlayback(state);
-      }
-      return;
-    }
-    if (forPlay) {
-      setLoading(state.root, true);
-    }
-    if (state.native) {
-      state.video.src = state.src;
-    } else if (state.hls) {
-      state.hls.loadSource(state.src);
-      wireHlsEvents(state);
-      if (state.revealChrome) {
-        bindQuality(state.root, state.hls, state.revealChrome);
-      }
-    } else if (supportsNativeHls(state.video)) {
-      state.video.src = state.src;
-      state.native = true;
-    } else {
-      setLoading(state.root, false);
-      showError(state.root, 'HLS playback is not supported in this browser');
-      return;
-    }
-    state.sourceLoaded = true;
-    state.media = true;
-    if (!forPlay && state.hls) {
-      state.prefetchMode = true;
-      state.prefetchedSegments = 0;
-      state.prefetchStopped = false;
-    }
-  }
-  function ensureStreamLoaded(state, forPlay) {
-    if (!state.prepared) {
-      prepareMedia(state);
-    }
-    loadStream(state, forPlay !== false);
-  }
-  function detachMedia(state) {
-    if (state.playIntent) {
-      return;
-    }
-    if (!state.video.paused && focusedPlaybackRoot === state.root) {
-      return;
-    }
-    state.video.pause();
-    if (!state.sourceLoaded) {
-      setLoading(state.root, false);
-      return;
-    }
-    stopPrefetch(state);
-    state.prefetchStopped = false;
-    state.prefetchedSegments = 0;
-    setLoading(state.root, false);
-  }
   function activatePlayer(root) {
     viewportRoots.add(root);
-    var state = playerState.get(root);
-    if (!state) {
-      state = createPlayerState(root);
-      if (!state) {
-        return;
-      }
-      playerState.set(root, state);
-    }
-    prepareMedia(state);
-    if (canPrefetch(root)) {
-      prefetchStream(state);
-    }
+    syncMediaLoading();
   }
   function deactivatePlayer(root) {
     viewportRoots.delete(root);
     var state = playerState.get(root);
     if (!state) {
+      syncMediaLoading();
       return;
     }
-    if (focusedPlaybackRoot === root && !state.video.paused) {
+    if (focusedPlaybackRoot === root && isPlaybackActive()) {
       return;
     }
-    detachMedia(state);
+    state.playIntent = false;
+    state.video.pause();
+    setLoading(state.root, false);
+    unmountPlayer(state);
+    syncMediaLoading();
   }
   function observePlayers(roots) {
     if (typeof IntersectionObserver === 'undefined') {
@@ -910,13 +724,38 @@
       observer.observe(root);
     });
   }
+  var scrollRepickPending = false;
+  function onScrollIdleRepick() {
+    if (scrollRepickPending || isPlaybackActive()) {
+      return;
+    }
+    scrollRepickPending = true;
+    window.requestAnimationFrame(function () {
+      scrollRepickPending = false;
+      if (isPlaybackActive()) {
+        return;
+      }
+      var candidate = pickIdleLoadCandidate();
+      if (candidate === idleLoadRoot) {
+        return;
+      }
+      syncMediaLoading();
+    });
+  }
   function init() {
     var roots = document.querySelectorAll('[data-post-video-player]');
     roots.forEach(function (root) {
       root.classList.remove('post-video-player--loading');
       root.removeAttribute('aria-busy');
+      var state = createPlayerState(root);
+      if (!state) {
+        return;
+      }
+      playerState.set(root, state);
+      ensureUi(state);
     });
     observePlayers(roots);
+    window.addEventListener('scroll', onScrollIdleRepick, { passive: true });
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
