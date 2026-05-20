@@ -28,10 +28,6 @@ layout: base
   <article class="article__content text" id="text">
     {{ content }}
   </article>
-  
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %}
 </article>
 
 <script src="{{ '/assets/js/vendor/hls.min.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

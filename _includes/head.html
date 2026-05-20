@@ -28,12 +28,13 @@
     default-src 'self';
     img-src 'self' https: data: http://cdn.viglink.com;
     media-src 'self' https: data: blob:;
-    style-src 'self' 'unsafe-inline' https://c.disquscdn.com;
+    style-src 'self' 'unsafe-inline';
     font-src 'self';
-    script-src 'self' 'unsafe-inline' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.googletagmanager.com https://www.google-analytics.com https://mc.yandex.ru;
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://mc.yandex.ru https://yastatic.net;
     connect-src 'self' https: https://www.google-analytics.com https://stats.g.doubleclick.net https://mc.yandex.ru wss://mc.yandex.ru;
     worker-src 'self' blob:;
-    frame-src https://disqus.com https://*.disqus.com https://www.youtube.com https://www.youtube-nocookie.com https://mc.yandex.ru;
+    frame-src https://www.youtube.com https://www.youtube-nocookie.com https://mc.yandex.ru https://metrika.yandex.ru;
+    frame-ancestors 'self' https://metrika.yandex.ru https://*.metrika.yandex.ru https://webvisor.com;
   ">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">

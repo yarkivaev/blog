@@ -75,7 +75,6 @@ blog/
 │   └── site.yml            # Site metadata and settings
 ├── _includes/               # Reusable template parts
 │   ├── head.html           # Enhanced SEO head section
-│   ├── disqus_comments.html # Comment system
 │   └── youtube.html        # YouTube embed helper
 ├── _layouts/                # Page templates
 │   ├── base.html           # Base template with compression
@@ -272,7 +271,6 @@ destinations:
 
 ## 🔗 Integrations
 
-- **Disqus Comments** - Configured for `xiaomao-blog`
 - **Google Analytics** - Ready for tracking ID
 - **GitHub Integration** - Automatic metadata
 - **Social Sharing** - Optimized for all major platforms

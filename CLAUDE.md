@@ -38,7 +38,6 @@ blog/
 │   └── default.html        # Default fallback layout
 ├── _includes/               # Reusable template components
 │   ├── head.html           # Enhanced SEO head with security headers
-│   ├── disqus_comments.html # Comment system integration
 │   ├── youtube.html        # YouTube embed helper
 │   └── video.html          # HLS post video player include
 ├── categories/              # Category archive pages

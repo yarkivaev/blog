@@ -30,7 +30,7 @@ performance:
 
 # Features
 features:
-  comments: true
+  comments: false
   search: false
   dark_mode: false
   analytics: true

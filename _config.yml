@@ -41,10 +41,6 @@ social:
   links:
     - "https://github.com/yarkivaev"
 
-# Comments
-disqus:
-  shortname: xiaomao-blog
-
 # Content settings
 show_excerpts: true
 paginate: 6
@@ -71,7 +67,6 @@ defaults:
     values:
       layout: post
       author: "Yaroslav Kivaev"
-      comments: true
       storage_prefix: "local"  
       permalink: /travel/:title/
 
