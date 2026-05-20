@@ -29,13 +29,13 @@ class ImageRetrySystem {
   }
   
   attachErrorHandler(img) {
-    // Skip if already handled
-    if (img.dataset.retryHandled) return;
-    
-    // Mark as handled
+    if (img.dataset.retryHandled) {
+      return;
+    }
+    if (img.classList.contains('blur-up') || img.dataset.src) {
+      return;
+    }
     img.dataset.retryHandled = 'true';
-    
-    // Only add loading class if image hasn't loaded yet
     if (!img.complete) {
       img.classList.add('loading');
     }
@@ -51,7 +51,9 @@ class ImageRetrySystem {
       this.handleImageError(img);
     });
     
-    // If image is already in error state, handle it
+    if (img.loading === 'lazy') {
+      return;
+    }
     if (img.complete && img.naturalWidth === 0) {
       this.handleImageError(img);
     }

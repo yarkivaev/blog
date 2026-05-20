@@ -39,9 +39,18 @@ blog/
 ├── _includes/               # Reusable template components
 │   ├── head.html           # Enhanced SEO head with security headers
 │   ├── disqus_comments.html # Comment system integration
-│   └── youtube.html        # YouTube embed helper
+│   ├── youtube.html        # YouTube embed helper
+│   └── video.html          # HLS post video player include
 ├── categories/              # Category archive pages
 ├── tags/                   # Tag archive pages
+├── utils/                  # Local helper scripts (not part of the Jekyll build)
+│   ├── download_photos.sh
+│   ├── list-post-media.sh       # List local media paths used by a travel post
+│   ├── process-post-images.sh   # WebP 1400/2400 + LQIP → travel/<slug>/derived/
+│   ├── process-post-videos.sh   # Adaptive HLS (≤720p/1080p, no upscale) → derived/<clip>/
+│   ├── lib/video-derivatives.sh # ffmpeg ladder + video entries in manifest.json
+│   ├── lib/post-media.sh        # Shared parsing and HLS expansion for the scripts above
+│   └── lib/image-derivatives.sh # ImageMagick resize + manifest.json for process-post-images
 └── css/
     └── main.scss           # Single CSS entry point (compiles all Sass)
 ```
@@ -113,11 +122,12 @@ lang: ru                                   # Content language (ru/zh/en)
 
 ### Image Handling
 - **External Storage**: Yandex Cloud for performance and CDN
-- **Local Fallbacks**: `2025/01/12/imgs/` structure for development
+- **Local Fallbacks**: `travel/<slug>/` for development (`storage_prefix: local`)
+- **Derivatives**: `utils/process-post-images.sh` → `travel/<slug>/derived/` (WebP w1400/w2400, LQIP, `manifest.json`; gitignored). Requires `/opt/homebrew/bin/bash` and `magick`.
+- **Responsive output**: `_plugins/image_url_processor.rb` + `assets/js/image-blur-up.js` (srcset, blur-up, lazy).
 - **Link References**: `[description][ref]` and `[ref]: path/to/image.jpg`
 - **Horizontal Galleries**: `<div class="horizontal-scroll">` with automatic styling
-- **Responsive JavaScript**: Automatic sizing based on aspect ratio
-- **Lazy Loading**: Performance optimization with `loading="lazy"`
+- **Lazy Loading**: `loading="lazy"` on post images
 
 ### Gallery Syntax
 ```markdown
@@ -136,6 +146,27 @@ lang: ru                                   # Content language (ru/zh/en)
 [img2]: /path/to/gallery2.jpg
 [img3]: /path/to/gallery3.jpg
 ```
+
+### HLS video in posts
+- **Format**: Static **HLS** only — URL мастер-плейлиста `master.m3u8` (fMP4-сегменты), раздача с **Yandex Object Storage** или другого HTTPS-хранилища с поддержкой Range; отдельный стриминг-сервер для VOD не нужен.
+- **Include**: `{% include video.html src="https://storage.yandexcloud.net/…/master.m3u8" %}`; опции `poster="https://…/poster.jpg"`, `round=true` (круглый кадр, как видеокружок).
+- **Клиент**: Safari (включая iOS) — нативный HLS; прочие браузеры — **hls.js** из [`assets/js/vendor/hls.min.js`](assets/js/vendor/hls.min.js). Кастомные элементы: play/pause, перемотка, mute, скорость; при воспроизведении одного ролика остальные вставки `video.html` на странице ставятся на паузу.
+- **Кодирование**: [`utils/process-post-videos.sh`](utils/process-post-videos.sh) — адаптивный HLS в `travel/<slug>/derived/hls/` (нужны `ffmpeg` и GNU bash 5).
+- **Публикация в Object Storage**: после `process-post-images` / `process-post-videos` — `aws s3 sync` всего `travel/<slug>/` в бакет (`--endpoint-url=https://storage.yandexcloud.net`, переменные `AWS_ACCESS_KEY_ID` и `AWS_SECRET_ACCESS_KEY`). **CORS** обязателен для hls.js (разные origin): вручную применить `config/yandex-bucket-cors.json` на бакете в консоли Yandex Cloud. Пример:
+  ```bash
+  export PATH="/opt/homebrew/bin:$PATH"
+  ./utils/list-post-media.sh --check _posts/travel/italy/2026-04-10-italy.md
+  ./utils/list-post-media.sh _posts/travel/italy/2026-04-10-italy.md \
+    | ./utils/process-post-images.sh --post _posts/travel/italy/2026-04-10-italy.md
+  # Only a subdir or file: --prefix rome/from_kate or --prefix rome/from_kate/19.jpg
+  ./utils/list-post-media.sh _posts/travel/italy/2026-04-10-italy.md \
+    | ./utils/process-post-videos.sh --post _posts/travel/italy/2026-04-10-italy.md
+  bundle exec jekyll build
+  aws s3 sync travel/italy/ s3://yarkivaev-blog/italy/ \
+    --endpoint-url=https://storage.yandexcloud.net \
+    --exclude ".DS_Store"
+  ```
+  [`utils/list-post-media.sh`](utils/list-post-media.sh) собирает пути к медиа из поста (для `--check` и выборочной обработки). После загрузки выставьте `storage_prefix: "yandex"` — плагин переписывает только `<img src>`; URL видео в `video.html` нужно задать полными (`https://storage.yandexcloud.net/yarkivaev-blog/<slug>/…/master.m3u8`) или расширить плагин отдельно.
 
 ## Key Features
 
@@ -187,6 +218,7 @@ bundle exec jekyll build
 2. **Categories/Tags**: Add to frontmatter, archive pages update automatically
 3. **Navigation**: Update `_data/navigation.yml` for new destinations
 4. **Images**: Upload to Yandex Cloud or use local fallback structure
+5. **Video**: Encode HLS with `utils/process-post-videos.sh`, upload via `aws s3 sync`, embed with `video.html` (see HLS section above)
 
 ### Performance Testing
 ```bash

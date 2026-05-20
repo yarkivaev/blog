@@ -1,4 +1,799 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://2xiaomao.ru/feed.xml" rel="self" type="application/atom+xml" /><link href="https://2xiaomao.ru/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-09-29T23:00:56+03:00</updated><id>https://2xiaomao.ru/feed.xml</id><title type="html">XiongXiaomao blog</title><subtitle>Travel blog documenting adventures around the world.  一边 программируем 一边 путешествуем - Programming while traveling.</subtitle><author><name>Yaroslav Kivaev</name><email>yarkivaev@gmail.com</email></author><entry xml:lang="ru"><title type="html">Батуми</title><link href="https://2xiaomao.ru/travel/batumi/" rel="alternate" type="text/html" title="Батуми" /><published>2025-06-04T00:00:00+03:00</published><updated>2025-06-04T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/batumi</id><content type="html" xml:base="https://2xiaomao.ru/travel/batumi/"><![CDATA[<p>Батуми — курортный “русский” город в Грузии на побережье Чёрного моря, столица автономной республики Аджария.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://2xiaomao.ru/feed.xml" rel="self" type="application/atom+xml" /><link href="https://2xiaomao.ru/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2026-05-21T02:01:36+03:00</updated><id>https://2xiaomao.ru/feed.xml</id><title type="html">XiongXiaomao blog</title><subtitle>Travel blog documenting adventures around the world.  一边 программируем 一边 путешествуем - Programming while traveling.</subtitle><author><name>Yaroslav Kivaev</name><email>yarkivaev@gmail.com</email></author><entry xml:lang="ru"><title type="html">Италия (Italy) - Рим</title><link href="https://2xiaomao.ru/travel/italy/" rel="alternate" type="text/html" title="Италия (Italy) - Рим" /><published>2026-04-10T00:00:00+03:00</published><updated>2026-04-10T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/italy</id><content type="html" xml:base="https://2xiaomao.ru/travel/italy/"><![CDATA[<p><strong>Товарищи, мы в Европе!</strong></p>
+
+<div class="horizontal-scroll">
+    <img src="rome/from_kate/20.jpg" />
+    <img src="venice/from_kate/1_cropped.jpg" />
+    <img src="rome/DSC_0703.JPG" />
+</div>
+
+<p>Это была наша давняя цель.
+Но даже когда мы подавались на визу (не без трудностей, но об этом отдельно), мы до самого конца сомневались, что эта поездка вообще случится. Но она случилась, а значит — и продолжению блога быть!</p>
+
+<div class="horizontal-scroll">
+    <figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="why_am_i_here/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="why_am_i_here/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+    <figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="i_like_everything/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="i_like_everything/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+</div>
+
+<div class="horizontal-scroll">
+    <figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="istanbul_hotel/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="istanbul_hotel/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+<figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="vienna/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="vienna/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+</div>
+
+<p><strong>Спойлер</strong>: наши поездки опять были настолько сумасшедшими, что чемодан, по традиции, не выдержал :)</p>
+
+<p><em>Возможно, когда-то мы все-таки придем к тому, чтобы путешествовать с рюкзаками.</em></p>
+
+<figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="broken_case/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="broken_case/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+<p>Первое знакомство с Европой у нас произошло в Италии. Культура, история, еда, Венеция особенно (!) — все это привлекало нас уже давно, а относительная доступность визы в итоге окончательно определила направление путешествия. Правда, помимо Италии мы  совершенно спонтанно заскочили и в Вену, чему потом были невероятно рады!</p>
+
+<p>Но обо всем по порядку.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/kate/DSC_0686.JPG" />
+    <img src="rome/DSC_0690.JPG" />
+    <img src="rome/kate/DSC_0609.JPG" />
+    <img src="rome/DSC_0446.JPG" />
+    <img src="rome/DSC_0568.JPG" />
+    <img src="rome/from_kate/27.jpg" />
+    <img src="rome/DSC_0447.JPG" />
+    <img src="rome/from_kate/28.jpg" />
+    <img src="rome/from_kate/25.jpg" />
+    <img src="rome/from_kate/26.jpg" />
+</div>
+
+<!-- <img src="rome/kate/DSC_0679.JPG" />
+<img src="rome/kate/DSC_0002.JPG" /> -->
+
+<p>Готовились к поездке мы, естественно, сами (без агентств): подавались на визу, планировали маршрут and all that jazz. И, честно говоря, весь этот процесс неожиданно оказался куда более энергозатратным, чем, например, подготовка к нашему большому азиатскому путешествию. Даже запись на подачу документов превратилась в отдельный квест: слоты открывались в начале месяца на следующий месяц и тут же разлетались! Но нам все-таки повезло, хотя и не с первого раза.</p>
+
+<p><img src="vizas.jpg" alt="Визы" /></p>
+
+<p>Летели мы через Ереван, а возвращались уже через Стамбул.</p>
+
+<p>В аэропорту Еревана нас ждал сюрприз от европейского лоукостера WizzAir. Так получилось, что на рейс мы не зарегистрировались онлайн заранее, поэтому заплатили штраф в 6к руб. на каждого. Вот такое вот начало поездки получилось.</p>
+
+<figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="wizzair_fine/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="wizzair_fine/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+<p>Но! Первое впечатление от Европы это не омрачило. Рим встречал нас солнцем (если что, в Москве в это время шел снег, хахах).</p>
+
+<figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="rome/first_rome_breakfast/vibe/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="rome/first_rome_breakfast/vibe/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+<div class="horizontal-scroll">
+    <img src="rome/first_rome_breakfast/8.jpg" />
+    <img src="rome/first_rome_breakfast/9.jpg" />
+    <img src="rome/first_rome_breakfast/4.jpg" />
+    <img src="rome/first_rome_breakfast/10.jpg" />
+    <img src="rome/first_rome_breakfast/1.jpg" />
+    <img src="rome/first_rome_breakfast/3.jpg" />
+    <img src="rome/first_rome_breakfast/5.jpg" />
+    <img src="rome/first_rome_breakfast/6.jpg" />
+    <img src="rome/first_rome_breakfast/7.jpg" />
+</div>
+
+<p>После Москвы и Китая все в Риме (и дальше в других городах) казалось таким уютно маленьким, “камерным”. Невысокие здания, узкие улочки, маленькие машины — все вокруг казалось более компактным.</p>
+
+<figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="rome/coziness/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="rome/coziness/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+<figure class="post-video-player post-video-player--chrome-hidden" data-post-video-player="" data-hls-src="rome/vibe_1/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="rome/vibe_1/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+<p><em>Смешнявый прохожий :)</em></p>
+
+<figure class="post-video-player post-video-player--chrome-hidden" data-post-video-player="" data-hls-src="rome/vibe_2/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="rome/vibe_2/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+<p>Тут даже автомобили маленькие.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/small_car.jpg" />
+    <img src="rome/small_car_2.jpg" />
+</div>
+
+<p>Даже от всемирно известных достопримечательностей не было эффекта “размаха” и помпезности.
+Тот же Колизей в реальности оказался гораздо более “миниатюрным”, чем мы представляли себе.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/colosseum/3.jpg" />
+    <img src="rome/colosseum/1.jpg" />
+    <img src="rome/colosseum/5.jpg" />
+    <img src="rome/colosseum/2.jpg" />
+</div>
+
+<p>Очень атмосферными оказались узенькие улочки в центре города. Каждый закоулок с историей. Эту живость усиливали бесконечные столики кафе — кажется, почти у каждого заведения была своя летняя веранда. Да, Рим — это место, где жизнь происходит прямо на улицах города. Это отличается от Москвы или китайских городов. Впрочем, если истолковать эту фразу буквально, то тоже не ошибешься — мусор, странные люди на улицах тоже присутствовали :) И это тоже отличается от Москвы :)</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/DSC_0688.JPG" />
+    <img src="rome/DSC_0692.JPG" />
+    <img src="rome/DSC_0659.JPG" />
+    <img src="rome/DSC_0660.JPG" />
+    <img src="rome/DSC_0579.JPG" />
+    <img src="rome/DSC_0580.JPG" />
+    <img src="rome/DSC_0598.JPG" />
+    <img src="rome/DSC_0682.JPG" />
+</div>
+
+<div class="horizontal-scroll">
+    <img src="rome/slavka/slavka_with_camera.jpg" />
+    <img src="rome/slavka/slavka_street.JPG" />
+</div>
+
+<div class="horizontal-scroll">
+    <img src="rome/from_kate/1.jpg" />
+    <img src="rome/from_kate/2.jpg" />
+    <img src="rome/from_kate/3.jpg" />
+    <img src="rome/from_kate/4.jpg" />
+    <img src="rome/from_kate/5.jpg" />
+    <img src="rome/from_kate/6.jpg" />
+    <img src="rome/from_kate/7.jpg" />
+    <img src="rome/from_kate/8.jpg" />
+    <img src="rome/from_kate/9.jpg" />
+    <img src="rome/from_kate/10.jpg" />
+    <img src="rome/from_kate/11.jpg" />
+    <img src="rome/from_kate/12.jpg" />
+    <img src="rome/from_kate/13.jpg" />
+    <img src="rome/from_kate/15.jpg" />
+    <img src="rome/from_kate/16.jpg" />
+    <img src="rome/from_kate/17.jpg" />
+    <img src="rome/from_kate/18.jpg" />
+</div>
+
+<div class="horizontal-scroll">
+    <img src="rome/kate/kate_the_best.JPG" />
+    <img src="rome/from_kate/19.jpg" />
+</div>
+
+<h1 id="пройдемся-по">Пройдемся по</h1>
+<h1 id="историческому-риму">историческому Риму!</h1>
+
+<p>Начнем, конечно же, с <strong>Колизея</strong>. Ощущается он, как мы уже отметили, не таким грандиозным, каким изначально себе представляли. Но от этого он не менее атмосферный!</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/colosseum/11.jpg" />
+    <img src="rome/colosseum/9.jpg" />
+    <img src="rome/colosseum/10.jpg" />
+    <img src="rome/near_coliseo.jpg" />
+</div>
+
+<p>Как известно Рим расположен на семи холмах. Оказавшись на главном из них <strong>Капитолийском</strong>, увидим разом множество достопримечательностей.</p>
+
+<p><img src="rome/from_kate/24.jpg" /></p>
+
+<p>С площади Арачелли поднимемся по ступенькам (созданным самим Микеланджело) и окажемся на <strong>Капитолийской площади</strong>.</p>
+
+<p>Перед нами окажется <strong>Дворец Сенаторов</strong> - вдумайтесь только - построенный еще в 1 веке до н.э.</p>
+
+<p><img src="rome/DSC_0927.JPG" /></p>
+
+<p>Слева увидим базилику <strong>Санта-Мария-ин-Аричели</strong>, справа музей.</p>
+
+<p><img src="rome/basilica.JPG" /></p>
+
+<p>Теперь окажемся на <strong>Римском Форуме</strong>. Изначально эта территория служила целям кладбища, но однажды 
+ее переделали в место для народных дебатов, чем собственно сейчас и известен Форум.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/DSC_0695.JPG" />
+    <img src="rome/DSC_0696.JPG" />
+</div>
+
+<p>Известная <strong>волчица</strong>, которая по легенде прокормила братьев-младенцев Ромула и Рема. 
+По легенде, Ромул убил Рема и стал правителем города — именно в честь него Рим и получил свое название.</p>
+
+<p><img src="rome/DSC_0701.JPG" /></p>
+
+<p>Во время экскурсии в какой-то момент появилось странное ощущение, будто грань между историей, мифами и реальностью начала немного размываться. Рим — город с очень богатой и длинной историей, и большое место во всем этом занимает религия.
+<!-- И даже несмотря на то, что это вообще не “наша тематика”, концентрация религиозных артефактов и историй вокруг них невольно заставляла задумываться о том, где заканчиваются реальные события и начинается мифология. -->
+Например, в базилике Санта-Мария-ин-Аричели, связанной со святой Еленой, которая, по преданию, привезла в Рим реликвии, связанные с распятием Христа. И церковь буквально построена вокруг этой истории. Она считается одним из главных мест хранения христианских реликвий в Риме.
+Только представьте себе: ты стоишь среди объектов, которым почти 1700 лет; вокруг реликвии, в которые люди верят веками; и мозг одновременно воспринимает это как историю, религию и почти легенду.</p>
+
+<p>В Италии история вообще ощущалась как никогда близкой. В Венеции мы были в Chiesa di San Vidal на концерте Вивальди. Это старая венецианская церковь, сейчас используется как концертный зал. Стены этой церкви помнят Вивальди. Просто вау. (Не претендуем на 100%-ую историческую достоверность, но суть вы поняли).</p>
+
+<p><img src="venice/vivaldi.JPG" alt="Вивальди" /></p>
+
+<p>Но про Венецию мы еще расскажем отдельно, а пока вернемся к Риму.</p>
+
+<p><strong>Испанская площадь и Испанская лестница.</strong></p>
+
+<div class="horizontal-scroll">
+    <img src="rome/spanish_square.JPG" />
+    <img src="rome/DSC_0845.JPG" />
+</div>
+
+<p><strong>Фонтан Треви</strong>. Тот самый знаменитый фонтан!</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/from_kate/21.jpg" />
+    <img src="rome/from_kate/22.jpg" />
+</div>
+
+<p><strong>Пантеон.</strong></p>
+
+<p>Любопытно, что снаружи Пантеон не очень похож на церковь — скорее на музей или какое-нибудь важное правительственное здание. Однако сегодня это действующая католическая церковь, а изначально “Храм Всех Богов”.</p>
+
+<p><img src="rome/DSC_0718.JPG" /></p>
+
+<p><strong>Замок и мост Святого Ангела.</strong></p>
+
+<div class="horizontal-scroll">
+    <img src="rome/DSC_0668.JPG" />
+    <img src="rome/from_kate/35.jpg" />
+</div>
+
+<p><strong>Фонтан Четырех рек</strong></p>
+
+<p>Находится он на <strong>пьяцце Навона</strong>. Сооружен в XVII веке по проекту Бернини.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/from_kate/23.jpg" />
+</div>
+
+<p><strong>Слова, которые часто можно увидеть на картах, и их значения:</strong></p>
+
+<ul>
+  <li>пьяцца - по-итальянски значит площадь</li>
+  <li>базилика - христианский храм</li>
+</ul>
+
+<div class="horizontal-scroll">
+    <img src="rome/DSC_0913.JPG" />
+    <img src="rome/DSC_0577.JPG" />
+    <img src="rome/DSC_0704.JPG" />
+    <img src="rome/DSC_0929.JPG" />
+    <img src="rome/DSC_0713.JPG" />
+    <img src="rome/DSC_0714.JPG" />
+    <img src="rome/DSC_0665.JPG" />
+</div>
+
+<p>Еще стоит отметить район <strong>Трастевере</strong>. Если вы приедете в Рим, то его вам будут рекомендовать буквально все.</p>
+
+<p>Здесь находятся одни из лучших кафе и баров города. Это очень живой, тусовочный район, который постоянно кипит, шумит и живет своей жизнью. Определенно советуем однажды там оказаться — а если попадете ночью, как мы, то прочувствуете это место на все 100%.</p>
+
+<p>Кстати, вайб этого района хорошо описывает такая сцена: какой-то странно выглядящий чувак танцевал под “Rasputin” (на телефоне был включен клип с Путиным) и очень громко подпевал — настолько, что у нас его бы уже давно успокоила полиция. В этот момент рядом стояли итальянские полицейские и, кажется, даже немного подпевали :)</p>
+
+<p>С - свобода.</p>
+
+<p>И разные ее проявления :)</p>
+
+<h1 id="трэш">Трэш</h1>
+
+<p>Нам было удивительно наблюдать за тем, как в городе (да в целом, в Италии) уживается культура с диковатостью. 
+Мусор разбросан по улицам города. Странноватые люди тоже часто встречаются.</p>
+
+<p>А метро - это вообще отдельная тема. Просто посмотрите на то, как выглядят некоторые станции. Мы были в шоке! Тут без комментариев - смотрите сами.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/DSC_0458.JPG" />
+    <img src="rome/subway/2.jpg" />
+    <img src="rome/DSC_0460.JPG" />
+    <img src="rome/DSC_0462.JPG" />
+    <img src="rome/DSC_0565.JPG" />
+    <img src="rome/subway/1.jpg" />
+    <img src="rome/DSC_0572.JPG" />
+    <img src="rome/DSC_0574.JPG" />
+</div>
+
+<p>Но есть и красивая станция - Колизей. Это буквально музей с историческими артефактами, представленными прямо на станции.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/coliseo_station.JPG" />
+    <img src="rome/coliseo_station_2.JPG" />
+    <img src="rome/coliseo_station_3.JPG" />
+    <img src="rome/coliseo_station_4.JPG" />
+</div>
+
+<h1 id="capuccino">Capuccino</h1>
+
+<p>Поговорим о кофе!</p>
+
+<p>Культура кофе тут совершенно другая. Сначала мы удивились, даже несколько огорчились, маленьким порциям, но потом поняли: итальянцы знают толк в правильном кофе.</p>
+
+<p>Мы почти нигде не встречали привычные кофейни/кафешки с кофе в стаканчике навынос. В Италии кофе пьют только из чашек, что интересно — часто за барными стойками. Добавляет к эстетике.</p>
+
+<p>Если это капучино, то в нем должны быть только эспрессо и плотная молочная пенка. Только пенка и эспрессо. Без молока. Если с молоком, то, как нам сказали, это уже “какой-то там кофе с молоком”, но не “правильный капучино”. Еще у них нет разделения на маленький, средний, большой — в каждом заведении свой единый стандарт, но почти всегда порция не будет большой. Не поняли, но приняли. Тем более что кофе почти везде действительно был очень вкусным. И с эстетикой :)</p>
+
+<figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="eating_coffee/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="eating_coffee/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+<figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="coffee_with_foam/master.m3u8">
+  <div class="post-video-player__frame">
+    <video class="post-video-player__video" playsinline="" preload="none" poster="coffee_with_foam/poster.jpg"></video>
+    <div class="post-video-player__loader" role="status" aria-label="Loading video">
+      <span class="post-video-player__spinner" aria-hidden="true"></span>
+    </div>
+    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
+      <span class="post-video-player__play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
+      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+      <div class="post-video-player__toolbar-actions">
+        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <div class="post-video-player__quality-label" hidden="">
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected="">Auto</option>
+          </select>
+        </div>
+        <div class="post-video-player__rate-label">
+          <select class="post-video-player__rate" aria-label="Playback speed">
+            <option value="0.5">0.5×</option>
+            <option value="0.75">0.75×</option>
+            <option value="1" selected="">1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="post-video-player__error" hidden=""></p>
+</figure>
+
+<div class="horizontal-scroll">
+    <img src="coffee/4.jpg" />
+    <img src="coffee/6.jpg" />
+    <img src="coffee/8.jpg" />
+    <img src="coffee/1.jpg" />
+    <img src="coffee/3.jpg" />
+    <img src="coffee/2.jpg" />
+    <img src="coffee/5.jpg" />
+</div>
+
+<p>Завтракают итальянцы обычно довольно просто: кофе с круассаном или сэндвичем. Минус ПП, плюс вайб.</p>
+
+<p>Да — ассоциации Италии с пиццей вообще не стереотип! Пиццы здесь буквально повсюду! Интересный факт: есть разные виды пиццы. Римская — более тонкая и прямоугольная, неаполитанская — круглая и более толстая, та, к которой мы обычно и привыкли.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/food/pizzas.jpg" />
+    <img src="rome/food/pizza_1.jpg" />
+    <img src="rome/food/pizza_2.jpg" />
+    <img src="rome/food/pizza_3.jpg" />
+    <img src="rome/food/pizza_4.jpg" />
+    <img src="rome/food/pizza_5.jpg" />
+</div>
+
+<p>Паста тоже популярна.</p>
+
+<p>Ризотто! <del>is a wicked problem @Giancarlo Succi.</del></p>
+
+<div class="horizontal-scroll">
+    <img src="rome/food/risotto_2.jpg" />
+    <img src="rome/food/risotto.jpg" />
+</div>
+
+<p>Очень много мороженого, в так называемых джелатериях. Для итальянцев это как отдельное блюдо.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/food/ice_cream.jpg" />
+    <img src="rome/food/big_ice_cream.jpg" />
+    <img src="rome/food/ice_cream_2.jpg" />
+</div>
+
+<p>Из десертов особенно запомнились канноли — хрустящие трубочки с творожной начинкой. Канноли бывают разных размеров и с разной начинкой: помимо стандартной, творожная паста может быть фисташковой, шоколадной и прочей.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/food/cannoli.jpg" />
+    <img src="rome/food/cannoli_2.jpg" />
+    <img src="rome/food/cannoli_3.jpg" />
+</div>
+
+<p>Тирамису. <em>И кстати, возможно, единственный наш кофе в стаканчике в Италии.</em></p>
+
+<p><img src="rome/food/tiramisu.jpg" /></p>
+
+<p>Прочие иальянские вкусности.</p>
+
+<div class="horizontal-scroll">
+    <img src="rome/food/fruit_sweets.jpg" />
+    <img src="rome/food/cookies.jpg" />
+    <img src="rome/food/cookies_2.jpg" />
+    <img src="rome/food/cookies_3.jpg" />
+    <img src="rome/food/cookies_4.jpg" />
+    <img src="rome/food/sweet_things.jpg" />
+    <img src="rome/food/buns.jpg" />
+    <img src="rome/food/small_thing.jpg" />
+    <img src="rome/food/colcone.jpg" />
+    <img src="rome/DSC_0838.JPG" />
+    <img src="rome/food/sandwiches.jpg" />
+    <img src="rome/food/aperol.jpg" />
+</div>
+
+<p>И вообще, кстати, путешествуя по Европе чувствуешь себя менее изолированным, чем когда путешествуешь по Китаю, например. По большей части, наверное, из-за отсутствия языкового барьера. Но стоит сказать, что и некоторые европейцы не особо знают английский, особенно взрослые люди. часто они просто на итальянском скажут тебе, что не понимают.</p>
+
+<p>Зато какой красивый итальянский!</p>
+
+<p>Из примеров:</p>
+
+<ul>
+  <li><strong>чао</strong> — привет, пока</li>
+  <li><strong>грацие</strong> — спасибо</li>
+  <li><strong>прего</strong> — пожалуйста (очень мило было слышать это каждый раз в кафешках, типа «угощайся»)</li>
+  <li><strong>рагацци</strong> — ребята</li>
+  <li><strong>чао, рагацци</strong> — тоже из лексикона кафешек</li>
+</ul>
+
+<div class="horizontal-scroll">
+    <img src="rome/hotel_district/1.jpg" />
+    <img src="rome/hotel_district/2.jpg" />
+    <img src="rome/hotel_district/3.jpg" />
+    <img src="rome/hotel_district/4.jpg" />
+    <img src="rome/hotel_district/5.jpg" />
+    <img src="rome/hotel_district/6.jpg" />
+    <img src="rome/hotel_district/7.jpg" />
+    <img src="rome/hotel_district/8.jpg" />
+    <img src="rome/hotel_district/9.jpg" />
+</div>
+
+<div class="horizontal-scroll">
+    <img src="rome/from_kate/29.jpg" />
+    <img src="rome/from_kate/36.jpg" />
+    <img src="rome/from_kate/30.jpg" />
+    <img src="rome/from_kate/31.jpg" />
+    <img src="rome/from_kate/33.jpg" />
+    <img src="rome/from_kate/34.jpg" />
+    <img src="rome/from_kate/32.jpg" />
+</div>
+
+<p>Скажем честно:</p>
+
+<p><strong>мы абсолютно точно прониклись культурой Италии!</strong></p>
+
+<p>Новое любимое направление для путешествий (Европа) открыто. Грацие Риму! А мы двигаемся дальше.</p>
+
+<p>Ciao!</p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="europe" /><category term="italy" /><category term="rome" /><category term="ancient-history" /><category term="colosseum" /><category term="italian-food" /><category term="coffee" /><category term="pizza" /><category term="gelato" /><category term="schengen-visa" /><category term="metro" /><category term="trastevere" /><category term="street-life" /><summary type="html"><![CDATA[Открываем для себя Европу — начинаем с Италии! А наш первый итальянский город - Рим - это буквально музей под открытым небом. Его улицы - это самые наглядные иллюстрации для учебников истории. А какой здесь климат! а еда! В общем, это путешествие: dolce vita · felicità · cappuccino · serenità — ну вы поняли.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://storage.yandexcloud.net/yarkivaev-blog/italy/derived/rome/from_kate/20.w1400.webp" /><media:content medium="image" url="https://storage.yandexcloud.net/yarkivaev-blog/italy/derived/rome/from_kate/20.w1400.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ru"><title type="html">Батуми</title><link href="https://2xiaomao.ru/travel/batumi/" rel="alternate" type="text/html" title="Батуми" /><published>2025-06-04T00:00:00+03:00</published><updated>2025-06-04T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/batumi</id><content type="html" xml:base="https://2xiaomao.ru/travel/batumi/"><![CDATA[<p>Батуми — курортный “русский” город в Грузии на побережье Чёрного моря, столица автономной республики Аджария.</p>
 
 <p>За неделю, проведённую в Батуми, мы прониклись кавказским гостеприимством, насладились горными пейзажами и, конечно же, попробовали настоящую грузинскую кухню.</p>
 
@@ -340,7 +1135,7 @@
 <img src="kate/581.jpg" alt="kate/581" />
 <img src="kate/632.jpg" alt="kate/632" />
 <img src="kate/642.jpg" alt="kate/642" />
-<img src="kate/665.jpg" alt="kate/665" /></p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="black-sea" /><category term="coastal-city" /><category term="adjara" /><category term="resort" /><category term="dogs" /><category term="balconies" /><category term="khachapuri" /><category term="botanical-garden" /><category term="modern-architecture" /><category term="arab-quarter" /><category term="waterfall" /><category term="mountains" /><category term="market" /><category term="casino" /><category term="multilingual" /><category term="promenade" /><summary type="html"><![CDATA[Черноморский курорт в горной Аджарии. Русский город в Грузии с собаками, балкончиками, хачапури и шикарным ботаническим садом. От современной архитектуры до арабского квартала - Батуми удивляет разнообразием.]]></summary></entry><entry xml:lang="ru"><title type="html">Чжанцзяцзе (张家界, Zhāngjiājiè)</title><link href="https://2xiaomao.ru/travel/zhangjiajie/" rel="alternate" type="text/html" title="Чжанцзяцзе (张家界, Zhāngjiājiè)" /><published>2025-01-12T00:00:00+03:00</published><updated>2025-01-12T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/zhangjiajie</id><content type="html" xml:base="https://2xiaomao.ru/travel/zhangjiajie/"><![CDATA[<p>Смотрели фильм “Аватар”? Наверняка смотрели. Значит, уже можете примерно представить, как выглядит наша следующая точка путешествия. Это место — Чжанцзяцзе!</p>
+<img src="kate/665.jpg" alt="kate/665" /></p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="black-sea" /><category term="coastal-city" /><category term="adjara" /><category term="resort" /><category term="dogs" /><category term="balconies" /><category term="khachapuri" /><category term="botanical-garden" /><category term="modern-architecture" /><category term="arab-quarter" /><category term="waterfall" /><category term="mountains" /><category term="market" /><category term="casino" /><category term="multilingual" /><category term="promenade" /><summary type="html"><![CDATA[Черноморский курорт в горной Аджарии. Русский город в Грузии с собаками, балкончиками, хачапури и шикарным ботаническим садом. От современной архитектуры до арабского квартала - Батуми удивляет разнообразием.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://storage.yandexcloud.net/yarkivaev-blog/batumi/1/DSC_0523.JPG" /><media:content medium="image" url="https://storage.yandexcloud.net/yarkivaev-blog/batumi/1/DSC_0523.JPG" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ru"><title type="html">Чжанцзяцзе (张家界, Zhāngjiājiè)</title><link href="https://2xiaomao.ru/travel/zhangjiajie/" rel="alternate" type="text/html" title="Чжанцзяцзе (张家界, Zhāngjiājiè)" /><published>2025-01-12T00:00:00+03:00</published><updated>2025-01-12T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/zhangjiajie</id><content type="html" xml:base="https://2xiaomao.ru/travel/zhangjiajie/"><![CDATA[<p>Смотрели фильм “Аватар”? Наверняка смотрели. Значит, уже можете примерно представить, как выглядит наша следующая точка путешествия. Это место — Чжанцзяцзе!</p>
 
 <p>Из Шанхая на скоростном поезде мы добрались до небольшого (по китайским меркам) города Чжанцзяцзе в провинции Хунань. Этот город — ближайшая точка к уникальным природным достопримечательностям, ради которых мы и приехали: красивейшим лесам, паркам и тем самым висячим скалам, как из фильма!</p>
 
@@ -453,7 +1248,7 @@
 
 <p><img src="07/DSC_0893.JPG" alt="07/0893" /></p>
 
-<p>Вот такой интересный городок затерян в Китае, и тот, кто его находит, получает приз — приключения, словно в фэнтезийном фильме.</p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="mountains" /><category term="nature" /><category term="avatar" /><category term="hunan" /><category term="cable-car" /><category term="snow" /><category term="tianmen" /><summary type="html"><![CDATA[Горы Аватара]]></summary></entry><entry xml:lang="ru"><title type="html">Пекин (北京, Běijīng)</title><link href="https://2xiaomao.ru/travel/beijing/" rel="alternate" type="text/html" title="Пекин (北京, Běijīng)" /><published>2024-12-31T00:00:00+03:00</published><updated>2024-12-31T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/beijing</id><content type="html" xml:base="https://2xiaomao.ru/travel/beijing/"><![CDATA[<p>У нас формируется замечательная традиция - праздновать Новый год в путешествии! 2025 год мы снова отметили в Китае. Эта страна нас невероятно привлекает, поэтому мы вновь отправились в большой китайский трип! Первая точка была в Пекине.</p>
+<p>Вот такой интересный городок затерян в Китае, и тот, кто его находит, получает приз — приключения, словно в фэнтезийном фильме.</p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="mountains" /><category term="nature" /><category term="avatar" /><category term="hunan" /><category term="cable-car" /><category term="snow" /><category term="tianmen" /><summary type="html"><![CDATA[Горы Аватара]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://storage.yandexcloud.net/yarkivaev-blog/zhangjiajie/kate/386.jpg" /><media:content medium="image" url="https://storage.yandexcloud.net/yarkivaev-blog/zhangjiajie/kate/386.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ru"><title type="html">Пекин (北京, Běijīng)</title><link href="https://2xiaomao.ru/travel/beijing/" rel="alternate" type="text/html" title="Пекин (北京, Běijīng)" /><published>2024-12-31T00:00:00+03:00</published><updated>2024-12-31T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/beijing</id><content type="html" xml:base="https://2xiaomao.ru/travel/beijing/"><![CDATA[<p>У нас формируется замечательная традиция - праздновать Новый год в путешествии! 2025 год мы снова отметили в Китае. Эта страна нас невероятно привлекает, поэтому мы вновь отправились в большой китайский трип! Первая точка была в Пекине.</p>
 
 <p><img src="31/DSC_0277.JPG" alt="31/0277" />
 <img src="31/DSC_0278.JPG" alt="31/0278" />
@@ -600,7 +1395,7 @@
 
 <p>Забавный китаец :)</p>
 
-<p>Вот так и закончилось наше путешествие по Пекину - с одной стороны, уже такому знакомому, но все еще не до конца изведанному, полному удивительных мест и людей городу.</p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="capital" /><category term="forbidden-city" /><category term="new-year" /><category term="bicycles" /><category term="architecture" /><category term="cctv-building" /><category term="food" /><category term="culture" /><category term="wangfujing" /><category term="opera-theater" /><summary type="html"><![CDATA[Пекинский бродвей, китайский воллейбол, новогодняя посиделка с китаянками, запретный город, штаны (!). А это уже наш следующий Новый год - и снова в Китае!]]></summary></entry><entry xml:lang="ru"><title type="html">Сингапур (Singapore)</title><link href="https://2xiaomao.ru/travel/singapore/" rel="alternate" type="text/html" title="Сингапур (Singapore)" /><published>2024-01-13T00:00:00+03:00</published><updated>2024-01-13T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/singapore</id><content type="html" xml:base="https://2xiaomao.ru/travel/singapore/"><![CDATA[<p>Наверное, в Сингапуре бывал не каждый, хотя многие о нем, мы уверены, слышали. Сингапур часто попадает в топы самых дорогих и самых безопасных городов мира, а его аэропорт вообще признан лучшим в мире. Да, все эти факты — про следующую точку нашего путешествия.</p>
+<p>Вот так и закончилось наше путешествие по Пекину - с одной стороны, уже такому знакомому, но все еще не до конца изведанному, полному удивительных мест и людей городу.</p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="capital" /><category term="forbidden-city" /><category term="new-year" /><category term="bicycles" /><category term="architecture" /><category term="cctv-building" /><category term="food" /><category term="culture" /><category term="wangfujing" /><category term="opera-theater" /><summary type="html"><![CDATA[Пекинский бродвей, китайский воллейбол, новогодняя посиделка с китаянками, запретный город, штаны (!). А это уже наш следующий Новый год - и снова в Китае!]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://storage.yandexcloud.net/yarkivaev-blog/beijing/icon.jpg" /><media:content medium="image" url="https://storage.yandexcloud.net/yarkivaev-blog/beijing/icon.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ru"><title type="html">Сингапур (Singapore)</title><link href="https://2xiaomao.ru/travel/singapore/" rel="alternate" type="text/html" title="Сингапур (Singapore)" /><published>2024-01-13T00:00:00+03:00</published><updated>2024-01-13T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/singapore</id><content type="html" xml:base="https://2xiaomao.ru/travel/singapore/"><![CDATA[<p>Наверное, в Сингапуре бывал не каждый, хотя многие о нем, мы уверены, слышали. Сингапур часто попадает в топы самых дорогих и самых безопасных городов мира, а его аэропорт вообще признан лучшим в мире. Да, все эти факты — про следующую точку нашего путешествия.</p>
 
 <p><img src="kate_with_maria_bay.JPG" alt="kate_with_maria_bay" /></p>
 
@@ -819,7 +1614,7 @@
 <p><img src="15/DSC_0305.JPG" alt="15/0305" />
 <img src="15/DSC_0325.JPG" alt="15/0325" /></p>
 
-<p>Так завершилось наше путешествие по Сингапуру. Одна из давних мечт стала реальностью. Этот город-государство действительно такой, как его описывают: очень современный, аккуратный, спокойный, однако и весьма дорогой. Если у нас когда-нибудь появится возможность обеспечить себя такой сказкой, то мы, пожалуй, воспользуемся этим шансом. Копилка мест, где мы планируем пожить в будущем, пополнилась!</p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="city-state" /><category term="gardens-by-the-bay" /><category term="marina-bay-sands" /><category term="multicultural" /><category term="clean" /><category term="expensive" /><category term="laws-regulations" /><category term="tropical" /><category term="equator" /><category term="airport" /><category term="safe" /><summary type="html"><![CDATA[Азиатская сказка в городе-государстве с необычными законами. Здесь нельзя петь, пользоваться жвачкой. По многим рейтингам это один из лучших городов мира. Чистый, прогрессивный и дорогой Сингапур - хотели бы заплатить за такую азиатскую сказку?]]></summary></entry><entry xml:lang="ru"><title type="html">Гонгконг (香港, Xiānggǎng, Hongkong)</title><link href="https://2xiaomao.ru/travel/hongkong/" rel="alternate" type="text/html" title="Гонгконг (香港, Xiānggǎng, Hongkong)" /><published>2024-01-12T00:00:00+03:00</published><updated>2024-01-12T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/hongkong</id><content type="html" xml:base="https://2xiaomao.ru/travel/hongkong/"><![CDATA[<p>До Гонконга можно довольно быстро и просто добраться из Шэньженя. Метро, таможня — привет, китайский Нью-Йорк!</p>
+<p>Так завершилось наше путешествие по Сингапуру. Одна из давних мечт стала реальностью. Этот город-государство действительно такой, как его описывают: очень современный, аккуратный, спокойный, однако и весьма дорогой. Если у нас когда-нибудь появится возможность обеспечить себя такой сказкой, то мы, пожалуй, воспользуемся этим шансом. Копилка мест, где мы планируем пожить в будущем, пополнилась!</p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="city-state" /><category term="gardens-by-the-bay" /><category term="marina-bay-sands" /><category term="multicultural" /><category term="clean" /><category term="expensive" /><category term="laws-regulations" /><category term="tropical" /><category term="equator" /><category term="airport" /><category term="safe" /><summary type="html"><![CDATA[Азиатская сказка в городе-государстве с необычными законами. Здесь нельзя петь, пользоваться жвачкой. По многим рейтингам это один из лучших городов мира. Чистый, прогрессивный и дорогой Сингапур - хотели бы заплатить за такую азиатскую сказку?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://storage.yandexcloud.net/yarkivaev-blog/singapore/supertree_detailed.JPG" /><media:content medium="image" url="https://storage.yandexcloud.net/yarkivaev-blog/singapore/supertree_detailed.JPG" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ru"><title type="html">Гонгконг (香港, Xiānggǎng, Hongkong)</title><link href="https://2xiaomao.ru/travel/hongkong/" rel="alternate" type="text/html" title="Гонгконг (香港, Xiānggǎng, Hongkong)" /><published>2024-01-12T00:00:00+03:00</published><updated>2024-01-12T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/hongkong</id><content type="html" xml:base="https://2xiaomao.ru/travel/hongkong/"><![CDATA[<p>До Гонконга можно довольно быстро и просто добраться из Шэньженя. Метро, таможня — привет, китайский Нью-Йорк!</p>
 
 <p>Да, наконец-то мы оказались в этом знаменитом (и дорогущем) городе мира. Крышесносные небоскребы, квартиры-коробки, межнациональная солянка и многое другое. Вот он — Гонконг!</p>
 
@@ -1027,7 +1822,7 @@
 <img src="11/DSC_0381.JPG" alt="0381" />
 <img src="11/DSC_0444.JPG" alt="0444" />
 <img src="12/DSC_0051.JPG" alt="0051" />
-<img src="12/DSC_0074.JPG" alt="0074" /></p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="special-administrative-region" /><category term="skyscrapers" /><category term="multicultural" /><category term="cantonese" /><category term="double-decker-buses" /><category term="harbor" /><category term="british-influence" /><category term="expensive" /><category term="density" /><category term="metro" /><summary type="html"><![CDATA[Боитесь китайского языка, боитесь китайского файервола? Тогда добро пожаловать в Гонконг, а-ля Китайский Нью-Йорк! Первый в мире город по количеству небоскребов, город с колоссальной плотностью населения. А еще это город двухэтажных автобусов :)]]></summary></entry><entry xml:lang="ru"><title type="html">Гуанчжоу (广州, Guǎngzhōu)</title><link href="https://2xiaomao.ru/travel/guangzhou/" rel="alternate" type="text/html" title="Гуанчжоу (广州, Guǎngzhōu)" /><published>2024-01-09T00:00:00+03:00</published><updated>2024-01-09T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/guangzhou</id><content type="html" xml:base="https://2xiaomao.ru/travel/guangzhou/"><![CDATA[<p>В Гуанчжоу мы были проездом - провели там всего 1,5 дня, но зато каких!</p>
+<img src="12/DSC_0074.JPG" alt="0074" /></p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="special-administrative-region" /><category term="skyscrapers" /><category term="multicultural" /><category term="cantonese" /><category term="double-decker-buses" /><category term="harbor" /><category term="british-influence" /><category term="expensive" /><category term="density" /><category term="metro" /><summary type="html"><![CDATA[Боитесь китайского языка, боитесь китайского файервола? Тогда добро пожаловать в Гонконг, а-ля Китайский Нью-Йорк! Первый в мире город по количеству небоскребов, город с колоссальной плотностью населения. А еще это город двухэтажных автобусов :)]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://storage.yandexcloud.net/yarkivaev-blog/hongkong/taxi_in_baker_street.jpg" /><media:content medium="image" url="https://storage.yandexcloud.net/yarkivaev-blog/hongkong/taxi_in_baker_street.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ru"><title type="html">Гуанчжоу (广州, Guǎngzhōu)</title><link href="https://2xiaomao.ru/travel/guangzhou/" rel="alternate" type="text/html" title="Гуанчжоу (广州, Guǎngzhōu)" /><published>2024-01-09T00:00:00+03:00</published><updated>2024-01-09T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/guangzhou</id><content type="html" xml:base="https://2xiaomao.ru/travel/guangzhou/"><![CDATA[<p>В Гуанчжоу мы были проездом - провели там всего 1,5 дня, но зато каких!</p>
 
 <p><img src="night_skyscraper.jpg" alt="night_skyscraper.JPG" /></p>
 
@@ -1179,7 +1974,7 @@
 
 <p><img src="the_biggest_tower_with_slava.jpg" alt="the biggest_tower_with_slava.JPG" /></p>
 
-<p>Вот такая вот она - торговая и промышленная столица Китая. Наша прогулка по Гуанчжоу закончена, и мы поехали дальше - в Шэньчжень!</p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="skyscrapers" /><category term="commercial-center" /><category term="trade" /><category term="urban" /><category term="night-life" /><category term="markets" /><category term="shopping" /><category term="metropolitan" /><category term="guangdong" /><summary type="html"><![CDATA[Небоскребы, небоскребы, небоскребы. Магазины, рынки, торговые лавки. И конечно же, много современных, модных мест в Гуанчжоу.]]></summary></entry><entry xml:lang="ru"><title type="html">Шеньчжень (深圳, Shēnzhèn)</title><link href="https://2xiaomao.ru/travel/shenzhen/" rel="alternate" type="text/html" title="Шеньчжень (深圳, Shēnzhèn)" /><published>2024-01-09T00:00:00+03:00</published><updated>2024-01-09T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/shenzhen</id><content type="html" xml:base="https://2xiaomao.ru/travel/shenzhen/"><![CDATA[<p>Сколько провинций и городов уже объездили, до сих пор удивляемся китайскому разнообразию и богатству. Есть крупные города, высокие по уровню политической и экономической значимости — они по праву ухоженные, обеспеченные, местами “вылизанные”. Но в Китае такую характеристику можно дать не одному, не двум городам, да даже и не в таких порядках тут счет.</p>
+<p>Вот такая вот она - торговая и промышленная столица Китая. Наша прогулка по Гуанчжоу закончена, и мы поехали дальше - в Шэньчжень!</p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="skyscrapers" /><category term="commercial-center" /><category term="trade" /><category term="urban" /><category term="night-life" /><category term="markets" /><category term="shopping" /><category term="metropolitan" /><category term="guangdong" /><summary type="html"><![CDATA[Небоскребы, небоскребы, небоскребы. Магазины, рынки, торговые лавки. И конечно же, много современных, модных мест в Гуанчжоу.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://storage.yandexcloud.net/yarkivaev-blog/guangzhou/night_skyscraper.jpg" /><media:content medium="image" url="https://storage.yandexcloud.net/yarkivaev-blog/guangzhou/night_skyscraper.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ru"><title type="html">Шеньчжень (深圳, Shēnzhèn)</title><link href="https://2xiaomao.ru/travel/shenzhen/" rel="alternate" type="text/html" title="Шеньчжень (深圳, Shēnzhèn)" /><published>2024-01-09T00:00:00+03:00</published><updated>2024-01-09T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/shenzhen</id><content type="html" xml:base="https://2xiaomao.ru/travel/shenzhen/"><![CDATA[<p>Сколько провинций и городов уже объездили, до сих пор удивляемся китайскому разнообразию и богатству. Есть крупные города, высокие по уровню политической и экономической значимости — они по праву ухоженные, обеспеченные, местами “вылизанные”. Но в Китае такую характеристику можно дать не одному, не двум городам, да даже и не в таких порядках тут счет.</p>
 
 <p>Разные города обладают разными потенциалами и естественно разными бюждежтами, но все они словно логически объединены какой-то общей идеей.</p>
 
@@ -1363,7 +2158,7 @@
 
 <p><img src="strange_building_fix.jpg" alt="strange_building_fix.JPG" /></p>
 
-<p><img src="back_enterance_near_hotel.jpg" alt="back_enterance_near_hotel.JPG" /></p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="electronics-market" /><category term="technology" /><category term="innovation" /><category term="subtropical" /><category term="art-district" /><category term="skyscrapers" /><category term="modern" /><category term="repair-services" /><category term="gadgets" /><category term="components" /><summary type="html"><![CDATA[Сказка по-китайски (особенно для таких гиков, как мы). Солнечный, жаркий, зеленый, ультрасовременный город и по совместительству мировой центр электроники. Здесь можно затариться как всевозможными готовыми девайсами, так и любыми отдельными компонентами. Здесь они (по китайским традициям) представлены в огроменном ассортименте.]]></summary></entry><entry xml:lang="ru"><title type="html">Гуйлинь (桂林, Guìlín)</title><link href="https://2xiaomao.ru/travel/guilin/" rel="alternate" type="text/html" title="Гуйлинь (桂林, Guìlín)" /><published>2024-01-07T00:00:00+03:00</published><updated>2024-01-07T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/guilin</id><content type="html" xml:base="https://2xiaomao.ru/travel/guilin/"><![CDATA[<p>Китай мы хотели изучить разнопланово, поэтому следующим пунктом нашего путешествия выбрали городок, который совершенно не похож ни на один другой, посещенный нами ранее. Это Гуйлинь (桂林, Guìlín). Запрятанный в горах маленький город с советской атмосферой и дикой эстетикой.</p>
+<p><img src="back_enterance_near_hotel.jpg" alt="back_enterance_near_hotel.JPG" /></p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="electronics-market" /><category term="technology" /><category term="innovation" /><category term="subtropical" /><category term="art-district" /><category term="skyscrapers" /><category term="modern" /><category term="repair-services" /><category term="gadgets" /><category term="components" /><summary type="html"><![CDATA[Сказка по-китайски (особенно для таких гиков, как мы). Солнечный, жаркий, зеленый, ультрасовременный город и по совместительству мировой центр электроники. Здесь можно затариться как всевозможными готовыми девайсами, так и любыми отдельными компонентами. Здесь они (по китайским традициям) представлены в огроменном ассортименте.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://storage.yandexcloud.net/yarkivaev-blog/shenzhen/beautiful_captions_on_the_building_with_flowers.jpg" /><media:content medium="image" url="https://storage.yandexcloud.net/yarkivaev-blog/shenzhen/beautiful_captions_on_the_building_with_flowers.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ru"><title type="html">Гуйлинь (桂林, Guìlín)</title><link href="https://2xiaomao.ru/travel/guilin/" rel="alternate" type="text/html" title="Гуйлинь (桂林, Guìlín)" /><published>2024-01-07T00:00:00+03:00</published><updated>2024-01-07T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/guilin</id><content type="html" xml:base="https://2xiaomao.ru/travel/guilin/"><![CDATA[<p>Китай мы хотели изучить разнопланово, поэтому следующим пунктом нашего путешествия выбрали городок, который совершенно не похож ни на один другой, посещенный нами ранее. Это Гуйлинь (桂林, Guìlín). Запрятанный в горах маленький город с советской атмосферой и дикой эстетикой.</p>
 
 <p>Гуйлинь — довольно уютный южный городок, известный очаровательными пейзажами.</p>
 
@@ -1647,7 +2442,7 @@
 <img src="67.jpeg" alt="67" />
 <img src="68.jpeg" alt="68" />
 <img src="69.jpeg" alt="69" />
-<img src="70.jpeg" alt="70" /></p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="mountains" /><category term="nature" /><category term="elephant-trunk-hill" /><category term="lakes" /><category term="traditional-parks" /><category term="pagoda" /><category term="karst-landscape" /><category term="scenic" /><category term="guangxi" /><category term="peaceful" /><summary type="html"><![CDATA[Вы думали, что Китай - только про небоскребы и толпы людей? А вот и не так! Гуйлинь тому доказательство. Запрятанный в горах маленький город с советской атмосферой и дикой эстетикой. Холмы, озера, уютные парки - это все про Гуйлинь.]]></summary></entry><entry xml:lang="ru"><title type="html">Чэнду (成都, Chéngdū)</title><link href="https://2xiaomao.ru/travel/chengdu/" rel="alternate" type="text/html" title="Чэнду (成都, Chéngdū)" /><published>2024-01-03T00:00:00+03:00</published><updated>2024-01-03T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/chengdu</id><content type="html" xml:base="https://2xiaomao.ru/travel/chengdu/"><![CDATA[<p>Бамбук, панды, мандарины, косплееры, hot pot. Так можно коротко описать наш Новый год в Китае, а именно в Чэнду.</p>
+<img src="70.jpeg" alt="70" /></p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="mountains" /><category term="nature" /><category term="elephant-trunk-hill" /><category term="lakes" /><category term="traditional-parks" /><category term="pagoda" /><category term="karst-landscape" /><category term="scenic" /><category term="guangxi" /><category term="peaceful" /><summary type="html"><![CDATA[Вы думали, что Китай - только про небоскребы и толпы людей? А вот и не так! Гуйлинь тому доказательство. Запрятанный в горах маленький город с советской атмосферой и дикой эстетикой. Холмы, озера, уютные парки - это все про Гуйлинь.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://storage.yandexcloud.net/yarkivaev-blog/guilin/icon.jpg" /><media:content medium="image" url="https://storage.yandexcloud.net/yarkivaev-blog/guilin/icon.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ru"><title type="html">Чэнду (成都, Chéngdū)</title><link href="https://2xiaomao.ru/travel/chengdu/" rel="alternate" type="text/html" title="Чэнду (成都, Chéngdū)" /><published>2024-01-03T00:00:00+03:00</published><updated>2024-01-03T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/chengdu</id><content type="html" xml:base="https://2xiaomao.ru/travel/chengdu/"><![CDATA[<p>Бамбук, панды, мандарины, косплееры, hot pot. Так можно коротко описать наш Новый год в Китае, а именно в Чэнду.</p>
 
 <p><img src="1.jpeg" alt="1" /></p>
 
@@ -1894,195 +2689,4 @@
 <p><img src="67.jpeg" alt="67" /></p>
 <blockquote>
   <p>Панды играют в маджонг!!!</p>
-</blockquote>]]></content><author><name>Yaroslav Kivaev</name></author><category term="pandas" /><category term="sichuan" /><category term="bamboo" /><category term="hot-pot" /><category term="new-year" /><category term="cosplay" /><category term="anime" /><category term="nature-reserve" /><category term="subtropical" /><category term="mandarins" /><summary type="html"><![CDATA[Бамбук, панды, мандарины, косплееры, hot pot. Так можно коротко описать наш Новый год в Китае, а именно в Чэнду.]]></summary></entry><entry xml:lang="ru"><title type="html">Сиань (西安, Xi’an)</title><link href="https://2xiaomao.ru/travel/xian/" rel="alternate" type="text/html" title="Сиань (西安, Xi’an)" /><published>2023-12-31T00:00:00+03:00</published><updated>2023-12-31T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/xian</id><content type="html" xml:base="https://2xiaomao.ru/travel/xian/"><![CDATA[<p>Сиань стал первой точкой в нашем большом путешествии. Отправились в Сиань мы прямиком из Пекина: ночь в поезде, и к утру мы оказались уже в древнем городе и некогда столице Китая.</p>
-
-<p>Уставшие, но таки дотащившие свои чемоданы, пьем кофе у Барабанной башни.</p>
-
-<p><img src="1.jpeg" alt="1" /></p>
-
-<p>(Нет, это не реклама, просто вкусный кофе 😊)</p>
-
-<p>В первый день мы забрались на местную городскую стену (Xi’an City Wall или 西安城墙). Раньше она охраняла город от врагов, а сейчас притягивает толпы людей, причем не только китайцев, но и иностранных туристов. В общем, это одна из главных достопримечательностей города. Тут вам и тысячелетняя история, и наследие ЮНЕСКО. В некоторых туристических гайдах писали, что неискушенного путешественника сложно удивить, но вот нам местная стена точно понравилась.</p>
-
-<p>Только фонарики чего стоят.</p>
-
-<p><img src="2.jpeg" alt="2" /></p>
-
-<p>Особенно вечером.</p>
-
-<p><img src="3.jpeg" alt="3" /></p>
-
-<p>Стена словно отгораживает старую часть Сианя от вторжения современных небоскребов.</p>
-
-<p><img src="4.jpeg" alt="4" /></p>
-
-<p>Когда с одной стороны ее обступают высокие современные здания, на противоположной виднеются небольшие атмосферные домики.</p>
-
-<p><img src="5.jpeg" alt="5" /></p>
-
-<p>Кстати, если приглядеться, то можно заметить, чем занимаются люди в старой части города. Вроде ночь, а нигде не задёрнуты шторы. Не волнуются китайцы сильно насчёт приватности.</p>
-
-<p><img src="6.jpeg" alt="6" /></p>
-
-<p>Пока представители буржуйского класса изучают меню ресторана, работяги сверху залипают в экраны ноутбуков. Работают.</p>
-
-<p><img src="7.jpeg" alt="7" /></p>
-
-<p>А может, просто запутались в таком количестве иконок на рабочем столе и пытаются наконец в них разобраться.</p>
-
-<p><img src="8.jpeg" alt="8" /></p>
-
-<p>Понаблюдали мы за частной жизнью китайцев - и хватит. Тем более, прямо на стене мы увидели прокатные велосипеды и решили взять один. К слову, впервые попробовали ведосипед - тандем. Штука прикольная, как и название марки велосипеда (те, кто в теме, поймут), вот только дорога вымощена брусьями так, что каждый из них ты чувствуешь под собой 😂.</p>
-
-<p><img src="9.jpeg" alt="9" /></p>
-
-<p>Кстати, изначально стена представляла собой земляную насыпь, верхушка которой была выложена кирпичами.</p>
-
-<p><img src="10.jpeg" alt="10" /></p>
-
-<p><img src="11.jpeg" alt="11" /></p>
-
-<p>После прогулки по стене наткнулись на уличную китайскую дискотеку.</p>
-
-<p><img src="12.jpeg" alt="12" /></p>
-
-<p>Проезжая, со стены увидели квартал, который с легкой руки назвали “красными фонарями” :), но точное название нам не известно. Это была ярмарка еды, как выяснилось.</p>
-
-<p><img src="13.jpeg" alt="13" /></p>
-
-<p>Кстати, именно здесь стали очевидны кулинарные различия с тем же Пекином (северная часть Китая). Здесь вам и китайские лепешки, и различные жареные китайские блюда, и сладкие чипсы, например, со вкусом манго.</p>
-
-<p>Махуа - косички из теста, по вкусу очень напоминающие чипсы.</p>
-
-<p><img src="14.jpeg" alt="14" /></p>
-
-<p>Конечно, лапша.</p>
-
-<p><img src="15.jpeg" alt="15" /></p>
-
-<p>В Сиане популярен такой фруктовый напиток. Готовят его обычно из груши или граната.</p>
-
-<p><img src="16.jpeg" alt="16" /></p>
-
-<p>А это рисовый десерт на палочке. Сладкий и вкусный, честно-честно!</p>
-
-<p><img src="17.jpeg" alt="17" /></p>
-
-<p>Такие пироги.</p>
-
-<hr />
-
-<h2 id="гробница-императора-цинь-шихуанди">Гробница императора Цинь Шихуанди</h2>
-
-<p>Главной целью визита Сианя ожидаемо была Гробница императора Цинь Шихуанди со знаменитой Терракотовой армией.</p>
-
-<p>Музейный комплекс находится в окрестностях Сианя. Добраться до него можно на метро + автобусе примерно за 2 часа.</p>
-
-<p>Почти на выходе из автобуса вас подлавливают гиды, представляются официальными. Вся эта сцена показалась нам подозрительной, поэтому мы купили сначала билеты, потом все-таки согласились на экскурсию от гида, которая подкараулила нас у кассы (к слову, экскурсией остались очень довольны!).</p>
-
-<p>Музейный комплекс представляет собой погребальный косплекс под курганом. На территории находятся три павильона. В каждом из них можно увидеть воинов.</p>
-
-<h3 id="это-первый-павильон">Это первый павильон.</h3>
-
-<p><img src="18.jpeg" alt="18" /></p>
-
-<p>Здесь и находится знаменитая армия.</p>
-
-<p><img src="19.jpeg" alt="19" /></p>
-
-<p><img src="20.jpeg" alt="20" /></p>
-
-<p>То, что сейчас доступно взору туристов, - реконструкция разрушенной армии. Не все воины восстановлены, большая часть площадки лежит в руинах. В первой гробнице всего 1000 статуй из 6000 реконструированы.</p>
-
-<p><img src="21.jpeg" alt="21" /></p>
-
-<p>Так происходит реконструкция.</p>
-
-<p><img src="22.jpeg" alt="22" /></p>
-
-<p><img src="23.jpeg" alt="23" /></p>
-
-<p>Оказалось, что знаменитая армия была найдена совсем недавно - в 1974 году обычными сианьскими крестьянами, которые копали землю в поисках воды. Что уж говорить, если весь город - нераскопанная (или unexcavated, как говорила наша гид) реликвия. Факт наличия многих исторических ценностей, зарытых под землей, даже затруднил строительство местного метро. Такой вот двухэтажный город. Но вернемся к гробнице.</p>
-
-<h3 id="третий-павильон">Третий павильон.</h3>
-
-<p><img src="24.jpeg" alt="24" /></p>
-
-<h3 id="последний-второй-павильон">Последний, второй, павильон.</h3>
-
-<p><img src="25.jpeg" alt="25" /></p>
-
-<p>Общее количество воинов во всех трех хранилищах оценивается 8000 тысячами. Но спустя два тысячилетия лишь один остался в сохранности. Прозвали его, как ни странно, Lucky (то есть удачливый).</p>
-
-<p><img src="26.jpeg" alt="26" /></p>
-
-<p><img src="27.jpeg" alt="27" /></p>
-
-<p>Император Цинь Шихуанди является одним из самых известных правителей Китая, великий реформатор, объединивший Китай, он же жестокий диктатор. Именно по его приказу и была сооружена гробница великих масштабов и для него самого, и для его богатств. А армию соорудили как бы для защиты. То, что император любил и ценил при жизни, он пожелал сохранить и после своей смерти. Такая вот древняя форма вещизма.</p>
-
-<p>Сам император похоронен отдельно, но его гробницу было решено оставить нераскопанной. Таково решение властей.</p>
-
-<p>Примечательные штуки из сувенирной лавки.</p>
-
-<p><img src="28.jpeg" alt="28" /></p>
-
-<p><img src="29.jpeg" alt="29" /></p>
-
-<p><img src="30.jpeg" alt="30" /></p>
-
-<hr />
-
-<h2 id="кото-кафе">Кото-кафе</h2>
-
-<p>Побывали, значит, в местной кофейне с котиками.</p>
-
-<p><img src="31.jpeg" alt="31" /></p>
-
-<p>Заходим, нас сразу просят обработать руки антисептиком, чтобы не пачкать кошечек. Там же на входе замечаем интересную схему, на которой изображенно, как правильно гладить кошек.</p>
-
-<p><img src="32.jpeg" alt="32" /></p>
-
-<p>Забегая вперёд, скажу, что все кошки максимально ласковые и покладистые, трогай хоть за лапки, хоть за брюшко. Очень игривые, вот этот котяра, например, только и пытался, что запрыгнуть на стол, поиграть с кофейными чашками.</p>
-
-<p><img src="33.jpeg" alt="33" />
-<img src="34.jpeg" alt="34" />
-<img src="35.jpeg" alt="35" />
-<img src="36.jpeg" alt="36" />
-<img src="37.jpeg" alt="37" /></p>
-
-<p>Кафе называется “Сats &amp; Piano Coffee”, поэтому и пианино здесь имеется.</p>
-
-<p><img src="38.jpeg" alt="38" /></p>
-
-<p>Прямо за ним находится домик котиков, они иногда туда заходят через специальную дверь.</p>
-
-<p><img src="39.jpeg" alt="39" />
-<img src="40.jpeg" alt="40" /></p>
-
-<p>Приведу несколько портретов местных кошек.</p>
-
-<p><img src="41.jpeg" alt="41" />
-<img src="42.jpeg" alt="42" />
-<img src="43.jpeg" alt="43" />
-<img src="44.jpeg" alt="44" />
-<img src="45.jpeg" alt="45" />
-<img src="46.jpeg" alt="46" />
-<img src="47.jpeg" alt="47" />
-<img src="48.jpeg" alt="48" /></p>
-
-<p>Кстати, кофе тут тоже нам понравился^^.</p>
-
-<hr />
-
-<p>Так и подошло к концу наше знакомство с Сианем, колоритным, живым городом. Он более молодежный и хипстерский в сравнении с консервативным и строгим Пекином и более атмосферный, если сравнивать с современным и технологичным Шанхаем.</p>
-
-<p><img src="49.jpeg" alt="49" /></p>
-
-<p>В городе много молодежи, возможно, потому что Сиань также известен как образовательный центр Китая - в городе находится порядка 50 университетов. Местные китайцы нам показались довольно раслабленными, яркими.</p>
-
-<p><img src="50.jpeg" alt="50" />
-<img src="51.jpeg" alt="51" /></p>
-
-<p>Сиань - достойный город для изучения многообразного и разнопланового Китая и просто классное место для посещения.</p>
-
-<p><img src="52.jpeg" alt="52" /></p>]]></content><author><name>Yaroslav Kivaev</name></author><category term="terracotta-army" /><category term="ancient-capital" /><category term="city-wall" /><category term="history" /><category term="unesco" /><category term="qin-emperor" /><category term="cultural-heritage" /><category term="shaanxi" /><category term="archaeology" /><category term="museums" /><summary type="html"><![CDATA[Знаменитая Терракотовая армия, древняя городская стена и многое другое в первом пункте нашего большого путешествия по Китаю!]]></summary></entry></feed>
+</blockquote>]]></content><author><name>Yaroslav Kivaev</name></author><category term="pandas" /><category term="sichuan" /><category term="bamboo" /><category term="hot-pot" /><category term="new-year" /><category term="cosplay" /><category term="anime" /><category term="nature-reserve" /><category term="subtropical" /><category term="mandarins" /><summary type="html"><![CDATA[Бамбук, панды, мандарины, косплееры, hot pot. Так можно коротко описать наш Новый год в Китае, а именно в Чэнду.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://storage.yandexcloud.net/yarkivaev-blog/chengdu/icon.jpg" /><media:content medium="image" url="https://storage.yandexcloud.net/yarkivaev-blog/chengdu/icon.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
