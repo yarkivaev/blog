@@ -96,7 +96,6 @@ blog/
 │   ├── list-post-media.sh              # List media paths referenced by a post
 │   ├── process-post-images.sh          # WebP derivatives + LQIP + manifest.json
 │   ├── process-post-videos.sh          # Adaptive HLS into derived/ (no upscale)
-│   ├── upload-post-media-to-yandex.sh  # Upload that list to Yandex Object Storage
 │   └── download_photos.sh              # Image management utility
 ├── _config.yml             # Jekyll configuration
 ├── Gemfile                 # Ruby dependencies
@@ -311,29 +310,27 @@ export PATH="/opt/homebrew/bin:$PATH"
 ./utils/download_photos.sh
 
 # List all local media for a travel post (images + expanded HLS trees)
-./utils/list-post-media.sh --check _posts/travel/italy/2025-04-10-italy.md -o /tmp/italy-media.txt
+./utils/list-post-media.sh --check _posts/travel/italy/2026-04-10-italy.md
 
 # Generate WebP 1400/2400 + LQIP blur placeholders → travel/<slug>/derived/ (gitignored)
-./utils/list-post-media.sh _posts/travel/italy/2025-04-10-italy.md \
-  | ./utils/process-post-images.sh --post _posts/travel/italy/2025-04-10-italy.md
+./utils/list-post-media.sh _posts/travel/italy/2026-04-10-italy.md \
+  | ./utils/process-post-images.sh --post _posts/travel/italy/2026-04-10-italy.md
 
 # Only a subdir or single file (relative to travel/<slug>/)
-./utils/list-post-media.sh --prefix rome/from_kate _posts/travel/italy/2025-04-10-italy.md \
-  | ./utils/process-post-images.sh --post _posts/travel/italy/2025-04-10-italy.md
-./utils/list-post-media.sh --prefix rome/from_kate/19.jpg _posts/travel/italy/2025-04-10-italy.md \
-  | ./utils/process-post-images.sh --post _posts/travel/italy/2025-04-10-italy.md
+./utils/list-post-media.sh --prefix rome/from_kate _posts/travel/italy/2026-04-10-italy.md \
+  | ./utils/process-post-images.sh --post _posts/travel/italy/2026-04-10-italy.md
+./utils/list-post-media.sh --prefix rome/from_kate/19.jpg _posts/travel/italy/2026-04-10-italy.md \
+  | ./utils/process-post-images.sh --post _posts/travel/italy/2026-04-10-italy.md
 
-./utils/list-post-media.sh _posts/travel/italy/2025-04-10-italy.md \
-  | ./utils/process-post-videos.sh --post _posts/travel/italy/2025-04-10-italy.md
+./utils/list-post-media.sh _posts/travel/italy/2026-04-10-italy.md \
+  | ./utils/process-post-videos.sh --post _posts/travel/italy/2026-04-10-italy.md
 
 bundle exec jekyll build
 
-# Upload originals + derived to Yandex Object Storage (AWS CLI + credentials)
-./utils/upload-post-media-to-yandex.sh --bucket yarkivaev-blog --slug italy \
-  --from-list /tmp/italy-media.txt --include-derived
-
-# Or pipe list → upload; add --dry-run on upload to preview aws commands
-# Optional: YC_S3_ACL_PUBLIC=1 for public-read objects
+# Upload travel/<slug>/ (originals + derived/) to Yandex Object Storage (AWS CLI + credentials)
+aws s3 sync travel/italy/ s3://yarkivaev-blog/italy/ \
+  --endpoint-url=https://storage.yandexcloud.net \
+  --exclude ".DS_Store"
 ```
 
 `travel/<slug>/derived/manifest.json` drives responsive `<img>` output (srcset, LQIP, lazy) via `_plugins/image_url_processor.rb`. After upload, set `storage_prefix: "yandex"` in post frontmatter. Video `{% include video.html %}` paths still need full cloud URLs unless you extend the Jekyll plugin.

@@ -49,11 +49,8 @@ blog/
 │   ├── process-post-images.sh   # WebP 1400/2400 + LQIP → travel/<slug>/derived/
 │   ├── process-post-videos.sh   # Adaptive HLS (≤720p/1080p, no upscale) → derived/<clip>/
 │   ├── lib/video-derivatives.sh # ffmpeg ladder + video entries in manifest.json
-│   ├── upload-post-media-to-yandex.sh # Upload a path list to Yandex Object Storage
 │   ├── lib/post-media.sh        # Shared parsing and HLS expansion for the scripts above
-│   ├── lib/image-derivatives.sh # ImageMagick resize + manifest.json for process-post-images
-│   ├── encode-mp4-to-assets-hls.sh # MP4 → HLS into assets/hls/<subdir>/ for local or test posts
-│   └── publish-hls-to-yandex.sh # Encode HLS with ffmpeg and upload to Yandex Object Storage
+│   └── lib/image-derivatives.sh # ImageMagick resize + manifest.json for process-post-images
 └── css/
     └── main.scss           # Single CSS entry point (compiles all Sass)
 ```
@@ -154,22 +151,22 @@ lang: ru                                   # Content language (ru/zh/en)
 - **Format**: Static **HLS** only — URL мастер-плейлиста `master.m3u8` (fMP4-сегменты), раздача с **Yandex Object Storage** или другого HTTPS-хранилища с поддержкой Range; отдельный стриминг-сервер для VOD не нужен.
 - **Include**: `{% include video.html src="https://storage.yandexcloud.net/…/master.m3u8" %}`; опции `poster="https://…/poster.jpg"`, `round=true` (круглый кадр, как видеокружок).
 - **Клиент**: Safari (включая iOS) — нативный HLS; прочие браузеры — **hls.js** из [`assets/js/vendor/hls.min.js`](assets/js/vendor/hls.min.js). Кастомные элементы: play/pause, перемотка, mute, скорость; при воспроизведении одного ролика остальные вставки `video.html` на странице ставятся на паузу.
-- **Локально в репозитории**: [`utils/encode-mp4-to-assets-hls.sh`](utils/encode-mp4-to-assets-hls.sh) — положить HLS в `assets/hls/<subdir>/` для тестов или статической раздачи с сайта: `./utils/encode-mp4-to-assets-hls.sh /path/to/file.mp4 my-clip`.
-- **Публикация (encode + upload)**: [`utils/publish-hls-to-yandex.sh`](utils/publish-hls-to-yandex.sh) — локально нужны `ffmpeg` и AWS CLI с `--endpoint-url=https://storage.yandexcloud.net`, переменные `AWS_ACCESS_KEY_ID` и `AWS_SECRET_ACCESS_KEY`. Пример: `./utils/publish-hls-to-yandex.sh clip.mp4 my-bucket video/2026/trip/clip/`. Опционально `YC_S3_ACL_PUBLIC=1` для `public-read` на объектах; иначе настройте публичный доступ политикой бакета. Переопределение публичного URL: `YC_PUBLIC_BASE_URL`. Если домен сайта и медиа различаются, на бакете может понадобиться **CORS**.
-- **Публикация готовых файлов из поста**: [`utils/list-post-media.sh`](utils/list-post-media.sh) собирает абсолютные пути к медиа (картинки, постеры, развёрнутые HLS-пакеты в `travel/<slug>/`); [`utils/process-post-images.sh`](utils/process-post-images.sh) генерирует `derived/`; [`utils/upload-post-media-to-yandex.sh`](utils/upload-post-media-to-yandex.sh) заливает список в бакет (`yarkivaev-blog/<slug>/…`). Пример:
+- **Кодирование**: [`utils/process-post-videos.sh`](utils/process-post-videos.sh) — адаптивный HLS в `travel/<slug>/derived/hls/` (нужны `ffmpeg` и GNU bash 5).
+- **Публикация в Object Storage**: после `process-post-images` / `process-post-videos` — `aws s3 sync` всего `travel/<slug>/` в бакет (`--endpoint-url=https://storage.yandexcloud.net`, переменные `AWS_ACCESS_KEY_ID` и `AWS_SECRET_ACCESS_KEY`). Если домен сайта и медиа различаются, на бакете может понадобиться **CORS**. Пример:
   ```bash
   export PATH="/opt/homebrew/bin:$PATH"
-  ./utils/list-post-media.sh --check _posts/travel/italy/2025-04-10-italy.md -o /tmp/italy-media.txt
-  ./utils/list-post-media.sh _posts/travel/italy/2025-04-10-italy.md \
-    | ./utils/process-post-images.sh --post _posts/travel/italy/2025-04-10-italy.md
+  ./utils/list-post-media.sh --check _posts/travel/italy/2026-04-10-italy.md
+  ./utils/list-post-media.sh _posts/travel/italy/2026-04-10-italy.md \
+    | ./utils/process-post-images.sh --post _posts/travel/italy/2026-04-10-italy.md
   # Only a subdir or file: --prefix rome/from_kate or --prefix rome/from_kate/19.jpg
-  ./utils/list-post-media.sh _posts/travel/italy/2025-04-10-italy.md \
-    | ./utils/process-post-videos.sh --post _posts/travel/italy/2025-04-10-italy.md
+  ./utils/list-post-media.sh _posts/travel/italy/2026-04-10-italy.md \
+    | ./utils/process-post-videos.sh --post _posts/travel/italy/2026-04-10-italy.md
   bundle exec jekyll build
-  ./utils/upload-post-media-to-yandex.sh --bucket yarkivaev-blog --slug italy \
-    --from-list /tmp/italy-media.txt --include-derived
+  aws s3 sync travel/italy/ s3://yarkivaev-blog/italy/ \
+    --endpoint-url=https://storage.yandexcloud.net \
+    --exclude ".DS_Store"
   ```
-  Для проверки без загрузки: `--dry-run`. Исходные `.mp4` в каталогах HLS включаются по умолчанию; `--exclude-mp4` убирает их из списка и из `aws s3 sync` (кроме `init.mp4`). После загрузки выставьте `storage_prefix: "yandex"` — плагин переписывает только `<img src>`; URL видео в `video.html` нужно задать полными (`https://storage.yandexcloud.net/yarkivaev-blog/<slug>/…/master.m3u8`) или расширить плагин отдельно.
+  [`utils/list-post-media.sh`](utils/list-post-media.sh) собирает пути к медиа из поста (для `--check` и выборочной обработки). После загрузки выставьте `storage_prefix: "yandex"` — плагин переписывает только `<img src>`; URL видео в `video.html` нужно задать полными (`https://storage.yandexcloud.net/yarkivaev-blog/<slug>/…/master.m3u8`) или расширить плагин отдельно.
 
 ## Key Features
 
@@ -221,7 +218,7 @@ bundle exec jekyll build
 2. **Categories/Tags**: Add to frontmatter, archive pages update automatically
 3. **Navigation**: Update `_data/navigation.yml` for new destinations
 4. **Images**: Upload to Yandex Cloud or use local fallback structure
-5. **Video**: Encode and upload HLS with `utils/publish-hls-to-yandex.sh`, then embed with `video.html` (see HLS section above)
+5. **Video**: Encode HLS with `utils/process-post-videos.sh`, upload via `aws s3 sync`, embed with `video.html` (see HLS section above)
 
 ### Performance Testing
 ```bash
