@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/opt/homebrew/bin/bash
 
 pm_set_has() {
   local file="$1" value="$2"
@@ -61,6 +61,13 @@ pm_media_extension() {
   local lower
   lower="$(printf '%s' "$path" | tr '[:upper:]' '[:lower:]')"
   [[ "$lower" =~ \.(jpe?g|png|gif|webp|m3u8|mp4|m4s)$ ]]
+}
+
+pm_is_raster_image() {
+  local path="$1"
+  local lower
+  lower="$(printf '%s' "$path" | tr '[:upper:]' '[:lower:]')"
+  [[ "$lower" =~ \.(jpe?g|png)$ ]]
 }
 
 pm_collect_frontmatter_paths() {

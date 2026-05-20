@@ -94,6 +94,8 @@ blog/
 │   └── main.scss           # Single CSS entry point
 ├── utils/
 │   ├── list-post-media.sh              # List media paths referenced by a post
+│   ├── process-post-images.sh          # WebP derivatives + LQIP + manifest.json
+│   ├── process-post-videos.sh          # Adaptive HLS into derived/ (no upscale)
 │   ├── upload-post-media-to-yandex.sh  # Upload that list to Yandex Object Storage
 │   └── download_photos.sh              # Image management utility
 ├── _config.yml             # Jekyll configuration
@@ -300,21 +302,35 @@ bundle exec jekyll doctor
 
 ### Image Management
 
+Requires GNU bash 5 and ImageMagick (`brew install bash imagemagick`). Scripts use `/opt/homebrew/bin/bash`.
+
 ```bash
+export PATH="/opt/homebrew/bin:$PATH"
+
 # Download images from Yandex Cloud
 ./utils/download_photos.sh
 
 # List all local media for a travel post (images + expanded HLS trees)
 ./utils/list-post-media.sh --check _posts/travel/italy/2025-04-10-italy.md -o /tmp/italy-media.txt
 
-# Upload to Yandex Object Storage (needs AWS CLI + AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY)
-./utils/upload-post-media-to-yandex.sh --bucket yarkivaev-blog --slug italy --from-list /tmp/italy-media.txt
+# Generate WebP 1400/2400 + LQIP blur placeholders → travel/<slug>/derived/ (gitignored)
+./utils/list-post-media.sh _posts/travel/italy/2025-04-10-italy.md \
+  | ./utils/process-post-images.sh --post _posts/travel/italy/2025-04-10-italy.md
+
+./utils/list-post-media.sh _posts/travel/italy/2025-04-10-italy.md \
+  | ./utils/process-post-videos.sh --post _posts/travel/italy/2025-04-10-italy.md
+
+bundle exec jekyll build
+
+# Upload originals + derived to Yandex Object Storage (AWS CLI + credentials)
+./utils/upload-post-media-to-yandex.sh --bucket yarkivaev-blog --slug italy \
+  --from-list /tmp/italy-media.txt --include-derived
 
 # Or pipe list → upload; add --dry-run on upload to preview aws commands
 # Optional: YC_S3_ACL_PUBLIC=1 for public-read objects
 ```
 
-After upload, set `storage_prefix: "yandex"` in the post frontmatter so images use `https://storage.yandexcloud.net/yarkivaev-blog/<slug>/`. Video `{% include video.html %}` paths still need full cloud URLs unless you extend the Jekyll plugin.
+`travel/<slug>/derived/manifest.json` drives responsive `<img>` output (srcset, LQIP, lazy) via `_plugins/image_url_processor.rb`. After upload, set `storage_prefix: "yandex"` in post frontmatter. Video `{% include video.html %}` paths still need full cloud URLs unless you extend the Jekyll plugin.
 
 ### Deployment
 

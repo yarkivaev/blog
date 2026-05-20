@@ -167,10 +167,30 @@ img {
 }
 
 // Image optimization and lazy loading
-img[data-src] {
+img.blur-up:not(.loaded) {
+  opacity: 1;
+  filter: blur(12px);
+  transform: scale(1.02);
+  transition: filter 0.35s ease-in-out, transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+}
+
+img.blur-up.loading,
+img.blur-up.error,
+img.blur-up.retry {
+  opacity: 1;
+  background: transparent;
+  animation: none;
+}
+
+img.blur-up.loaded {
+  filter: none;
+  transform: none;
+}
+
+img[data-src]:not(.blur-up) {
   filter: blur(5px);
   transition: filter 0.3s ease-in-out;
-  
+
   &.loaded {
     filter: blur(0);
   }

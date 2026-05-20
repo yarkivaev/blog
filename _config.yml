@@ -130,3 +130,7 @@ liquid:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Gitignored image derivatives must still be published to _site
+include:
+  - travel/**/derived/**

@@ -1,6 +1,6 @@
-<figure class="post-video-player post-video-player--chrome-hidden post-video-player--loading{% if include.round %} post-video-player--round{% endif %}" data-post-video-player data-hls-src="{{ include.src | xml_escape }}" aria-busy="true">
+<figure class="post-video-player post-video-player--chrome-hidden{% if include.round %} post-video-player--round{% endif %}" data-post-video-player data-hls-src="{{ include.src | xml_escape }}">
   <div class="post-video-player__frame">
-    <video class="post-video-player__video" playsinline preload="metadata"{% if include.poster %} poster="{{ include.poster | xml_escape }}"{% endif %}></video>
+    <video class="post-video-player__video" playsinline preload="none"{% if include.poster %} poster="{{ include.poster | xml_escape }}"{% endif %}></video>
     <div class="post-video-player__loader" role="status" aria-label="Loading video">
       <span class="post-video-player__spinner" aria-hidden="true"></span>
     </div>
@@ -11,6 +11,12 @@
       <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
       <div class="post-video-player__toolbar-actions">
         <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
+        <label class="post-video-player__quality-label" hidden>
+          <span class="post-video-player__quality-text">Quality</span>
+          <select class="post-video-player__quality" aria-label="Video quality">
+            <option value="-1" selected>Auto</option>
+          </select>
+        </label>
         <label class="post-video-player__rate-label">
           <span class="post-video-player__rate-text">Speed</span>
           <select class="post-video-player__rate" aria-label="Playback speed">

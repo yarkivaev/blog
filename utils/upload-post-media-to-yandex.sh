@@ -13,6 +13,7 @@ usage() {
   echo "  --from-list FILE   Read absolute paths from file (default: stdin)" >&2
   echo "  --dry-run          Print aws commands without running them" >&2
   echo "  --exclude-mp4      Skip source .mp4 in HLS sync (keeps init.mp4)" >&2
+  echo "  --include-derived  Sync travel/<slug>/derived/ to s3://bucket/<slug>/derived/" >&2
   exit 1
 }
 
@@ -21,6 +22,7 @@ SLUG=""
 FROM_LIST=""
 DRY_RUN=0
 EXCLUDE_MP4=0
+INCLUDE_DERIVED=0
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -41,6 +43,7 @@ while [[ $# -gt 0 ]]; do
       ;;
     --dry-run) DRY_RUN=1; shift ;;
     --exclude-mp4) EXCLUDE_MP4=1; shift ;;
+    --include-derived) INCLUDE_DERIVED=1; shift ;;
     -h|--help) usage ;;
     *) echo "Unknown option: $1" >&2; usage ;;
   esac
@@ -136,6 +139,13 @@ while IFS= read -r path || [[ -n "${path:-}" ]]; do
   upload_file "$path"
   FILE_HANDLED[$path]=1
 done < "$INPUT_FILE"
+
+if [[ "$INCLUDE_DERIVED" -eq 1 && -d "${MEDIA_ROOT}/derived" ]]; then
+  run_aws aws s3 sync "${MEDIA_ROOT}/derived/" "s3://${BUCKET}/${SLUG}/derived/" "${SYNC_FLAGS[@]}"
+  echo "Synced derived/: s3://${BUCKET}/${SLUG}/derived/"
+elif [[ "$INCLUDE_DERIVED" -eq 1 ]]; then
+  echo "warning: derived directory not found: ${MEDIA_ROOT}/derived" >&2
+fi
 
 echo "Uploaded: ${CP_COUNT} file(s) via cp, ${HLS_SYNC_COUNT} HLS director(ies) via sync"
 if [[ "$SKIP_COUNT" -gt 0 ]]; then
