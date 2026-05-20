@@ -317,6 +317,12 @@ export PATH="/opt/homebrew/bin:$PATH"
 ./utils/list-post-media.sh _posts/travel/italy/2025-04-10-italy.md \
   | ./utils/process-post-images.sh --post _posts/travel/italy/2025-04-10-italy.md
 
+# Only a subdir or single file (relative to travel/<slug>/)
+./utils/list-post-media.sh --prefix rome/from_kate _posts/travel/italy/2025-04-10-italy.md \
+  | ./utils/process-post-images.sh --post _posts/travel/italy/2025-04-10-italy.md
+./utils/list-post-media.sh --prefix rome/from_kate/19.jpg _posts/travel/italy/2025-04-10-italy.md \
+  | ./utils/process-post-images.sh --post _posts/travel/italy/2025-04-10-italy.md
+
 ./utils/list-post-media.sh _posts/travel/italy/2025-04-10-italy.md \
   | ./utils/process-post-videos.sh --post _posts/travel/italy/2025-04-10-italy.md
 

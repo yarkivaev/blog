@@ -297,6 +297,45 @@ pm_add_unique_path() {
   fi
 }
 
+pm_normalize_prefix() {
+  local prefix="$1"
+  prefix="${prefix#./}"
+  prefix="${prefix#/}"
+  prefix="${prefix%/}"
+  printf '%s' "$prefix"
+}
+
+pm_rel_under_media_root() {
+  local path="$1"
+  local repo="$2"
+  local media_root="$3"
+  if [[ "$path" == "${media_root}/"* ]]; then
+    printf '%s' "${path#${media_root}/}"
+    return 0
+  fi
+  if [[ "$path" == "${repo}/assets/"* ]]; then
+    printf '%s' "${path#${repo}/}"
+    return 0
+  fi
+  return 1
+}
+
+pm_path_matches_prefixes() {
+  local rel="$1"
+  local prefix normalized
+  if [[ "${#PM_PREFIXES[@]}" -eq 0 ]]; then
+    return 0
+  fi
+  for prefix in "${PM_PREFIXES[@]}"; do
+    normalized="$(pm_normalize_prefix "$prefix")"
+    [[ -z "$normalized" ]] && continue
+    if [[ "$rel" == "$normalized" || "$rel" == "${normalized}/"* ]]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
 pm_list_media() {
   local post_path="$1"
   local check="${2:-0}"
@@ -325,8 +364,16 @@ pm_list_media() {
       done < <(pm_expand_hls_for_path "$resolved" "$exclude_mp4")
     fi
   done < <(pm_collect_raw_paths "$post_path" | sort -u)
-  local path out
+  local path out rel
   for path in "${PM_RESULT_PATHS[@]}"; do
+    if [[ "${#PM_PREFIXES[@]}" -gt 0 ]]; then
+      if ! rel="$(pm_rel_under_media_root "$path" "$repo" "$media_root")"; then
+        continue
+      fi
+      if ! pm_path_matches_prefixes "$rel"; then
+        continue
+      fi
+    fi
     if [[ ! -e "$path" ]]; then
       missing=1
       if [[ "$check" -eq 1 ]]; then

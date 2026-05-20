@@ -162,6 +162,7 @@ lang: ru                                   # Content language (ru/zh/en)
   ./utils/list-post-media.sh --check _posts/travel/italy/2025-04-10-italy.md -o /tmp/italy-media.txt
   ./utils/list-post-media.sh _posts/travel/italy/2025-04-10-italy.md \
     | ./utils/process-post-images.sh --post _posts/travel/italy/2025-04-10-italy.md
+  # Only a subdir or file: --prefix rome/from_kate or --prefix rome/from_kate/19.jpg
   ./utils/list-post-media.sh _posts/travel/italy/2025-04-10-italy.md \
     | ./utils/process-post-videos.sh --post _posts/travel/italy/2025-04-10-italy.md
   bundle exec jekyll build
