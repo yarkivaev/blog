@@ -333,7 +333,9 @@ aws s3 sync travel/italy/ s3://yarkivaev-blog/italy/ \
   --exclude ".DS_Store"
 ```
 
-`travel/<slug>/derived/manifest.json` drives responsive `<img>` output (srcset, LQIP, lazy) via `_plugins/image_url_processor.rb`. After upload, set `storage_prefix: "yandex"` in post frontmatter. Video `{% include video.html %}` paths still need full cloud URLs unless you extend the Jekyll plugin.
+**CORS** (required for HLS via hls.js from `localhost:4000` or `2xiaomao.ru`): apply `config/yandex-bucket-cors.json` on bucket `yarkivaev-blog` in the Yandex Cloud console (bucket → Security → CORS), or via `aws s3api put-bucket-cors --bucket yarkivaev-blog --cors-configuration file://config/yandex-bucket-cors.json --endpoint-url=https://storage.yandexcloud.net`.
+
+`travel/<slug>/derived/manifest.json` drives responsive `<img>` output (srcset, LQIP, lazy) via `_plugins/image_url_processor.rb`. Upload it with `aws s3 sync` to `italy/derived/manifest.json` on the bucket. With `storage_prefix: "yandex"`, Jekyll fetches that file from Object Storage at build time (falls back to the local copy if the download fails). Video `{% include video.html %}` paths still need full cloud URLs unless you extend the Jekyll plugin.
 
 ### Deployment
 

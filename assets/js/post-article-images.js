@@ -19,6 +19,44 @@
     };
   }
 
+  function directChildImages(parent) {
+    var images = [];
+    var child = parent.firstChild;
+    while (child) {
+      if (child.tagName === 'IMG') {
+        images.push(child);
+      }
+      child = child.nextSibling;
+    }
+    return images;
+  }
+
+  function wrapInFigure(parent, img) {
+    var figure = document.createElement('div');
+    figure.className = 'figure';
+    parent.insertBefore(figure, img);
+    figure.appendChild(img);
+    return figure;
+  }
+
+  function splitParagraphFigures(parent) {
+    var images = directChildImages(parent);
+    var container = parent.parentNode;
+    if (!container || images.length <= 1) {
+      return;
+    }
+    var before = parent.nextSibling;
+    images.forEach(function (image) {
+      var figure = document.createElement('div');
+      figure.className = 'figure';
+      figure.appendChild(image);
+      container.insertBefore(figure, before);
+    });
+    if (parent.textContent.replace(/\s/g, '') === '') {
+      container.removeChild(parent);
+    }
+  }
+
   function ensureFigureParent(img) {
     var parent = img.parentNode;
     if (!parent) {
@@ -28,11 +66,11 @@
       return parent;
     }
     if (parent.classList && parent.classList.contains('article__content')) {
-      var figure = document.createElement('div');
-      figure.className = 'figure';
-      parent.insertBefore(figure, img);
-      figure.appendChild(img);
-      return figure;
+      return wrapInFigure(parent, img);
+    }
+    if (directChildImages(parent).length > 1) {
+      splitParagraphFigures(parent);
+      return img.parentNode;
     }
     parent.className = 'figure';
     return parent;

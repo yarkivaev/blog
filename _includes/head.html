@@ -57,7 +57,7 @@
       "name": "{{ site.author.name }}"
     },
     "datePublished": "{{ page.date | date_to_xmlschema }}",
-    "image": "{{ page.preview | default: site.logo | absolute_url }}"
+    "image": "{% if page.image %}{{ page.image }}{% elsif page.preview %}{{ page | preview_absolute_url }}{% else %}{{ site.logo | absolute_url }}{% endif %}"
   }
   </script>
   {% endif %}

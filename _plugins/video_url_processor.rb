@@ -13,15 +13,10 @@ module VideoUrlProcessor
     ImageUrlProcessor.media_prefix(post, storage_prefix, prefixes, slug)
   end
 
-  def load_manifest(site_source, slug)
-    path = File.join(site_source, 'travel', slug, 'derived', 'manifest.json')
-    return {} unless File.file?(path)
-
-    data = JSON.parse(File.read(path))
-    data['videos'] || {}
-  rescue JSON::ParserError => e
-    Jekyll.logger.warn 'VideoUrlProcessor:', "invalid manifest #{path}: #{e.message}"
-    {}
+  def load_manifest(site_source, slug, storage_prefix: 'local', prefix: nil)
+    ImageUrlProcessor.load_manifest_raw(
+      site_source, slug, storage_prefix: storage_prefix, prefix: prefix
+    )['videos'] || {}
   end
 
   def hls_key_for_src(src, slug)
@@ -63,16 +58,20 @@ module VideoUrlProcessor
       ordered = variants.sort_by { |size, _| size.to_i }
       pair = ordered.find { |size, _| size == '1400' } || ordered.first
       rel = pair.last['webp']
-      return media_url(prefix, rel) if derived_file?(site_source, slug, rel)
+      return media_url(prefix, rel) if remote_prefix?(prefix) || derived_file?(site_source, slug, rel)
 
       return nil
     end
     if lqip
       rel = lqip['webp']
-      return media_url(prefix, rel) if derived_file?(site_source, slug, rel)
+      return media_url(prefix, rel) if remote_prefix?(prefix) || derived_file?(site_source, slug, rel)
     end
 
     nil
+  end
+
+  def remote_prefix?(prefix)
+    prefix.to_s.match?(%r{\Ahttps?://})
   end
 end
 
@@ -89,17 +88,11 @@ Jekyll::Hooks.register :posts, :post_render do |post|
   prefix = VideoUrlProcessor.media_prefix(post, storage_prefix, prefixes, slug)
   next if prefix.nil?
 
-  manifest_path = File.join(post.site.source, 'travel', slug, 'derived', 'manifest.json')
-  manifest_images = {}
-  manifest_videos = VideoUrlProcessor.load_manifest(post.site.source, slug)
-  if File.file?(manifest_path)
-    begin
-      manifest_images = JSON.parse(File.read(manifest_path))
-      manifest_images = manifest_images.reject { |k, _| k == 'videos' }
-    rescue JSON::ParserError
-      manifest_images = {}
-    end
-  end
+  manifest_raw = ImageUrlProcessor.load_manifest_raw(
+    post.site.source, slug, storage_prefix: storage_prefix, prefix: prefix
+  )
+  manifest_images = manifest_raw.reject { |k, _| k == 'videos' }
+  manifest_videos = manifest_raw['videos'] || {}
 
   html = post.output
 

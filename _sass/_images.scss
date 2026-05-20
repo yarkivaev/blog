@@ -141,6 +141,12 @@ img {
   }
 }
 
+// Several markdown images in one <p> (old posts) — gap before JS splits them
+.article__content .figure:has(> img + img) {
+  @include flex-column;
+  align-items: center;
+}
+
 // Figure styles (used by JavaScript) — full-bleed within viewport
 .article__content .figure {
   position: relative;

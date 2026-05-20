@@ -152,7 +152,7 @@ lang: ru                                   # Content language (ru/zh/en)
 - **Include**: `{% include video.html src="https://storage.yandexcloud.net/…/master.m3u8" %}`; опции `poster="https://…/poster.jpg"`, `round=true` (круглый кадр, как видеокружок).
 - **Клиент**: Safari (включая iOS) — нативный HLS; прочие браузеры — **hls.js** из [`assets/js/vendor/hls.min.js`](assets/js/vendor/hls.min.js). Кастомные элементы: play/pause, перемотка, mute, скорость; при воспроизведении одного ролика остальные вставки `video.html` на странице ставятся на паузу.
 - **Кодирование**: [`utils/process-post-videos.sh`](utils/process-post-videos.sh) — адаптивный HLS в `travel/<slug>/derived/hls/` (нужны `ffmpeg` и GNU bash 5).
-- **Публикация в Object Storage**: после `process-post-images` / `process-post-videos` — `aws s3 sync` всего `travel/<slug>/` в бакет (`--endpoint-url=https://storage.yandexcloud.net`, переменные `AWS_ACCESS_KEY_ID` и `AWS_SECRET_ACCESS_KEY`). Если домен сайта и медиа различаются, на бакете может понадобиться **CORS**. Пример:
+- **Публикация в Object Storage**: после `process-post-images` / `process-post-videos` — `aws s3 sync` всего `travel/<slug>/` в бакет (`--endpoint-url=https://storage.yandexcloud.net`, переменные `AWS_ACCESS_KEY_ID` и `AWS_SECRET_ACCESS_KEY`). **CORS** обязателен для hls.js (разные origin): вручную применить `config/yandex-bucket-cors.json` на бакете в консоли Yandex Cloud. Пример:
   ```bash
   export PATH="/opt/homebrew/bin:$PATH"
   ./utils/list-post-media.sh --check _posts/travel/italy/2026-04-10-italy.md

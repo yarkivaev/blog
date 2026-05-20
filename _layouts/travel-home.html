@@ -22,18 +22,9 @@ layout: base
         <article class="post-card">
           <a href="{{ post.url | relative_url }}" class="post-card-link">
             <div class="post-card-image">
-              {% assign storage_prefix = post.storage_prefix | default: site.data.site.image_storage.default_prefix %}
-              {% assign prefix = site.data.site.image_storage.prefixes[storage_prefix] | replace: ':slug', post.slug %}
-              {% if storage_prefix == 'local' %}
-                {% assign image_url = '/travel/' | append: post.slug | append: '/' | append: post.preview %}
-              {% else %}
-                {% assign image_url = prefix | append: post.preview %}
+              {% if post.preview %}
+                {{ post | preview_responsive: post.title }}
               {% endif %}
-              <img 
-                src="{{ image_url }}" 
-                alt="{{ post.title | escape }}" 
-                loading="lazy"
-                >
             </div>
             <div class="post-card-content">
               <h2 class="post-card-title">{{ post.title | escape }}</h2>
@@ -130,3 +121,5 @@ layout: base
 
   {%- endif -%}
 </div>
+
+<script src="{{ '/assets/js/image-blur-up.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
