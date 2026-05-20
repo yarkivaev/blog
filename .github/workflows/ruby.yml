@@ -34,4 +34,4 @@ jobs:
     - name: Install jgd
       run: gem install jgd
     - name: deploy
-      run: jgd --bundle -c _config.yml
+      run: jgd --bundle -c _config-deploy.yml

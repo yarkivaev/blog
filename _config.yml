@@ -28,7 +28,11 @@ facebook:
 # Google and Analytics
 google_analytics: 
 google_site_verification: 
-# yandex_verification: 
+# yandex_verification:
+# Yandex Metrika counter ID (digits only): https://metrika.yandex.ru → Add counter → copy ID
+yandex_metrika: 109333094
+# Analytics scripts load when enable_analytics is true (_config-deploy.yml via jgd) or JEKYLL_ENV=production
+enable_analytics: false
 
 # Images and Media
 logo: "/assets/images/logo.png"

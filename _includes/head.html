@@ -30,10 +30,10 @@
     media-src 'self' https: data: blob:;
     style-src 'self' 'unsafe-inline' https://c.disquscdn.com;
     font-src 'self';
-    script-src 'self' 'unsafe-inline' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.googletagmanager.com https://www.google-analytics.com;
-    connect-src 'self' https: https://www.google-analytics.com https://stats.g.doubleclick.net;
+    script-src 'self' 'unsafe-inline' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.googletagmanager.com https://www.google-analytics.com https://mc.yandex.ru;
+    connect-src 'self' https: https://www.google-analytics.com https://stats.g.doubleclick.net https://mc.yandex.ru wss://mc.yandex.ru;
     worker-src 'self' blob:;
-    frame-src https://disqus.com https://*.disqus.com https://www.youtube.com https://www.youtube-nocookie.com;
+    frame-src https://disqus.com https://*.disqus.com https://www.youtube.com https://www.youtube-nocookie.com https://mc.yandex.ru;
   ">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -62,6 +62,7 @@
   </script>
   {% endif %}
 
+  {% if site.enable_analytics or jekyll.environment == 'production' %}
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WHKSXKWSEQ"></script>
   <script>
@@ -71,4 +72,7 @@
 
     gtag('config', 'G-WHKSXKWSEQ');
   </script>
+  {% endif %}
+
+  {% include yandex-metrika.html %}
 </head>

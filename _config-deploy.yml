@@ -1,0 +1,2 @@
+# Merged by jgd: jekyll build --config _config.yml,_config-deploy.yml
+enable_analytics: true

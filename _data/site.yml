@@ -33,7 +33,7 @@ features:
   comments: true
   search: false
   dark_mode: false
-  analytics: false
+  analytics: true
   rss: true
   sitemap: true
 
