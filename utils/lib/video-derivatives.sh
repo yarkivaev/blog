@@ -328,6 +328,7 @@ vd_process_one_master() {
     variant_dirs+=("$out_dir")
   done
   vd_write_master_playlist "$tmp_root" "${variant_dirs[@]}"
+  mkdir -p "$(dirname "$out_root")"
   rm -rf "$out_root"
   mv "$tmp_root" "$out_root"
   sizes_built="$(IFS=,; echo "${sizes_to_build[*]}")"
