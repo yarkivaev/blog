@@ -12,6 +12,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -30,5 +31,9 @@ jobs:
         bundler-cache: true
     - name: Install jgd
       run: gem install jgd
-    - name: deploy
-      run: jgd --bundle -c _config-deploy.yml
+    - name: Build site
+      run: bundle exec jekyll build --config _config.yml,_config-deploy.yml
+    - name: Verify gh-pages is not built by Actions
+      run: |
+        test ! -f _site/CLAUDE.md
+        test ! -f _site/_config.yml

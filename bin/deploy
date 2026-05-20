@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+set -euo pipefail
+root="$(cd "$(dirname "$0")/.." && pwd)"
+gem_home="${GEM_HOME:-$HOME/.gem}"
+ruby_bin="/opt/homebrew/opt/ruby@3.4/bin"
+bundle_bin="${ruby_bin}/bundle"
+deploy_config="${root}/_config-deploy.yml"
+branch="gh-pages"
+branch_from="master"
+if [[ ! -x "${bundle_bin}" ]]; then
+  echo "missing ${bundle_bin}, install: brew install ruby@3.4" >&2
+  exit 1
+fi
+if [[ ! -r "${deploy_config}" ]]; then
+  echo "missing ${deploy_config}" >&2
+  exit 1
+fi
+export GEM_HOME="${gem_home}"
+export PATH="${ruby_bin}:${gem_home}/ruby/3.4.0/bin:/usr/local/bin:/usr/bin:/bin"
+cd "${root}"
+url="$(git config --get remote.origin.url)"
+if [[ -z "${url}" ]]; then
+  echo "git remote.origin.url is not set" >&2
+  exit 1
+fi
+temp="$(mktemp -d -t blog-deploy.XXXXXX)"
+trap 'rm -rf "${temp}"' EXIT
+clone="${temp}/clone"
+copy="${temp}/copy"
+site_out="${temp}/site"
+echo "Cloning ${url} (${branch_from})..."
+git clone -b "${branch_from}" "${url}" "${clone}"
+cp -R "${clone}" "${copy}"
+echo "Installing gems..."
+cd "${clone}"
+"${bundle_bin}" install --quiet
+"${bundle_bin}" binstubs jekyll --force
+echo "Building Jekyll..."
+rm -rf _site
+./bin/jekyll build --config "_config.yml,${deploy_config}"
+if [[ ! -d _site ]]; then
+  echo "Jekyll did not create _site" >&2
+  exit 1
+fi
+cp -R _site "${site_out}"
+cd "${temp}"
+rm -rf "${clone}"
+mv "${copy}" "${clone}"
+cd "${clone}"
+echo "Preparing ${branch}..."
+if git branch -a | grep -q "origin/${branch}"; then
+  git checkout "${branch}"
+else
+  git checkout --orphan "${branch}"
+fi
+echo "Pushing to ${branch}..."
+rm -rf ./*
+cp -R "${site_out}/"* .
+touch .nojekyll
+rm -f README.md
+git add .
+git commit -am "new version $(date)" --allow-empty
+git push origin "${branch}"
+echo "Deploy finished."
