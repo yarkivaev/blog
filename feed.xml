@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://2xiaomao.ru/feed.xml" rel="self" type="application/atom+xml" /><link href="https://2xiaomao.ru/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2026-05-21T02:30:26+03:00</updated><id>https://2xiaomao.ru/feed.xml</id><title type="html">XiongXiaomao blog</title><subtitle>Travel blog documenting adventures around the world.  一边 программируем 一边 путешествуем - Programming while traveling.</subtitle><author><name>Yaroslav Kivaev</name><email>yarkivaev@gmail.com</email></author><entry xml:lang="ru"><title type="html">Италия (Italy) - Рим</title><link href="https://2xiaomao.ru/travel/italy/" rel="alternate" type="text/html" title="Италия (Italy) - Рим" /><published>2026-04-10T00:00:00+03:00</published><updated>2026-04-10T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/italy</id><content type="html" xml:base="https://2xiaomao.ru/travel/italy/"><![CDATA[<p><strong>Товарищи, мы в Европе!</strong></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://2xiaomao.ru/feed.xml" rel="self" type="application/atom+xml" /><link href="https://2xiaomao.ru/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2026-05-22T23:55:27+03:00</updated><id>https://2xiaomao.ru/feed.xml</id><title type="html">XiongXiaomao blog</title><subtitle>Travel blog documenting adventures around the world.  一边 программируем 一边 путешествуем - Programming while traveling.</subtitle><author><name>Yaroslav Kivaev</name><email>yarkivaev@gmail.com</email></author><entry xml:lang="ru"><title type="html">Италия (Italy) - Рим</title><link href="https://2xiaomao.ru/travel/italy/" rel="alternate" type="text/html" title="Италия (Italy) - Рим" /><published>2026-04-10T00:00:00+03:00</published><updated>2026-04-10T00:00:00+03:00</updated><id>https://2xiaomao.ru/travel/italy</id><content type="html" xml:base="https://2xiaomao.ru/travel/italy/"><![CDATA[<p><strong>Товарищи, мы в Европе!</strong></p>
 
 <div class="horizontal-scroll">
     <img src="rome/from_kate/20.jpg" />
@@ -617,40 +617,6 @@
 <figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="eating_coffee/master.m3u8">
   <div class="post-video-player__frame">
     <video class="post-video-player__video" playsinline="" preload="none" poster="eating_coffee/poster.jpg"></video>
-    <div class="post-video-player__loader" role="status" aria-label="Loading video">
-      <span class="post-video-player__spinner" aria-hidden="true"></span>
-    </div>
-    <button type="button" class="post-video-player__play" aria-label="Play video" hidden="">
-      <span class="post-video-player__play-icon" aria-hidden="true"></span>
-    </button>
-    <div class="post-video-player__toolbar" hidden="" role="group" aria-label="Video controls">
-      <input type="range" class="post-video-player__seek" min="0" max="1000" value="0" step="1" aria-label="Seek" />
-      <div class="post-video-player__toolbar-actions">
-        <button type="button" class="post-video-player__mute" aria-label="Mute"></button>
-        <div class="post-video-player__quality-label" hidden="">
-          <select class="post-video-player__quality" aria-label="Video quality">
-            <option value="-1" selected="">Auto</option>
-          </select>
-        </div>
-        <div class="post-video-player__rate-label">
-          <select class="post-video-player__rate" aria-label="Playback speed">
-            <option value="0.5">0.5×</option>
-            <option value="0.75">0.75×</option>
-            <option value="1" selected="">1×</option>
-            <option value="1.25">1.25×</option>
-            <option value="1.5">1.5×</option>
-            <option value="2">2×</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p class="post-video-player__error" hidden=""></p>
-</figure>
-
-<figure class="post-video-player post-video-player--chrome-hidden post-video-player--round" data-post-video-player="" data-hls-src="coffee_with_foam/master.m3u8">
-  <div class="post-video-player__frame">
-    <video class="post-video-player__video" playsinline="" preload="none" poster="coffee_with_foam/poster.jpg"></video>
     <div class="post-video-player__loader" role="status" aria-label="Loading video">
       <span class="post-video-player__spinner" aria-hidden="true"></span>
     </div>
