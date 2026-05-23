@@ -9,12 +9,9 @@ main:
     url: /contact/
 
 social:
-  - title: "GitHub"
-    url: "https://github.com/catdog905"
-    icon: "github"
-  - title: "Email"
-    url: "mailto:yarkivaev@gmail.com"
-    icon: "email"
+  - title: "Telegram"
+    url: "https://t.me/two_xiaomao_ru"
+    icon: "telegram"
 
 destinations:
   - name: "Beijing"

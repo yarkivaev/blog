@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+.site-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $spacing-base;
+  padding: 8px 12px;
+}
+
+.site-header__telegram-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: unset;
+}
+
+.site-header__telegram-icon {
+  width: 36px;
+  height: 36px;
+  fill: currentColor;
+}
